@@ -1,0 +1,1245 @@
+<DOCTYPE html>
+	<html>
+	<head><title>PHP RESERVED WORDS EXPLAINED</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    	#phpres {
+    	background-color: silver;
+    	width: 100%;
+    	height: 100%vh;
+    }
+
+    h1 {
+  	font-weight: bold;
+  	font-size: 25px;
+  	color: blue;
+  	text-shadow: 2px 2px 2px white;
+  	text-transform: capitalize;
+  }
+  
+  p{
+  	background-color: #7FFFD4;
+  	width: 80%;
+  	max-height: 30%;
+  	color: black;
+  	margin-top: 20px;
+  	margin-bottom: 20px;
+  }
+
+  h3 {
+  	color: red;
+    font-family: arial;
+    border-bottom: 5px solid black;
+}
+
+
+@media screen and (max-width: 440px){
+  #phpres {
+    margin: 0px;
+    width: 100vw;
+    height: 100%vh;
+  }
+}
+
+
+  
+
+
+
+
+</style>
+	</head>
+
+   <body>
+	<div id="phpres">
+
+<h1>abstract</h1>
+<p>Abstract classes and methods are when the parent class has a named method, but need its child class(es) to fill out the tasks.
+
+An abstract class is a class that contains at least one abstract method. An abstract method is a method that is declared, but not implemented in the code.
+
+An abstract class or method is defined with the abstract keyword</p>
+<h4><?php<br>
+// Parent class<br>
+abstract class Car {<br>
+  public $name;<br>
+  public function __construct($name) {<br>
+    $this->name = $name;<br>
+  }<br>
+  abstract public function intro() : string;<br>
+}<br>
+
+// Child classes<br>
+class Audi extends Car {<br>
+  public function intro() : string {<br>
+    return "Choose German quality! I'm an $this->name!";<br>
+  }<br>
+}<br>
+
+class Volvo extends Car {<br>
+  public function intro() : string {<br>
+    return "Proud to be Swedish! I'm a $this->name!";<br>
+  }<br>
+}<br>
+
+class Citroen extends Car {<br>
+  public function intro() : string {<br>
+    return "French extravagance! I'm a $this->name!";<br>
+  }<br>
+}<br>
+
+// Create objects from the child classes<br>
+$audi = new audi("Audi");<br>
+echo $audi->intro();<br>
+echo "<br>";
+
+$volvo = new volvo("Volvo");<br>
+echo $volvo->intro();<br>
+echo "<br>";
+
+$citroen = new citroen("Citroen");<br>
+echo $citroen->intro();<br>
+?></h4>
+<h3>output <br>
+	Choose German quality! I'm an Audi!<br>
+Proud to be Swedish! I'm a Volvo!<br>
+French extravagance! I'm a Citroen!</h3>
+
+
+
+<h1>array</h1>
+<p>An array is a data structure that stores one or more similar type of values in a single value. For example if you want to store 100 numbers then instead of defining 100 variables its easy to define an array of 100 length.
+
+There are three different kind of arrays and each array value is accessed using an ID c which is called array index.
+Numeric array − An array with a numeric index. Values are stored and accessed in linear fashion.
+
+Associative array − An array with strings as index. This stores element values in association with key values rather than in a strict linear index order.
+
+Multidimensional array − An array containing one or more arrays and values are accessed using multiple indices</p>
+<h4><html>
+   <body>
+   
+      <?php<br>
+         /* First method to create array. */<br>
+         $numbers = array( 1, 2, 3, 4, 5);<br>
+         
+         foreach( $numbers as $value ) {<br>
+            echo "Value is $value <br />";<br>
+         }<br>
+         
+         /* Second method to create array. */<br>
+         $numbers[0] = "one";<br>
+         $numbers[1] = "two";<br>
+         $numbers[2] = "three";<br>
+         $numbers[3] = "four";<br>
+         $numbers[4] = "five";<br>
+         
+         foreach( $numbers as $value ) {<br>
+            echo "Value is $value <br />";<br>
+         }<br>
+      ?><br>
+      
+  </h4>
+<h3>output <br>
+	Value is 1 <br>
+Value is 2 <br>
+Value is 3 <br>
+Value is 4 <br>
+Value is 5 <br>
+Value is one <br>
+Value is two <br>
+Value is three <br>
+Value is four <br>
+Value is five </h3>
+
+
+
+<h1>break</h1>
+<p>
+next →← prev
+PHP Break
+PHP break statement breaks the execution of the current for, while, do-while, switch, and for-each loop. If you use break inside inner loop, it breaks the execution of inner loop only.
+
+The break keyword immediately ends the execution of the loop or switch structure. It breaks the current flow of the program at the specified condition and program control resumes at the next statements outside the loop.
+
+The break statement can be used in all types of loops such as while, do-while, for, foreach loop, and also with switch case</p>
+<h4><?php    <br>
+for($i=1;$i<=10;$i++){   <br> 
+echo "$i <br/>"; <br>   
+if($i==5){  <br>  
+break;    <br>
+}   <br> 
+}  <br>  
+?>  </h4>
+<h3>output <br>
+1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+</h3>
+
+<h1>callable</h1>
+<p>The is_callable() function is used to test that the contents of a variable, whether it can be called as a function or not.</p>
+<h4><?php<br>
+function foo(){<br>
+}<br>
+echo is_callable('foo');<br>
+echo is_callable('bar');<br>
+?></h4>
+<h3>output <br>
+1</h3>
+
+<h1>case</h1>
+<p>THE CASE KEYWORD IS USED IN SWITCH PHP STATEMENT TO SELECT ONE OF MANY CODE TO BE EXECUTED</p>
+<h4><?php <BR>
+$favcolor = "red"; <BR>
+
+switch ($favcolor) { <BR>
+  case "red": <BR>
+    echo "Your favorite color is red!"; <BR>
+    break; <BR>
+  case "blue": <BR>
+    echo "Your favorite color is blue!"; <BR>
+    break; <BR>
+  case "green": <BR>
+    echo "Your favorite color is green!"; <BR>
+    break; <BR>
+  default: <BR>
+    echo "Your favorite color is neither red, blue, nor green!"; <BR>
+}
+?></h4>
+<h3>OUTPUT <BR>
+YOUR FAVOURATE COLOR IS RED</h3>
+
+<h1>catch</h1>
+<p>CATCH: The CATCH block will “catch” any exceptions that occurred inside the preceding TRY block. The code inside our CATCH block will only be executed if an Exception occurs.</p>
+<h4>
+<?php<BR>
+ 
+//TRY to do something.<BR>
+try{<BR>
+    //Obviously, 1 is never going to be equal to 2...<BR>
+    if(1 !== 2){<BR>
+        //Throw an exception.<BR>
+        throw new Exception('1 is not equal to 2!');<BR>
+    }<BR>
+} <BR>
+//CATCH the exception if something goes wrong.<BR>
+catch (Exception $ex) {<BR>
+    //Print out the exception message.<BR>
+    echo $ex->getMessage();<BR>
+}</h4>
+<h3></h3>
+
+<h1>class</h1>
+<p>A class is defined by using the class keyword, followed by the name of the class and a pair of curly braces ({}). All its properties and methods go inside the braces:</p>
+<h4><?php<BR>
+class Fruit {<BR>
+  // Properties<BR>
+  public $name;<BR>
+  public $color;<BR>
+
+  // Methods<BR>
+  function set_name($name) {<BR>
+    $this->name = $name;<BR>
+  }<BR>
+  function get_name() {<BR>
+    return $this->name;<BR>
+  }<BR>
+}<BR>
+?></h4>
+<h3></h3>
+
+
+<h1>clone</h1>
+<p>An object copy is created by using the clone keyword and the __clone() method cannot be called directly. In PHP, cloning an object is doing a shallow copy and not a deep copy. Meaning, the contained objects of the copied objects are not copied.</p>
+<h4>class CloneableUser<BR>
+{<BR>
+    public $name;<BR>
+    public $lastName;<BR>
+
+    /**<BR>
+     * This method will be invoked by a clone operator and will prepend "Copy " to the<BR>
+     * name and lastName properties.<BR>
+     */<BR>
+    public function __clone()<BR>
+    {<BR>
+        $this->name = "Copy " . $this->name;<BR>
+        $this->lastName = "Copy " . $this->lastName;<BR>
+    }<BR>
+}</h4>
+<h3></h3>
+
+<h1>const</h1>
+<p>Constants are like variables except that once they are defined they cannot be changed or undefined.
+A constant is an identifier (name) for a simple value. The value cannot be changed during the script.
+
+A valid constant name starts with a letter or underscore (no $ sign before the constant name).
+
+Note: Unlike variables, constants are automatically global across the entire script.</p>
+<h4><!DOCTYPE html><BR>
+<html><BR>
+<body><BR>
+
+<?php<BR>
+// case-sensitive constant name<BR>
+define("GREETING", "Welcome to W3Schools.com!");<BR>
+echo GREETING;<BR>
+?> <BR>
+
+</body><BR>
+</html><BR>
+</h4>
+<h3>output <br>
+Welcome to W3Schools.com!</h3>
+
+<h1>continue</h1>
+<p>continue is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation and then the beginning of the next iteration.
+In PHP the switch statement is considered a looping structure for the purposes of continue. continue behaves like break (when no arguments are passed) but will raise a warning as this is likely to be a mistake. If a switch is inside a loop, continue 2 will continue with the next iteration of the outer loop.</p>
+<h4><?php <br>
+for ($i = 0; $i < 5; ++$i) { <br>
+    if ($i == 2) <br>
+        continue <br>
+    print "$i\n"; <br>
+} <br>
+?></h4>
+<h3>output <br>
+2</h3>
+
+<h1>declare</h1>
+<p>In PHP, a variable starts with the $ sign, followed by the name of the variable:</p>
+<h4><?php<br>
+$txt = "Hello world!";<br>
+$x = 5;<br>
+$y = 10.5;<br>
+
+echo $txt;<br>
+echo "<br>";
+echo $x;<br>
+echo "<br>";
+echo $y;<br>
+?></h4>
+<h3>output <br>
+Hello world!<br>
+5<br>
+10.5</h3>
+
+<h1>default</h1>
+<p>PHP allows you to define C++ style default argument values. In such case, if you don't pass any value to the function, it will use default argument value</p>
+<h4><?php   <br> 
+function greeting($first="Sonoo",$last="Jaiswal"){   <br> 
+echo "Greeting: $first $last<br/>";   <br> 
+}    <br>
+greeting();  <br>
+greeting("Rahul");  <br>
+greeting("Michael","Clark");  <br>
+?> <br> </h4>
+<h3>output <br>
+Greeting: Sonoo Jaiswal<br>
+Greeting: Rahul Jaiswal<br>
+Greeting: Michael Clark</h3>
+
+
+<h1>die</h1>
+<p>The die() is an inbuilt function in PHP. It is used to print message and exit from the current php script. It is equivalent to exit() function in PHP.
+synthax = die(message)</p>
+<h4><?php <br>
+// blank url of site <br>
+// so that die() is executed <br>
+$site = ""; <br>
+  
+// open url else die (exit) <br>
+fopen($site, "r") <br>
+or die("Unable to connect to given site."); <br>
+?> </h4>
+<h3>output <br>
+unable to connect to given site</h3>
+
+<h1>do</h1>
+<p>Loops are used to execute the same block of code again and again, as long as a certain condition is met. The basic idea behind a loop is to automate the repetitive tasks within a program to save the time and effort. PHP supports four different types of loops.
+	do…while — the block of code executed once and then condition is evaluated. If the condition is true the statement is repeated as long as the specified condition is true.
+</p>
+<h4><?php<br>
+$i = 1;<br>
+do{<br>
+    $i++;<br>
+    echo "The number is " . $i . "<br>";<br>
+}<br>
+while($i <= 3);<br>
+?><br></h4>
+<h3></h3>
+
+<h1>echo</h1>
+<p>In this tutorial we use echo or print in almost every example. So, this chapter contains a little more info about those two output statements.
+echo and print are more or less the same. They are both used to output data to the screen.
+The differences are small: echo has no return value while print has a return value of 1 so it can be used in expressions. echo can take multiple parameters (although such usage is rare) while print can take one argument. echo is marginally faster than print.
+</p> 
+<h4><?php<br>
+echo "<h2>PHP is Fun!</h2>";<br>
+echo "Hello world!<br>";<br>
+echo "I'm about to learn PHP!<br>";<br>
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";<br>
+?></h4>
+<h3>output <br>
+Hello world!<br>
+I'm about to learn PHP!<br>
+This string was made with multiple parameters.</h3>
+
+<h1>else</h1>
+<p>Often you'd want to execute a statement if a certain condition is met, and a different statement if the condition is not met. This is what else is for. else extends an if statement to execute a statement in case the expression in the if statement evaluates to FALSE. For example, the following code would display a is greater than b if $a is greater than $b, and a is NOT greater than b otherwise:</p>
+<h4><?php<br>
+if ($a > $b) {<br>
+  echo "a is greater than b";<br>
+} else {<br>
+  echo "a is NOT greater than b";<br>
+}<br>
+?></h4>
+<h3></h3>
+
+<h1>elseif</h1>
+<p>elseif, as its name suggests, is a combination of if and else. Like else, it extends an if statement to execute a different statement in case the original if expression evaluates to FALSE. However, unlike else, it will execute that alternative expression only if the elseif conditional expression evaluates to TRUE. For example, the following code would display a is bigger than b, a equal to b or a is smaller than b:</p>
+<h4><?php<br>
+if ($a > $b) {<br>
+    echo "a is bigger than b";<br>
+} elseif ($a == $b) {<br>
+    echo "a is equal to b";<br>
+} else {<br>
+    echo "a is smaller than b";<br>
+}<br>
+?></h4>
+<h3></h3>
+
+<h1>empty()</h1>
+<p>Check whether a variable is empty. Also check whether the variable is set/declared:
+The empty() function checks whether a variable is empty or not.
+This function returns false if the variable exists and is not empty, otherwise it returns true.
+The following values evaluates to empty:</p>
+<h4>// True because $a is empty
+if (empty($a)) {
+  echo "Variable 'a' is empty.<br>";
+}
+
+// True because $a is set
+if (isset($a)) {
+  echo "Variable 'a' is set.";
+}
+?></h4>
+<h3>output <br>
+variable 'a' is empty <br>
+variable 'b' is set</h3>
+
+<h1>end</h1>
+<p>Output the value of the current and the last element in an array:</p>
+<h4><?php<br>
+$people = array("Peter", "Joe", "Glenn", "Cleveland");<br>
+
+echo current($people) . "<br>";<br>
+echo end($people);<br>
+?></h4>
+<h3>output <br>
+peter<br>
+claveland</h3>
+
+<h1>declare</h1>
+<p>In PHP declare construct is used to set execution directives for a block of code. At present two directives are recognized ticks and encoding.</p>
+<h4><?php<br>
+declare(ticks=5);<br>
+// the following function is called on each tick event<br>
+function w3r_tick()<br>
+{<br>
+echo "w3r_tick() called<br>";<br>
+}<br>
+register_tick_function('w3r_tick');<br>
+$a = 5;<br>
+if ($a > 0)<br>
+{<br>
+$a += 2;<br>
+print($a);<br>
+}<br>
+?></h4>
+<h3></h3>
+
+<h1>for</h1>
+<p>The PHP for loop allows the user to put all the loop-related statements (i.e. INITIALIZER; CONDITION; INCREMENTOR or DECREMENTOR) in one place. The structure is similar to C language.</p>
+<h4><?php<br>
+for ($xint=0; $xint<=5; $xint++)<br>
+{<br>
+echo "Number is : $xint <br />";<br>
+}<br>
+?></h4>
+<h3>output <br>
+Number is : 0 <br>
+Number is : 1 <br>
+Number is : 2 <br>
+Number is : 3 <br>
+Number is : 4 <br>
+Number is : 5 </h3>
+
+<h1>foreach</h1>
+<p>The foreach loop is mainly used for looping through the values of an array. It loops over the array, and each value for the current array element is assigned to $value, and the array pointer is advanced by one to go the next element in the array.</p>
+<h4><?php<br>
+$salary[]=2000;<br>
+$salary[]=3000;<br>
+$salary[]=5000;<br>
+
+foreach($salary as $value){<br>
+  echo "Salary: $value<br>";<br>
+}<br>
+?></h4>
+<h3>output <br>
+	Salary: 2000<br>
+
+Salary: 3000<br>
+
+Salary: 5000</h3>
+
+<h1>endif</h1>
+<p>PHP offers an alternative syntax for some of its control structures; namely, if, while, for, foreach, and switch. In each case, the basic form of the alternate syntax is to change the opening brace to a colon (:) and the closing brace to endif;, endwhile;, endfor;, endforeach;, or endswitch;, respectively.</p>
+<h4><?php<br>
+if ($a == 5):<br>
+    echo "a equals 5";<br>
+    echo "...";<br>
+elseif ($a == 6):<br>
+    echo "a equals 6";<br>
+    echo "!!!";<br>
+else:<br>
+    echo "a is neither 5 nor 6";<br>
+endif;<br>
+?></h4>
+<h3></h3>
+
+<h1>endswitch</h1>
+<p></p>
+<h4></h4>
+<h3></h3>
+
+<h1>exit()</h1>
+<p>The exit() function prints a message and terminates the current script.</p>
+<h4><?php<br>
+$site = "https://www.w3schools.com/";<br>
+fopen($site,"r")<br>
+or exit("Unable to connect to $site");<br>
+?><br></h4>
+<h3></h3>
+
+<h1>extends</h1>
+<p>Often you need classes with similar variables and functions to another existing class. In fact, it is good practice to define a generic class which can be used in all your projects and adapt this class for the needs of each of your specific projects. To facilitate this, classes can be extensions of other classes. The extended or derived class has all variables and functions of the base class (this is called 'inheritance' despite the fact that nobody died) and what you add in the extended definition. It is not possible to subtract from a class, that is, to undefine any existing functions or variables. An extended class is always dependent on a single base class, that is, multiple inheritance is not supported. Classes are extended using the keyword 'extends'.</p>
+<h4><?php<br>
+class Named_Cart extends Cart {<br>
+    var $owner;<br>
+  
+    function set_owner ($name) {<br>
+        $this->owner = $name;<br>
+    }<br>
+}<br>
+?></h4>
+<h3></h3>
+
+
+
+<h1>finally</h1>
+<p>PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. If the class itself is being defined final then it cannot be extended.</p>
+<h4><?php<br>
+class BaseClass {<br>
+   public function test() {<br>
+       echo "BaseClass::test() called\n";<br>
+   }<br>
+   
+   final public function moreTesting() {<br>
+       echo "BaseClass::moreTesting() called\n";<br>
+   }<br>
+}<br>
+
+class ChildClass extends BaseClass {<br>
+   public function moreTesting() {<br>
+       echo "ChildClass::moreTesting() called\n";<br>
+   }<br>
+}<br>
+// Results in Fatal error: Cannot override final method BaseClass::moreTesting()<br>
+?></h4>
+<h3></h3>
+
+<h1>for	</h1>
+<p>The for loop - Loops through a block of code a specified number of times.</p>
+<h4><?php<br>
+// example to demonstrate for keyword<br>
+for($i=0; $i<10; $i++) {<br>
+if($i == 5) {<br>
+break;<br>
+}<br>
+echo '<br>'.$i;<br>
+}<br>
+?></h4>
+<h3>output <br>
+0<br> 
+1<br>
+2<br>
+3<br>
+4</h3>
+
+<h1>foreach</h1>
+<p>The foreach construct provides an easy way to iterate over arrays. foreach works only on arrays and objects, and will issue an error when you try to use it on a variable with a different data type or an uninitialized variable.</p>
+<h4><?php<br>
+// example to demonstrate foreach keyword<br>
+$array = array(10,20,30,40,50);<br>
+foreach($array as $value) {<br>
+echo '<br>'.$value/10;<br>
+}
+?></h4>
+<h3>output <br>
+	1<br>
+	2<br>
+	3<br>
+	4<br>
+	5<br>
+
+</h3>
+
+<h1>function</h1>
+<p>PHP functions are similar to other programming languages. A function is a piece of code which takes one more input in the form of parameter and does some processing and returns a value.
+
+You already have seen many functions like fopen() and fread() etc. They are built-in functions but PHP gives you option to create your own functions as well.
+
+There are two parts which should be clear to you −
+
+Creating a PHP Function
+Calling a PHP Function
+In fact you hardly need to create your own PHP function because there are already more than 1000 of built-in library functions created for different area and you just need to call them according to your requirement.</p>
+
+<h4><?php<br>
+function calSum($a , $b) {<br>
+$c = $a + $b;<br>
+return $c;<br>
+}<br>
+$result = calSum(10 , 20);<br>
+echo '<br> The sum  :  '.$result;<br>
+?></h4>
+<h3>output <br>
+the sum: 30</h3>
+
+<h1>global</h1>
+<p>Some predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.examples are <br>
+$GLOBALS<br>
+$_SERVER<br>
+$_REQUEST<br>
+$_POST<br>
+$_GET<br>
+$_FILES<br>
+$_ENV<br>
+$_COOKIE<br>
+$_SESSION</p>
+<h4><?php <br>
+//example to demonstrate global keyword <br>
+$a = 10; <br>
+$b = 20; <br>
+function fun() { <br>
+global $a; <br>
+global $b; <br>
+$result = $a + $b; <br>
+return $result; <br>
+} <br>
+$f = fun(); <br>
+echo 'The result is '.$f; <br>
+?></h4>
+<h3>output <br>
+the result: 30</h3>
+
+<h1>goto</h1>
+<p>The goto operator can be used to jump to another section in the program. The target point is specified by a label followed by a colon, and the instruction is given as goto followed by the desired target label. This is not a full unrestricted goto. The target label must be within the same file and context, meaning that you cannot jump out of a function or method, nor can you jump into one. You also cannot jump into any sort of loop or switch structure. You may jump out of these, and a common use is to use a goto in place of a multi-level break.</p>
+<h4><?php<br>
+goto a;<br>
+echo 'Foo';<br>
+ 
+a:<br>
+echo 'Bar';<br>
+?></h4>
+<h3>output <br>
+bar</h3>
+
+<h1>if</h1>
+<p>The if construct is one of the most important features of many languages, PHP included. It allows for conditional execution of code fragments. PHP features an if structure that is similar to that of C:</p>
+<h4><?php<br>
+// example to demonstrate if keyword<br>
+$sum = 10;<br>
+if($sum == 10) {<br>
+echo 'Sum is 10';<br>
+} else {<br>
+echo 'Sum is not 10';<br>
+}<br>
+?></h4>
+<h3>output <br>
+sum is 10</h3>
+
+<h1>implements</h1>
+<p>An Interface enables us to make programs, indicating the public methods that a class must execute, without including the complexities and procedure of how the specific methods are implemented. This implies that an interface can define method names and arguments, but not the contents of the methods. Any classes implementing an interface must implement all methods defined by the interface.
+
+Interfaces are characterized similarly as a class, however, only the interface keyword replaces the class phrase in the declaration and without any of the methods having their contents defined.</p>
+<h4><?php
+//example to demonstrate interface keyword<br>
+interface One<br>
+{<br>
+public function first();<br>
+}<br>
+class MainClass implements One {<br>
+public function first() {<br>
+echo 'This is the First function';<br>
+}<br>
+}<br>
+$obj = new MainClass;<br>
+echo $obj->first();<br>
+?></h4>
+<h3>output <br>
+this is the first function</h3>
+
+<h1>include</h1>
+<p>The include (or require) statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
+Including files is very useful when you want to include the same PHP, HTML, or text on multiple pages of a website.
+It is possible to insert the content of one PHP file into another PHP file (before the server executes it), with the include or require statement.
+require will produce a fatal error (E_COMPILE_ERROR) and stop the script.
+include will only produce a warning (E_WARNING) and the script will continue.</p>
+<h4>
+   file.php<br>
+	<?php<br>
+//example to demonstrate include keyword<br>
+$a = 'The Earth';<br>
+$b = 'Round';<br>
+?><br>
+	index.php<br>
+	<?php<br>
+include 'file.php';<br>
+echo $a . ' is '. $b. ' in Shape';<br>
+?><br>
+</h4>
+<h3></h3>
+
+<h1>include_once</h1>
+<p>The include_once statement includes and evaluates the specified file during the execution of the script. This is a behavior similar to the include statement, with the only difference being that if the code from a file has already been included, it will not be included again, and include_once returns TRUE. As the name suggests, the file will be included just once.
+
+include_once may be used in cases where the same file might be included and evaluated more than once during a particular execution of a script, so in this case it may help avoid problems such as function redefinitions, variable value reassignments, etc.</p>
+<h4>
+	
+	<?php<br>
+	file.php<br>
+//example to demonstrate include_once keyword<br>
+$a = 'The Earth';<br>
+$b = 'Round';<br>
+?><br>
+	
+	<?php<br>
+	index.php<br>
+Include_once 'file.php';<br>
+echo $a . ' is '. $b. ' in Shape';<br>
+?><br>
+</h4>
+<h3>output <br>
+the earth is round in shape</h3>
+
+<h1>instanceof</h1>
+<p>The instanceof operator is used in PHP to find out if an object is an instantiated instance of a class. It's quite easy to use and works in the same sort of way as other operators. This can be useful to controlling objects in large applications as you can make sure that a parameter is a particular instance of an object before using it. Lets create a couple of classes as examples.</p>
+
+<h4><?php<br>
+//example to demonstrate instanceOf keyword<br>
+class MainClass<br>
+{<br>
+public function MainCLassMethod(){<br>
+echo 'Hello World!';<br>
+}<br>
+}<br>
+class ExtendedClass extends MainClass<br>
+{<br>
+public function ExtendedClassMethod(){<br>
+echo 'Have a Nice Day!';<br>
+}<br>
+}<br>
+$obj1 = new ExtendedClass;<br>
+var_dump($obj1 instanceOf ExtendedClass);<br>
+?></h4>
+<h3>output <br>
+bool(true)</h3>
+
+
+<h1>interface</h1>
+<p>Object interfaces allow you to create code which specifies which methods a class must implement, without having to define how these methods are implemented.
+
+Interfaces are defined in the same way as a class, but with the interface keyword replacing the class keyword and without any of the methods having their contents defined.
+
+All methods declared in an interface must be public; this is the nature of an interface.
+
+Note that it is possible to declare a constructor in an interface, which can be useful in some contexts, e.g. for use by factories.</p>
+<h4><?php<br>
+//example to demonstrate interface keyword<br>
+interface One<br>
+{<br>
+public function one();<br>
+}<br>
+interface Two<br>
+{<br>
+public function two();<br>
+}<br>
+class MainClass implements One, Two {<br>
+public function one() {<br>
+echo '<br> This is the one function';<br>
+}<br>
+public function two() {<br>
+echo '<br> This is the two function';<br>
+}<br>
+}<br>
+$obj = new MainClass;<br>
+echo $obj->one();<br>
+echo $obj->two();<br>
+?></h4>
+<h3>output <br>
+this is the one function<br>
+this is the two function</h3>
+
+<h1>isset()</h1>
+<p>Check whether a variable is empty. Also check whether the variable is set/declared:</p>
+<h4><?php<br>
+//example to demonstrate isset keyword<br>
+$stringOne = '';<br>
+var_dump(isset($stringOne));<br>
+$stringTwo = NULL;<br>
+var_dump(isset($stringTwo));<br>
+?></h4>
+<h3>output <br>
+bool(true) bool(false)</h3>
+
+<h1>list()</h1>
+<P>The list() function is used to assign values to a list of variables in one operation.
+Note: Prior to PHP 7.1, this function only worked on numerical arrays.</P>
+<h4><?php<br>
+//example to demonstrate list keyword<br>
+$names = array('Ram','Mohan','Raghav');<br>
+list($person1, $person2, $person3) = $names;<br>
+echo "$person1, $person2 and $person3 are friends";<br>
+?></h4>
+<h3>output <br>
+	ram,moham,raghav are friends<br>
+</h3>
+
+<h1>namespace</h1>
+<p>Namespaces are qualifiers that solve two different problems:
+
+They allow for better organization by grouping classes that work together to perform a task
+They allow the same name to be used for more than one class
+For example, you may have a set of classes which describe an HTML table, such as Table, Row and Cell while also having another set of classes to describe furniture, such as Table, Chair and Bed. Namespaces can be used to organize the classes into two different groups while also preventing the two classes Table and Table from being mixed up.</p>
+<h4><?php<br>
+namespace Html;<br>
+class Table {<br>
+  public $title = "";<br>
+  public $numRows = 0;<br>
+  public function message() {<br>
+    echo "<p>Table '{$this->title}' has {$this->numRows} rows.</p>";<br>
+  }<br>
+}<br>
+$table = new Table();<br>
+$table->title = "My table";<br>
+$table->numRows = 5;<br>
+?><br>
+
+<!DOCTYPE html><br>
+<html><br>
+<body><br>
+
+<?php<br>
+$table->message();<br>
+?><br>
+
+</body><br>
+</html></h4><br>
+<h3>output <br>
+table "my tables" has 5 rows</h3>
+
+<h1>new</h1>
+<p>Instances of classes are created using the new keyword. In the previous example, we created a new instance of the Person class using $judy = new Person();. What happens during the new call is that a new object is allocated with its own copies of the properties defined in the class you requested, and then the constructor of the object is called in case one was defined. The constructor is a method named __construct(), which is automatically called by the new keyword after creating the object. It is usually used to automatically perform various initializations such as property initializations. Constructors can also accept arguments, in which case, when the new statement is written, you also need to send the ...</p>	
+<h4><?php<br>
+//example to demonstrate new keyword<br>
+class Student<br>
+{<br>
+public function score($name, $subject, $marks) {<br>
+echo "$name scored $marks marks in $subject";<br>
+}<br>
+}<br>
+$obj = new Student;<br>
+$obj->score('Sunil','Maths',90);<br>
+?></h4>
+<h3>output <br>
+sunil scored 90 marks in maths</h3>
+
+<h1>or</h1>
+<p>	TRUE if either $a or $b is TRUE....symbol $a || $b</p>
+<h4><?php<br>
+//example to demonstrate or keyword<br>
+$a = 10;<br>
+$b = 11;<br>
+if($a ==10  or $b == 12) {<br>
+echo 'Result :  True';<br>
+}<br>
+else<br>
+{<br>
+echo 'Result : False';<br>
+}<br>
+?></h4>
+<h3>output <br>
+result: true</h3>
+
+
+<h1>print</h1>
+<p>In this tutorial we use echo or print in almost every example. So, this chapter contains a little more info about those two output statements.
+
+PHP echo and print Statements
+echo and print are more or less the same. They are both used to output data to the screen.
+
+The differences are small: echo has no return value while print has a return value of 1 so it can be used in expressions. echo can take multiple parameters (although such usage is rare) while print can take one argument. echo is marginally faster than print.</p>
+<h4><?php
+//example to demonstrate print keyword
+$str = "PHP Programming";
+print($str);
+$stringOne = "Shyam, ";
+$stringTwo = "How are you?";
+print "<br>"."Hello $stringOne $stringTwo";
+?></h4>
+<h3>output <br>
+php programing<br>
+hello shyan how are doing </h3>
+
+<h1>private</h1>
+<p>The private keyword ensures that the declared property/method can only be accessed within the very class in which it is defined (the advantage of private methods/properties). However, the major drawback of using private (if not used correctly) is that child classes cannot inherit such properties/methods at all</p>
+<h4><?php
+//example to demonstrate private keyword<br>
+class MainClass<br>
+{<br>
+private $str = 'Private';<br>
+function PrivateMethod()<br>
+{<br>
+echo 'In '. $this->str. ' Method';<br>
+}<br>
+}<br>
+$obj = new MainClass();<br>
+$obj->PrivateMethod(); //Shows Private Method<br>
+?></h4>
+<h3>output <br>
+in private method</h3>
+
+<h1>protected</h1>
+<p>The protected keyword ensures that all properties/methods declared/defined using this keyword cannot be accessed externally. However, its main advantage over the "private" keyword is that such methods/properties can be inherited by child classes.</p>
+<h4><?php
+//example to demonstrate protected keyword
+class MainClass
+{
+protected $str = 'Protected';
+function ProtectedMethod()
+{
+echo 'In '. $this->str. ' Method';
+}
+}
+$obj = new MainClass();
+$obj->ProtectedMethod(); //Shows Protected Method
+?></h4>
+<h3>output <br>
+in protected method</h3>
+
+<h1>public</h1>
+<p>The public keyword is by far the most common keyword used when declaring or defining properties/methods in PHP classes. All properties/methods declared/defined with this keyword can be accessible throughout the entire PHP script being executed.</p>
+<h4><?php
+//example to demonstrate public keyword<br>
+class MainClass<br>
+{<br>
+public $str = 'Public';<br>
+function PublicMethod()<br>
+{<br>
+echo 'In '. $this->str. ' Method';<br>
+}<br>
+}<br>
+$obj = new MainClass();<br>
+$obj->PublicMethod(); //Shows Public Method<br>
+?></h4>
+<h3>output <br>
+in public method</h3>
+
+<h1>require</h1>
+<p>require is identical to include except upon failure it will also produce a fatal E_COMPILE_ERROR level error. In other words, it will halt the script whereas include only emits a warning (E_WARNING) which allows the script to continue.</p>
+<h4><?php<br>
+require 'somefile.php';<br>
+?><br></h4>
+<h3></h3>
+
+<h1>require_once</h1>
+<p>require_once() statement can be used to include a php file in another one, when you may need to include the called file more than once. If it is found that the file has already been included, calling script is going to ignore further inclusions.
+
+If a.php is a php script calling b.php with require_once() statement, and does not find b.php, a.php stops executes causing a fatal error.</p>
+<h4><?php<br>
+require_once('x.php');<br>
+require_once('x.php');<br>
+?></h4>
+<h3></h3>
+
+<h1>return</h1>
+<p>PHP return statement immediately terminates the execution of a function when it is called from within that function. This function is also used to terminate the execution of an eval() function or script file. If this function is called from a global scope, the function stops the execution of the current script.</p>
+
+<h4><?php
+//example to demonstrate return keyword<br>
+function sum() {<br>
+$a = 10;<br>
+$b = 20;<br>
+$c = $a +$b;<br>
+return $c;<br>
+}<br>
+$result = sum();<br>
+echo 'Sum : ' . $result;<br>
+?></h4>
+<h3>output <br>
+sum 10</h3>
+
+<h1>static</h1>
+<p>Declaring class properties or methods as static makes them accessible without needing an instantiation of the class. A property declared as static cannot be accessed with an instantiated class object (though a static method can).
+
+For compatibility with PHP 4, if no visibility declaration is used, then the property or method will be treated as if it was declared as public.
+Because static methods are callable without an instance of the object created, the pseudo-variable $this is not available inside the method declared as static.</p>
+<h4><?php <br>
+class Foo { <br>
+    public static function aStaticMethod() { <br>
+        // ... <br>
+    } <br>
+} <br>
+
+Foo::aStaticMethod(); <br>
+$classname = 'Foo'; <br>
+$classname::aStaticMethod(); // As of PHP 5.3.0 <br>
+?></h4>
+<h3></h3>
+
+<h1>switch</h1>
+<p>The switch statement is similar to a series of IF statements on the same expression. In many occasions, you may want to compare the same variable (or expression) with many different values, and execute a different piece of code depending on which value it equals to. This is exactly what the switch statement is for.</p>
+<h4><?php<br>
+//example to demonstrate switch keyword<br>
+$i= 3;<br>
+switch($i) {<br>
+case 1:<br>
+echo "<br>"."One";<br>
+break;<br>
+case 2:<br>
+echo "<br>"."Two";<br>
+break;<br>
+case 3:<br>
+echo "<br>"."Three";<br>
+break;<br>
+default:<br>
+echo "<br>"."Default";<br>
+}<br>
+?></h4>
+<h3>output <br>
+three</h3>
+
+<h1>throw</h1>
+<p>Throw: The throw keyword is used to signal the occurrence of a PHP exception. The PHP runtime will then try to find a catch statement to handle the exception. Catch: This block of code will be called only if an exception occurs within the try code block.</p>
+<h4><?php<br>
+//example to demonstrate throw keyword<br>
+function division($x, $y) {<br>
+try {<br>
+if($y == 0) {<br>
+throw new Exception('Divide By Zero');<br>
+}<br>
+}<br>
+catch (Exception $e) {<br>
+echo '<br>'.$e->getMessage();<br>
+}<br>
+}<br>
+division(10,0);<br>
+?></h4>
+<h3>output <br>
+divide by zero</h3>
+
+<h1>trait</h1>
+<p>Traits are a mechanism for code reuse in single inheritance languages such as PHP. A Trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies. The semantics of the combination of Traits and classes is defined in a way which reduces complexity, and avoids the typical problems associated with multiple inheritance and Mixins.
+
+A Trait is similar to a class, but only intended to group functionality in a fine-grained and consistent way. It is not possible to instantiate a Trait on its own. It is an addition to traditional inheritance and enables horizontal composition of behavior; that is, the application of class members without requiring inheritance.</p>
+<h4><?php<br>
+class Base {<br>
+    public function sayHello() {<br>
+        echo 'Hello ';<br>
+    }<br>
+}<br>
+
+trait SayWorld {<br>
+    public function sayHello() {<br>
+        parent::sayHello();<br>
+        echo 'World!';<br>
+    }<br>
+}<br>
+
+class MyHelloWorld extends Base {<br>
+    use SayWorld;<br>
+}<br>
+
+$o = new MyHelloWorld();<br>
+$o->sayHello();<br>
+?></h4>
+<h3>output <br>
+hello world</h3>
+
+<h1>try	</h1>
+<p>try - A function using an exception should be in a "try" block. If the exception does not trigger, the code will continue as normal. ...
+throw - This is how you trigger an exception. ...
+catch - A "catch" block retrieves an exception and creates an object containing the exception information</p>
+
+<h4><?php<br>
+//example to demonstrate try keyword<br>
+try{<br>
+$arr = array();<br>
+$arr_length = count($arr);<br>
+if($arr_length == 0) {<br>
+throw new Exception('Error : Empty Array!');<br>
+}<br>
+else {<br>
+echo 'Array found';<br>
+print_r($arr);<br>
+}<br>
+}<br>
+catch(Exception $e) {<br>
+echo '<br>'.$e->getMessage();<br>
+}<br>
+?></h4>
+<h3>otuput <br>
+error: empty array</h3>
+
+<h1>unset</h1>
+<p>unset() destroys the specified variables.
+
+The behavior of unset() inside of a function can vary depending on what type of variable you are attempting to destroy.
+
+If a globalized variable is unset() inside of a function, only the local variable is destroyed. The variable in the calling environment will retain the same value as before unset() was called.</p>
+<h4><?php<br>
+//example to demonstrate unset keyword<br>
+echo 'Hello World!'.'<br>';<br>
+$a = 10;<br>
+echo $a;<br>
+unset($a);<br>
+// echo $a; //this line when uncommented shows error : Undefined variable,  as the variable is unset<br>
+?></h4>
+<h3>output <br>
+hello world<br>|
+10</h3>
+
+<h1>use</h1>
+<p>The use keyword allows you to introduce local variables into the local scope of an anonymous function. This is useful in the case where you pass the anonymous function to some other function which you have no control over.
+
+In this simple example we have no control over which arguments array_filter passes to our anonymous function. The only other way to access the $half variable in this example function would be to make it a global variable. The use keyword allows us to solve this elegantly without polluting our global scope.</p>
+<h4><? <br>
+function remove_lowest_half($arr) { <br>
+  $half = array_sum($arr) / count($arr); // Calculate the average value. <br>
+
+  return array_filter($arr, function($v) use ($half) { <br>
+    return ($v > $half); <br>
+  }); <br>
+} <br>
+
+// 8 elements which sum up to 40. <br>
+// So half will be 5. <br>
+$input = array(1,2,3,4,6,7,8,9); <br>
+
+var_dump(remove_lowest_half($input));</h4>
+<h3>output <br>
+	array(4) { <br>
+  [4]=> <br>
+  int(6) <br>
+  [5]=> <br>
+  int(7) <br>
+  [6]=> <br>
+  int(8) <br>
+  [7]=> <br>
+  int(9) <br>
+}</h3>
+
+<h1>var</h1>
+<p>The var keyword in PHP is used to declare a property or variable of class which is public by default. The var keyword is same as public when declaring variables or property of a class.
+
+Note: The var keyword was deprecated from version 5.0.0 up to version 5.1.2. Since PHP 5.1.3 it has been added again.</p>
+<h4><?php<br>
+//example to demonstrate var keyword<br>
+class MainClass<br>
+{<br>
+var $str = 'PHP Programming';<br>
+public function displayMsg() {<br>
+echo $this->str;<br>
+}<br>
+}<br>
+$obj = new MainClass;<br>
+$obj->displayMsg();<br>
+?></h4>
+<h3>output <br>
+php programing</h3>
+
+<h1>while</h1>
+<p>The while loop - Loops through a block of code as long as the specified condition is true.
+The while loop executes a block of code as long as the specified condition is true.</p>
+<h4><?php<br>
+//example to demonstrate while keyword<br>
+$i = 0;<br>
+while ($i<5) {<br>
+echo '<br>'. $i;<br>
+$i++;<br>
+}<br>
+?></h4>
+<h3>output <br>
+1<br>
+2<br>
+3<br>
+4<br>
+</h3>
+
+<h1>xor</h1>
+<p>is true if either $x or $y are true, but not both.
+symbol: 	$x xor $y</p>
+<h4></h4>
+<h3></h3>
+
+<h1>yield</h1>
+<p>A generator function looks just like a normal function, except that instead of returning a value, a generator yields as many values as it needs to. Any function containing yield is a generator function.
+
+When a generator function is called, it returns an object that can be iterated over. When you iterate over that object (for instance, via a foreach loop), PHP will call the object's iteration methods each time it needs a value, then saves the state of the generator when the generator yields a value so that it can be resumed when the next value is required.
+
+Once there are no more values to be yielded, then the generator can simply exit, and the calling code continues just as if an array has run out of values.</p>
+The heart of a generator function is the yield keyword. In its simplest form, a yield statement looks much like a return statement, except that instead of stopping execution of the function and returning, yield instead provides a value to the code looping over the generator and pauses execution of the generator function. <br>
+<h4><?php <br>
+function gen_one_to_three() { <br>
+    for ($i = 1; $i <= 3; $i++) { <br>
+        // Note that $i is preserved between yields. <br>
+        yield $i; <br>
+    } <br>
+} <br>
+
+$generator = gen_one_to_three(); <br>
+foreach ($generator as $value) { <br>
+    echo "$value\n"; <br>
+} <br>
+?></h4>
+<h3>output <br>
+1 <br>
+2 <br>
+3</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+</body>
+</html>
+		

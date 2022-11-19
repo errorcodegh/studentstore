@@ -1,0 +1,211 @@
+<DOCTYPE html>
+	<html>
+	<head><title>COMPUTER SERVER ADMINISTRATION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+   <style>
+  h1{
+  	color: blue;
+  	text-shadow: 2px 2px 2px white;
+  }
+
+  h2{
+  	font-family: comic sans ms;
+    border-bottom: 5px solid black;
+
+  }
+
+ @media screen and (max-width: 440px){
+h2,h1 {
+  font-size: 15px;
+  display:block;
+ }
+}
+
+
+
+
+
+</style>
+
+	</head>
+	<BODY>
+    
+    <h1>SERVER</h1>
+   <h2>A server is a software or hardware device that accepts and responds to requests made over a network. The device that makes the request, and receives a response from the server, is called a client. On the Internet, the term "server" commonly refers to the computer system that receives requests for a web files and sends those files to the client.</h2>
+
+   <H1>WHAT SERVER DOES</H1>
+   <H2>Servers manage network resources. For example, a user may set up a server to control access to a network, send/receive e-mail, manage print jobs, or host a website. They are also proficient at performing intense calculations. Some servers are committed to a specific task, often referred to as dedicated. However, many servers today are shared servers that take on the responsibility of e-mail, DNS, FTP, and even multiple websites in the case of a web server.</H2>
+
+   <H1>SERVER CONNECTIVITY</H1>
+   <H2>With a local network, the server connects to a router or switch that all other computers on the network use. Once connected to the network, other computers can access that server and its features. For example, with a web server, a user could connect to the server to view a website, search, and communicate with other users on the network.
+
+An Internet server works the same way as a local network server, but on a much larger scale. The server is assigned an IP address by InterNIC, or by web host.
+
+Usually, users connect to a server using its domain name, which is registered with a domain name registrar. When users connect to the domain name (such as "computerhope.com"), the name is automatically translated to the server's IP address by a DNS resolver.
+
+The domain name makes it easier for users to connect to the server, because the name is easier to remember than an IP address. Also, domain names enable the server operator to change the IP address of the server without disrupting the way that users access the server. The domain name can always remain the same, even if the IP address changes.</H2>
+
+<H1>WHERE TO KEEP SERVERS</H1>
+<H2>In a business or corporate environment, a server and other network equipment are often stored in a closet or glass house. These areas help isolate sensitive computers and equipment from people who should not have access to them.
+
+Servers that are remote or not hosted on-site are located in a data center. With these types of servers, the hardware is managed by another company and configured remotely by you or your company.</H2>
+
+<H1>MAKING A COMPUTER A SERVER</H1>
+<H2>Yes. Any computer, even a home desktop or laptop computer, can act as a server with the right software. For example, you could install an FTP server program on your computer to share files between other users on your network.
+
+Although it is possible to have your home computer act as a server, keep the following ideas in mind.
+
+Your computer and the related server software must always be running to be accessible.<BR>
+When your computer is used as a server, its resources (e.g., processing and bandwidth) is taken away from what you have available to do other things.<BR>
+Connecting a computer to a network and the Internet can open up your computer to new types of attacks.<BR>
+If the service you're providing becomes popular, a typical computer may not have the necessary resources to handle all of the requests.</H2>
+
+
+<H1>EXAMPLES OF SERVER</H1>
+<BR>
+
+<H1>APPLICATION SERVER</H1>
+ <H2>The application server is a framework, an environment where applications can run, no matter what they are or what functions they perform. An application server can develop and run web-based applications. There are many different types of application servers, including Java, PHP, and .NET Framework application servers.
+
+Application servers provide many advantages. They provide data and code integrity by allowing for a more centralized approach to updates and upgrades to applications. They provide security by centralizing the management of data access and the authentication process. Performance can be improved for heavy usage applications by limiting network traffic. All the advantages and benefits can result in a lower TCO (total cost of ownership).</H2>
+
+
+<H1>WEB SERVER</H1>
+<H2>The term web server can refer to hardware or software, or both of them working together.
+
+On the hardware side, a web server is a computer that stores web server software and a website's component files. (for example, HTML documents, images, CSS stylesheets, and JavaScript files) A web server connects to the Internet and supports physical data interchange with other devices connected to the web.
+On the software side, a web server includes several parts that control how web users access hosted files. At a minimum, this is an HTTP server. An HTTP server is software that understands URLs (web addresses) and HTTP (the protocol your browser uses to view webpages). An HTTP server can be accessed through the domain names of the websites it stores, and it delivers the content of these hosted websites to the end user's device.
+At the most basic level, whenever a browser needs a file that is hosted on a web server, the browser requests the file via HTTP. When the request reaches the correct (hardware) web server, the (software) HTTP server accepts the request, finds the requested document, and sends it back to the browser, also through HTTP. (If the server doesn't find the requested document, it returns a 404 response instead.)
+
+To publish a website, you need either a static or a dynamic web server.
+
+A static web server, or stack, consists of a computer (hardware) with an HTTP server (software). We call it "static" because the server sends its hosted files as-is to your browser.
+
+A dynamic web server consists of a static web server plus extra software, most commonly an application server and a database. We call it "dynamic" because the application server updates the hosted files before sending content to your browser via the HTTP server.
+
+For example, to produce the final webpages you see in the browser, the application server might fill an HTML template with content from a database. Sites like MDN or Wikipedia have thousands of webpages. Typically, these kinds of sites are composed of only a few HTML templates and a giant database, rather than thousands of static HTML documents. This setup makes it easier to maintain and deliver the content.</H2>
+
+  <H4>FLOW OF WEB FILES</H4>
+  To review: to fetch a webpage, your browser sends a request to the web server, which searches for the requested file in its own storage space. Upon finding the file, the server reads it, processes it as-needed, and sends it to the browser. Let's look at those steps in more detail.
+
+  <H4>HOSTING FILES</H4>
+ <H5> First, a web server has to store the website's files, namely all HTML documents and their related assets, including images, CSS stylesheets, JavaScript files, fonts, and video.
+
+Technically, you could host all those files on your own computer, but it's far more convenient to store files all on a dedicated web server because:
+
+A dedicated web server is typically more available. (up and running)
+Excusing downtime and systems troubles, a dedicated web server is always connected to the Internet.
+A dedicated web server can have the same IP address all the time. This is known as a dedicated IP address. (not all ISPs provide a fixed IP address for home lines)
+A dedicated web server is typically maintained by a third-party.
+For all these reasons, finding a good hosting provider is a key part of building your website. Examine the various services companies offer. Choose one that fits your needs and budget. (Services range from free to thousands of dollars per month.) You can find more details in this article.
+
+Once you have web hosting service, you must upload your files to your web server.</H5>
+
+
+<H4>COMMUNICATING THROUGH HTTP</H4>
+<H5>Second, a web server provides support for HTTP (Hypertext Transfer Protocol). As its name implies, HTTP specifies how to transfer hypertext (linked web documents) between two computers.
+
+A Protocol is a set of rules for communication between two computers. HTTP is a textual, stateless protocol.
+
+Textual
+All commands are plain-text and human-readable.
+Stateless
+Neither the server nor the client remember previous communications. For example, relying on HTTP alone, a server can't remember a password you typed or remember your progress on an incomplete transaction. You need an application server for tasks like that. (We'll cover that sort of technology in other articles.)
+HTTP provides clear rules for how a client and server communicate. We'll cover HTTP itself in a technical article later. For now, just be aware of these things:
+
+Only clients can make HTTP requests, and then only to servers. Servers can only respond to a client's HTTP request.<BR>
+When requesting a file via HTTP, clients must provide the file's URL.<BR>
+The web server must answer every HTTP request, at least with an error message.<BR>
+On a web server, the HTTP server is responsible for processing and answering incoming requests.
+
+1.Upon receiving a request, an HTTP server first checks if the requested URL matches an existing file.
+2.If so, the web server sends the file content back to the browser. If not, an application server builds the necessary file.
+3.If neither process is possible, the web server returns an error message to the browser, most commonly 404 Not Found. (The 404 error is so common that some web designers devote considerable time and effort to designing 404 error pages.)
+</H5>
+
+<H4>STATIC VS. DYNAMIC CONTENT</H4>
+<H5>Roughly speaking, a server can serve either static or dynamic content. Remember that the term static means "served as-is". Static websites are the easiest to set up, so we suggest you make your first site a static site.
+
+The term dynamic means that the server processes the content or even generates it on the fly from a database. This approach provides more flexibility, but the technical stack is more complex, making it dramatically more challenging to build a website.
+
+Take, for example, the page you're reading right now. On the web server hosting it, there is an application server that takes article content from a database, formats it, puts it inside some HTML templates, and sends you the results. In this case, the application server is called Kuma. Kuma is built with the programming language Python (using the Django framework). The Mozilla team built Kuma for the specific needs of MDN, but there are many similar applications built on many other technologies.
+
+There are so many application servers that it's difficult to suggest a particular one. Some application servers cater to specific website categories like blogs, wikis, or eCommerce; others, called CMSs (content management systems), are more generic. If you're building a dynamic website, take the time to choose technology that fits your needs. Unless you want to learn web server programming (which is an exciting area in itself!), you don't need to create your own application server. That's just Unknown prefix: Wikipedia..</H5>
+
+<H1>PRINT SERVER</H1>
+<h2>Computer or standalone device responsible for managing one or more printers on a network. Because of the load required for a print job, a print server does not need to be a fast computer. The picture is an example of a wireless standalone print server from Cisco.</h2>
+
+<h1>PROXY SERVER</h1>
+<H2>A proxy is a computer server or program that's part of the gateway server or another computer that separates a local network from outside networks. A proxy server will cache all pages accessed through the network allowing users who may want to visit that same page to load it faster and reduce the networks bandwidth. When a page is accessed that is not in the proxy server's cache, the proxy server accesses the page using its own IP address. Then it caches that page and forwards it to the user.
+
+Do I have a proxy?
+Programs and devices that connect to the Internet may ask for a proxy, proxy address, or proxy server. This information is only required if you are connecting to a proxy to connect to the Internet. If you are not sure, it is likely you do not have a proxy and this information can be left blank or if available select the option to auto detect network settings.
+
+How to share an Internet connection using a proxy
+Today, for most users the easiest way today to share an Internet connection is to use a network router.</H2>
+
+<H1>MAIL SERVER</H1>
+<H2>A remote or central computer that holds electronic mail (e-mail) messages for clients on a network is called a mail server. A mail server is similar to the post office, where mail is stored and sorted before being sent to its final destination. When the user requests his or her e-mail, contact is established with the mail server, which then delivers all stored to the client's computer.
+
+What is my mail server address?
+Your mail server address and other information should be provided by your e-mail provider. This information is usually found on either the e-mail providers support page or in documentations from your e-mail provider. On your e-mail provider's website, the information may be listed as SMTP and POP3 addresses.
+
+Mail server information is often configured in a website's cPanel, or equivalent interface.</H2>
+
+
+<h1>FILE SERVER</h1>
+<h2>A file server is a central server in a computer network that provides file systems or at least parts of a file system to connected clients. File servers therefore offer users a central storage place for files on internal data media, which is accessible to all authorized clients. Here, the server administrator defines strict rules regarding which users have which access rights: For instance, the configuration or file authorizations of the respective file system enable the admin to set which files can be seen and opened by a certain user or user group, and whether data can only be viewed or also added, edited, or deleted.
+
+With file servers connected to the internet and configured accordingly, users cannot only access the files via the local network but also benefit from remote access. This enables files to be accessed and saved on the file server even when users are on the go. All modern operating systems such as Windows, Linux, or macOS can be used on a file server, although the devices available in the network need to be compatible with the operating system. But file servers are not only used for file storage and management. They are also often used as a repository for programs that have to be accessible to multiple network participants, and as a backup server.</h2>
+
+<H4>HOW FILE SERVER WORKS</H4>
+<H3>The right hardware is the foundation for a reliable file server. Most importantly, of course, this includes the hard drive which needs to offer sufficient space for the files and necessary programs, as well as the respective operating system, and the software for using the clients. The server also needs enough working memory and processing power to process file and program accesses for various users as quickly and faultlessly as possible. Whether the hardware requirements can be fulfilled by a standard PC or whether a special server setup is required primarily depends on the number of users.</H3>
+
+<H1>DATABASE SEREVER</H1>
+<H2>Database Servers
+Database servers are used to store and manage databases that are stored on the server and to provide data access for authorized users. This type of server keeps the data in a central location that can be regularly backed up. It also allows users and applications to centrally access the data across the network. A large number of the databases used in your organization can be kept on one server or a group of servers that are specifically configured to protect data and service client requests.
+
+The Configure Your Server Wizard does not include a configurable role for database servers. A database server is any server that runs a network database application and maintains database files, such as Microsoft SQL Server or Oracle. SQL Server is a high-performance database management system. It is used for data storage and analysis, and it provides users with the ability to access vast amounts of data quickly over the network. Because SQL Server provides additional measures of security that would not otherwise be available (as discussed in the “Securing Database Servers” section later in this chapter) and processing occurs on the server, transactions can occur securely and rapidly.
+
+Data stored in database management systems is generally accessed through user interfaces that are developed by an organization or third parties. For example, a company might create custom applications in Visual Basic (or some other programming language), or use ASP on the Web server to display information that is stored in a database. While the user interacts with the data through the user interface, the data is actually stored in the SQL Server or Oracle database located on a database server.</H2>
+
+
+<h1>CLOUD SERVER</h1>
+<H2>Cloud computing is a term used to describe services provided over a network by a collection of remote servers. This abstract "cloud" of computers provides massive, distributed storage and processing power that can be accessed by any Internet-connected device running a web browser.
+
+How do you access cloud computing?
+Cloud computing is accessed through an application (e.g., Dropbox app) on your computer, smartphone, or tablet or a website that accesses the cloud through your browser.
+
+Examples of cloud services
+If you have spent any time on the Internet or use devices connected to the Internet, you likely have used cloud computing in some form. Below are some common examples of cloud computing you have likely heard of or used.</H2>
+
+<H1>DEDICATED SERVERS</H1>
+<H2>A server that is hosted by a company and only allows one company to lease and access it is called a dedicated server. It is "dedicated" to the one client and is not shared with any other clients. Dedicated servers usually allow the client to choose what operating system is installed on it and what type of hardware. In some cases, as an add-on service, the hosting company provides administration services for the client, freeing the client from having to worry about the server.
+
+In most cases, the hosting company performs all or most of the maintenance on the dedicated server. This includes:
+
+operating system updates<BR>
+updates to any installed applications<BR>
+monitoring of the server and applications<BR>
+firewall maintenance<BR>
+intrusion detection and prevention<BR>
+data backups<BR>
+disaster recovery<BR>
+The hosting company also employs strict security measures to safeguard their clients' data. Clients usually pay a monthly, quarterly, or yearly fee to use a dedicated server, which saves money over hosting, maintaining, and managing their servers on-site.</H2>
+
+
+<H1>DOMAIN NAME SERVER</H1>
+<H2>The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities. Most prominently, it translates more readily memorized domain names to the numerical IP addresses needed for locating and identifying computer services and devices with the underlying network protocols. By providing a worldwide, distributed directory service, the Domain Name System has been an essential component of the functionality of the Internet since 1985.
+
+The Domain Name System delegates the responsibility of assigning domain names and mapping those names to Internet resources by designating authoritative name servers for each domain. Network administrators may delegate authority over sub-domains of their allocated name space to other name servers. This mechanism provides distributed and fault-tolerant service and was designed to avoid a single large central database.
+
+The Domain Name System also specifies the technical functionality of the database service that is at its core. It defines the DNS protocol, a detailed specification of the data structures and data communication exchanges used in the DNS, as part of the Internet Protocol Suite.
+
+The Internet maintains two principal namespaces, the domain name hierarchy[1] and the Internet Protocol (IP) address spaces.[2] The Domain Name System maintains the domain name hierarchy and provides translation services between it and the address spaces. Internet name servers and a communication protocol implement the Domain Name System.[3] A DNS name server is a server that stores the DNS records for a domain; a DNS name server responds with answers to queries against its database.
+
+The most common types of records stored in the DNS database are for Start of Authority (SOA), IP addresses (A and AAAA), SMTP mail exchangers (MX), name servers (NS), pointers for reverse DNS lookups (PTR), and domain name aliases (CNAME). Although not intended to be a general purpose database, DNS has been expanded over time to store records for other types of data for either automatic lookups, such as DNSSEC records, or for human queries such as responsible person (RP) records. As a general purpose database, the DNS has also been used in combating unsolicited email (spam) by storing a real-time blackhole list (RBL). The DNS database is traditionally stored in a structured text file, the zone file, but other database systems are common.</H2>
+
+	</BODY>
+	</html>

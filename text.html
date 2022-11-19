@@ -1,0 +1,98 @@
+<DOCTYPE html>
+	<html>
+	<head><title>the form</title>
+      <style>
+   #formform {
+   	display: block;
+   	width: 40%;
+   	height: 65%;
+   	margin: 10% auto;
+   	text-align: center;
+   	background-color: #3CB371;
+   	padding: 40px;
+   	line-height: 40px;
+      
+   }
+
+   label {
+   	display: block;
+   	color: white;
+   	font-weight: bold;
+   	text-shadow: 3px 3px 3px blue;
+   	font-size: 20px;
+   }
+
+.inputv{
+   	width: 350px;
+   	height: 40px;
+   	text-align: center;
+   }
+
+   #sub22{
+   	position: absolute;
+   	bottom: 40px;
+   	right: 30%;
+   	font-size: 20px;
+   	font-weight: bold;
+   	text-shadow: 3px 3px 3px blue;
+   	color: white;
+   	transition: all .2s ease-in-out;
+   }
+
+   #cls33{
+   	position: absolute;
+   	top: 24%;
+   	right: 28%;
+   	transition: all .2s ease-in-out;
+   }
+
+  #cls33:hover {
+  	background-color: gold;
+  	transform: scale(1.2);
+  }
+
+  #sub22:hover {
+   background-color: #3CB371;
+   transform: scale(1.2);
+  }
+
+
+
+
+
+
+
+
+</style>
+	</head>
+	 <body>
+         <div id="formform">
+         	<button onclick="close44()" id="cls33">X</button>
+         	<form name="serviceform" action="" method="">
+         		
+         		<label for="name">PESONNEL NAME /COMPANY NAME</label>
+         		<input type="text" name="nm1" id="nm1" class="inputv" placeholder="MR JAMES /TEMA OIL REFINERY LIMITED">
+         		<BR>
+
+         		<label for="name">SERVICE NAME</label>
+         		<input type="text" servtype="nm1" id="servtype" class="inputv" placeholder="ICT MENTAINANCE OR NETWORKING ">
+         		<BR>
+
+         		<label for="name">COMPANY LOCATION / PERSON'S LOCATION</label>
+         		<input type="text" name="loc" id="loc" class="inputv" placeholder="ACCRA GHANA / CALIFONIA UK">
+         		<BR>
+
+         		<label for="name">PESONNEL TELEPHONE /COMPANY TELEPHONE</label>
+         		<input type="tell" name="servtell" id="servtell" class="inputv" placeholder="0265763004 / 0304657839">
+         		<BR>
+
+         		<label for="name">SERVICE TYPE</label>
+         		<input type="checkbox" name="radiotype" class="radio" value="contract">CONTRACT<BR>
+         		<input type="checkbox" name="radiotype" class="radio" value="PERMANENT">SERVICE JOB<BR>
+         		<input type="checkbox" name="radiotype" class="radio" value="JOB">EMPLOY EXPERT<BR>
+         		<BR>
+
+         		  <input type="submit" name="sub22" id="sub22" value="SEND">
+         </div>
+	 </body>
+	 </html>

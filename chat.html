@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+  <html>
+  <head><title>THE CHAT SYSTEM</title>
+   <style>
+       #textbox {
+       	width: 200px;
+       	height: 100px;
+       }
+
+       li {
+       	list-style: none;
+       }
+
+       #ema {
+       	border: none;
+       }
+
+       #checkmsg {
+       	color: gold;
+       }
+
+
+
+
+
+</style>
+  </head>
+    <body>
+   <div id="cchat">
+        <ul id="message"></ul>
+
+         <label for="message">MESSAGE US</label>
+     <input type="text" id="textbox">
+       <br>
+     <label for="email">EMAIL</label>
+     <input type="text" id="checkmsg" name="email" placeholder="........email here">
+       <br>
+     <button id="submit" onclick="mes()">send</button>
+   </div>
+    
+   
+
+
+
+
+
+
+
+
+     <script>
+      var message = document.getElementById("message");
+      var textbox = document.getElementById("textbox");
+      var checkmsg = document.getElementById("checkmsg");
+      var send = document.getElementById("submit");
+
+      function mes(){
+    
+      var comemess = document.createElement("li");
+      comemess.innerHTML = document.getElementById("checkmsg").value +" "+ document.getElementById("textbox").value;
+
+      message.appendChild(comemess);
+
+
+      }
+ </script>
+  
+
+ 
+
+    </body>
+    </html>

@@ -1,0 +1,50 @@
+<DOCTYPE html>
+	<html>
+	<head><title>JUST TEXTINH MY PAGE</title>
+     
+     <style>
+   h1 {
+   	color: blue;
+   	font-size: 20px;
+   }
+
+   pre {
+   	font-size: 20px;
+    display: inline-block;
+   }
+
+
+</style>
+	</head>
+	<body>
+     <pre>
+
+<h5>Resetting your network devices and network stack, as well as updating your drivers, should be the first line of troubleshooting anytime you<br> encounter a networking issue. Some people know this. However, many people are unaware that there is a proper order in which to reset your networking <br>devices, for them to synchronize quickly. Following is the fastest and easiest way to resolve most network problems, including, but not limited to<br> Wi-Fi and Ethernet disconnects, slowdowns, and errors, even if these issues are affecting only one computer on your network. To reset your <br>devices in the correct order:<br>
+
+Shut down your computer by clicking Start > Power > Shut Down. Please note that using the power button on your machine is probably set to sleep the<br> computer, not to shut it down. For troubleshooting purposes, the computer must be shut down.
+Locate your modem and note the lights on your modem when it is normal and ready. There may be a “Ready” or “Online” light. Taking a picture with a <br>phone is a good tactic so that you know when it’s ready to go.<br>
+Trace the Ethernet cord (not the screw-in coaxial cable or the power cord, but the one with a clip) to the next device to determine if you have a <br>router.
+Unplug the power cord (either from the back of the device or from the wall, whichever is more comfortable) from your modem, router, and any switches <br>or hubs, between your computer and the modem, as well as any wireless boosters or access points, and leave them all unplugged for now.<br>
+Plug in your modem.<br>
+Wait until your modem’s lights show normal operation again.<br>
+Plug in your router, if you have one, and give it about five minutes to boot. Routers typically have no external means of telling if they are ready,<br> but they should be ready after a five-minute wait.
+Plug in anything else between your computer and the modem.<br>
+Power on your computer.<br>
+Once your computer is booted back up, if it is not connected to the Internet, or is still having issues, you will want to reset its network stack.<br>
+Please note that these commands affect all of your networking adapters, both physical and virtual, both used and unused, so you will see some errors <br>when running these commands, where the resets targeted adapters that are not being used. These errors are perfectly normal, and not a cause for <br>concern. Please complete each step, in order, even if you have done some of these previously, and even if you encounter errors.<br>
+</h5>
+
+
+
+In the search box on the taskbar (click Start), type command prompt, right-click the command prompt result and then select Run as administrator and confirm.
+<li>Type ipconfig /release and press Enter.</li>
+<li>Type ipconfig /flushdns and press Enter.</li>
+<li>Type ipconfig /renew and press Enter. (this will stall for a moment)</li>
+<li>Type netsh int ip reset and press Enter. (don’t restart yet)</li>
+<li>Type netsh winsock reset and press Enter.</li>
+<li>Now restart your machine using Start > Power > Restart once more and test to see if the issue is resolved.</li>
+
+
+     </pre>
+   </body>
+   </html>

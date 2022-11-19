@@ -1,0 +1,18 @@
+<!DOCTYPE HTML> 
+<html> 
+	<head> 
+		<title> 
+			Get browser details through JavaScript
+		</title> 
+	</head> 
+	<body> 
+<!-- The text field -->
+<div id="example"></div>
+<script>
+txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+document.getElementById("example").innerHTML=txt;
+</script>
+	</body> 
+</html>

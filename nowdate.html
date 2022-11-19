@@ -1,0 +1,32 @@
+<plaintext>
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+	<title></title> 
+</head> 
+<body> 
+	<p id="php_UP"></p> 
+	<button onclick="php_Run()"> 
+		Click Me 
+	</button> 
+	<p id="php_DOWN"></p> 
+	<script> 
+		var el_up = document.getElementById("php_UP"); 
+		var el_down = document.getElementById("php_DOWN"); 
+		var today = new Date(); 
+		var dd = today.getDate(); 
+		var mm = today.getMonth() + 1; 
+		var yyyy = today.getFullYear(); 
+		if (dd < 10) { 
+			dd = '0' + dd; 
+		} 
+		if (mm < 10) { 
+			mm = '0' + mm; 
+		} 
+		var today = dd + '/' + mm + '/' + yyyy; 
+		function php_Run() { 
+			el_down.innerHTML = today; 
+		} 
+	</script> 
+</body> 
+</html>

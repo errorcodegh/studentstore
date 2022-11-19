@@ -1,0 +1,112 @@
+ <!DOCTYPE html>
+ <html>
+ <head><title>the webpage</title>
+
+   <style>
+
+
+
+#formform {
+   display: none;
+    border: 5px solid blue;
+      width: 40%;
+      height: 65%;
+      margin: 10% auto;
+      text-align: center;
+      background-color: #3CB371;
+      padding: 40px;
+      line-height: 40px;
+   }
+
+   #svvnet {background-color: #7FFFD4; margin-bottom: 80px;}
+   #svvnet1 {background-color: #7FFFD4; margin-bottom: 80px;}
+
+      #allorder {
+          
+            line-height: 30px;
+            margin-top: 30px;
+         }
+
+
+
+
+
+</style>
+
+ </head>
+<body>
+
+  <div id="allorder">
+     <div id="svvnet">
+      <h1>ERROR CODE SOLVED NETWORK TEAM</h1>
+      <img src="C:\Users\eddie\Downloads\thepic.jpg"  id="img2">
+      <h3 class="ordersv">ERROR CODE SOLVED IS A TECH ORGANISATION THAT DELIVER IT SERVICES<BR>
+         TO COMPANIES AND INDIVIDUALS....WE OFFER SPECIALISE IT SOLUTIONS IN ALL<BR>
+          FIELD OF IT TECHNOLOGY...OUR NETWORK TEAM IS A GROUP OF SPECIALISE STUDENT<BR>
+          OR INDIVIDUALS THAT HAS MORE THAN FIVE YEARS EXPERIENCE...FOR A QUALITY<BR>
+          WORK TO BE DONE, WE WISH YOU CALL OUR NETWORK TEAM FOR ASSISTANCE.<BR>
+          THANK YOU!!!
+      </h3>
+       <button onclick="orserv()" class="fillout">SUBMIT FORM</button>
+       
+     </div>
+
+
+       <div id="svvnet1">
+         <h1>ERROR CODE WEB DEVELOPER'S TEAM</h1>
+         <img src="C:\Users\eddie\Downloads\thepic.jpg"  id="img2">
+      <h3 class="ordersv">  ERROR CODE SOLVED IS A TECH ORGANISATION THAT DELIVER IT SERVICES<BR>
+         TO COMPANIES AND INDIVIDUALS....WE OFFER SPECIALISE IT SOLUTIONS IN ALL<BR>
+          FIELD OF IT TECHNOLOGY...OUR NETWORK TEAM IS A GROUP OF SPECIALISE STUDENT<BR>
+          OR INDIVIDUALS THAT HAS MORE THAN FIVE YEARS EXPERIENCE...FOR A QUALITY<BR>
+          WORK TO BE DONE, WE WISH YOU CALL OUR NETWORK TEAM FOR ASSISTANCE.<BR>
+          THANK YOU!!!</h3>
+        <button onclick="orserv()" class="fillout">SUBMIT FORM</button>
+       </div>
+    </div>
+
+
+
+
+
+  <div id="formform">
+         	<button onclick="close44()" id="cls33">X</button>
+         	<form name="serviceform" action="PHP_SELF" method="POST">
+         		<label for="name">PESONNEL NAME /COMPANY NAME</label>
+         		<input type="text" name="nm1" id="nm1" class="inputv" placeholder="MR JAMES /TEMA OIL REFINERY LIMITED">
+         		<BR>
+
+         		<label for="name">SERVICE NAME</label>
+         		<input type="text" servtype="nm1" id="servtype" class="inputv" placeholder="ICT MENTAINANCE OR NETWORKING ">
+         		<BR>
+
+         		<label for="name">COMPANY LOCATION / PERSON'S LOCATION</label>
+         		<input type="text" name="loc" id="loc" class="inputv" placeholder="ACCRA GHANA / CALIFONIA UK">
+         		<BR>
+
+         		<label for="name">PESONNEL TELEPHONE /COMPANY TELEPHONE</label>
+         		<input type="tell" name="servtell" id="servtell" class="inputv" placeholder="0265763004 / 0304657839">
+         		<BR>
+
+         		<label for="name">SERVICE TYPE</label>
+         		<input type="checkbox" name="radiotype" class="radio" value="contract">CONTRACT<BR>
+         		<input type="checkbox" name="radiotype" class="radio" value="PERMANENT">SERVICE JOB<BR>
+         		<input type="checkbox" name="radiotype" class="radio" value="JOB">EMPLOY EXPERT<BR>
+         		<BR>
+
+         		  <input type="submit" name="sub22" id="sub22" value="SEND">
+         </div>
+
+
+  <script>
+      function orserv(){
+         document.getElementById("formform").style.display ="block";
+      }
+
+      function close44(){
+            document.getElementById("formform").style.display ="none";
+          }
+       
+     </script>
+</body>
+</html>

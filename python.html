@@ -1,0 +1,666 @@
+<DOCTYPE html>
+	<html>
+	<head><title>PYTHON RESERVED WORDS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+
+ #pythonres{
+    	background-color: silver;
+    	width: 100%;
+    	height: 100%vh;
+    }
+
+  h1 {
+  	font-weight: bold;
+  	font-size: 25px;
+  	color: blue;
+  	text-shadow: 2px 2px 2px white;
+  	text-transform: capitalize;
+  }
+  
+  p{
+  	background-color: maroon;
+  	width: 80%;
+  	max-height: 65%;
+  	color: white;
+  }
+
+  h3 {
+  	color: red;
+    font-family: arial;
+    border-bottom: 5px solid black;
+}
+
+@media screen and (max-width: 440px){
+  #pythonres{
+  background-color: silver;
+      width: 100%;
+      height: 100%vh;
+}
+
+}
+
+		</style>
+	</head>
+
+	<BODY>
+
+		<div id="pythonres">
+
+
+<h1>and</h1>
+<p>Logical operators are used to combine conditional statements:</p>
+<h4>x = 5<br>
+print(x > 3 and x < 10)<br>
+# returns True because 5 is greater than 3 AND 5 is less than 10</h4>
+<h3>output <br>
+true</h3>
+
+<h1>except</h1>
+<p>The except block lets you handle the error.
+
+The finally block lets you execute code, regardless of the result of the try- and except blocks.</p>
+<h4>#The try block will generate an error, because x is not defined:<br>
+
+try:<br>
+  print(x)<br>
+except:<br>
+  print("An exception occurred")<br>
+</h4>
+<h3>
+output <br>
+an exception occured <br>
+</h3>
+
+<h1>lambda</h1>
+<p>In Python, an anonymous function is a function that is defined without a name.
+
+While normal functions are defined using the def keyword in Python, anonymous functions are defined using the lambda keyword.
+
+Hence, anonymous functions are also called lambda functions.
+Lambda functions can have any number of arguments but only one expression. The expression is evaluated and returned. Lambda functions can be used wherever function objects are required.</p>
+<h4># Program to show the use of lambda functions<br>
+double = lambda x: x * 2<br>
+
+print(double(5))</h4>
+<h3>output <br>
+10</h3>
+
+<h1>with</h1>
+<p>with statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common resources like file streams. Observe the following code example on how the use of with statement makes code cleaner.</p>
+<h4># file handling <br>
+  
+# 1) without using with statement <br>
+file = open('file_path', 'w') <br>
+file.write('hello world !') <br>
+file.close() <br>
+  
+# 2) without using with statement <br>
+file = open('file_path', 'w') <br>
+try: <br>
+    file.write('hello world') <br>
+finally: <br>
+    file.close() <br>
+
+
+# using with statement <br>
+with open('file_path', 'w') as file: <br>
+    file.write('hello world !')</h4>
+
+<h3>Notice that unlike the first two implementations, there is no need to call file.close() when using with statement. The with statement itself ensures proper acquisition and release of resources. An exception during the file.write() call in the first implementation can prevent the file from closing properly which may introduce several bugs in the code, i.e. many changes in files do not go into effect until the file is properly closed.
+
+The second approach in the above example takes care of all the exceptions but using the with statement makes the code compact and much more readable. Thus, with statement helps avoiding bugs and leaks by ensuring that a resource is properly released when the code using the resource is completely executed. The with statement is popularly used with file streams, as shown above and with Locks, sockets, subprocesses and telnets etc.</h3>
+
+
+
+<h1>finally</h1>
+<p>The finally block will always be executed, no matter if the try block raises an error or not:
+The finally keyword is used in try...except blocks. It defines a block of code to run when the try...except...else block is final.
+
+The finally block will be executed no matter if the try block raises an error or not.
+
+This can be useful to close objects and clean up resources.</p>
+<h4>try:<br>
+  x > 3<br>
+except:
+  print("Something went wrong")<br>
+else:<br>
+  print("Nothing went wrong")<br>
+finally:<br>
+  print("The try...except block is finished")<br>
+</h4>
+<h3>output <br>
+	Something went wrong<br>
+The try...except block is finished</h3>
+
+<h1>nonlocal</h1>
+<p>nonlocal is a keyword (case-sensitive) in python, it is used when we work with the nested functions and we need to use a function which is declared in outer function, if we do the same, a variable will be created as local and we then we will not be able to work with a variable in inner function which is declared in outer function.
+
+In such a case, we can define the variable (which is declared in outer function) as a nonlocal variable in inner function using nonlocal keyword.
+synthax = nonlocal variable_name</p>
+<h4>def outerfunc():<br>
+    a = 10    <br>
+    def innerfunc():<br>
+        # nonlocal binding<br>
+        nonlocal a<br>
+        a = 100<br>
+            
+    # calling inner function<br>
+    innerfunc()<br>
+    # printing the value of a<br>
+    print("a : ", a)<br>
+
+    </h4>
+<h3>Output:<br>
+    a : 100</h3>
+
+<h1>while</h1>
+<p>Loops are used in programming to repeat a specific block of code. In this article, you will learn to create a while loop in Python.
+The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true.
+
+We generally use this loop when we don't know the number of times to iterate beforehand.</p>
+<h4># Program to add natural<br>
+# numbers up to <br>
+# sum = 1+2+3+...+n<br>
+
+# To take input from the user,<br>
+# n = int(input("Enter n: "))<br>
+
+n = 10<br>
+
+# initialize sum and counter<br>
+sum = 0<br>
+i = 1<br>
+
+while i <= n:<br>
+    sum = sum + i<br>
+    i = i+1    # update counter<br>
+
+# print the sum<br>
+print("The sum is", sum)</h4>
+<h3>output <br>
+	Enter n: 10<br>
+The sum is 55</h3>
+
+<h1>assert</h1>
+<p>The assert keyword is used when debugging code.
+
+The assert keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.
+
+You can write a message to be written if the code returns False, check the example below.</p>
+<h4>x = "hello"<br>
+
+#if condition returns True, then nothing happens:<br>
+assert x == "hello"<br>
+
+#if condition returns False, AssertionError is raised:<br>
+assert x == "goodbye"</h4>
+<h3>output <br>
+	Traceback (most recent call last):<br>
+  File "demo_ref_keyword_assert.py", line 5, in <module><br>
+    assert x == "goodbye"<br>
+AssertionError</h3>
+
+<h1>false</h1>
+<p>In programming you often need to know if an expression is True or False.
+
+You can evaluate any expression in Python, and get one of two answers, True or False.
+
+When you compare two values, the expression is evaluated and Python returns the Boolean answer:</p>
+<h4>a = 200<br>
+b = 33<br>
+
+if b > a:<br>
+  print("b is greater than a")
+else:<br>
+  print("b is not greater than a")<br>
+</h4>
+<h3>output <br>
+b is not greater than a</h3>
+
+<h1>None</h1>
+<p>The None keyword is used to define a null value, or no value at all.
+
+None is not the same as 0, False, or an empty string. None is a datatype of its own (NoneType) and only None can be None.
+
+</p>
+<h4>x = None<br>
+
+if x:<br>
+  print("Do you think None is True")<br>
+else:<br>
+  print("None is not True...")<br>
+</h4>
+<h3>output <br>
+none is not true</h3>
+
+<h1>yield</h1>
+<p>The yield statement suspends function’s execution and sends a value back to the caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This allows its code to produce a series of values over time, rather than computing them at once and sending them back like a list.
+
+Let’s see with an example:</p>
+<h4># A Simple Python program to demonstrate working <br>
+# of yield <br>
+  
+# A generator function that yields 1 for the first time, <br>
+# 2 second time and 3 third time <br>
+def simpleGeneratorFun(): <br>
+    yield 1<br>
+    yield 2<br>
+    yield 3<br>
+  
+# Driver code to check above generator function <br>
+for value in simpleGeneratorFun(): <br> 
+    print(value)</h4>
+<h3>output <br>
+1<br>
+2<br>
+3</h3>
+
+<h1>break</h1>
+<p>It terminates the current loop and resumes execution at the next statement, just like the traditional break statement in C.
+
+The most common use for break is when some external condition is triggered requiring a hasty exit from a loop. The break statement can be used in both while and for loops.
+
+If you are using nested loops, the break statement stops the execution of the innermost loop and start executing the next line of code after the block.</p>
+<h4>
+#!/usr/bin/python<br>
+
+for letter in 'Python':     # First Example<br>
+   if letter == 'h':<br>
+      break<br>
+   print 'Current Letter :', letter<br>
+  
+var = 10                    # Second Example<br>
+while var > 0:  <br>            
+   print 'Current variable value :', var<br>
+   var = var -1<br>
+   if var == 5:<br>
+      break<br>
+
+print "Good bye!"</h4>
+<h3>output <br>
+	Current Letter : P<br>
+Current Letter : y<br>
+Current Letter : t<br>
+Current variable value : 10<br>
+Current variable value : 9<br>
+Current variable value : 8<br>
+Current variable value : 7<br>
+Current variable value : 6<br>
+Good bye!</h3>
+
+<h1>for</h1>
+<p>A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+
+This is less like the for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
+
+With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.</p>
+<h4>fruits = ["apple", "banana", "cherry"]<br>
+for x in fruits:<br>
+  print(x)</h4>
+<h3>ouptut <br>
+apple<br>
+bannana<br>
+cherry</h3>
+
+<h1>not</h1>
+<p>Not equal to - True if operands are not equal</p>
+<h4>x = True<br>
+y = False<br>
+
+print('x and y is',x and y)<br>
+
+print('x or y is',x or y)<br>
+
+print('not x is',not x)</h4>
+<h3>output <br> 
+	x and y is False<br>
+x or y is True<br>
+not x is False</h3>
+
+
+<h1>class</h1>
+<p>A Class is like an object constructor, or a "blueprint" for creating objects.
+To create a class, use the keyword class:<br>
+class MyClass:<br>
+  x = 5<br>
+print(MyClass)</p>
+<h4>class Person:<br>
+  def __init__(self, name, age):<br>
+    self.name = name<br>
+    self.age = age<br>
+
+p1 = Person("John", 36)<br>
+
+print(p1.name)<br>
+print(p1.age)</h4>
+<h3>output <br>
+john <br>
+36</h3>
+
+
+<h1>or</h1>
+<p>	Returns True if one of the statements is true	x < 5 or x < 4</p>
+<h4>x = 5<br>
+print(x > 3 or x < 4)<br>
+# returns True because one of the conditions are true (5 is greater than 3, but 5 is not less than 4)<br>
+</h4>
+<h3>output <br>
+true </h3>
+
+<h1>continue</h1>
+<p>It returns the control to the beginning of the while loop.. The continue statement rejects all the remaining statements in the current iteration of the loop and moves the control back to the top of the loop.
+
+The continue statement can be used in both while and for loops.</p>
+<h4>#!/usr/bin/python<br>
+
+for letter in 'Python':     # First Example<br>
+   if letter == 'h':<br>
+      continue<br>
+   print 'Current Letter :', letter<br>
+
+var = 10                    # Second Example<br>
+while var > 0: <br>             
+   var = var -1<br>
+   if var == 5:<br>
+      continue<br>
+   print 'Current variable value :', var<br>
+print "Good bye!"</h4>
+<h3>output <br>
+	Current Letter : P<br>
+Current Letter : y<br>
+Current Letter : t<br>
+Current Letter : o<br>
+Current Letter : n<br>
+Current variable value : 9<br>
+Current variable value : 8<br>
+Current variable value : 7<br>
+Current variable value : 6<br>
+Current variable value : 4<br>
+Current variable value : 3<br>
+Current variable value : 2<br>
+Current variable value : 1<br>
+Current variable value : 0<br>
+Good bye!</h3>
+
+<h1>global</h1>
+<p>In Python, global keyword allows you to modify the variable outside of the current scope. It is used to create a global variable and make changes to the variable in a local context.
+The basic rules for global keyword in Python are:
+
+When we create a variable inside a function, it is local by default.
+When we define a variable outside of a function, it is global by default. You don't have to use global keyword.
+We use global keyword to read and write a global variable inside a function.
+Use of global keyword outside a function has no effect.</p>
+<h4>c = 1 # global variable <br>
+
+def add(): <br>
+    print(c) <br>
+
+add()</h4>
+<h3>output  <br>
+1</h3>
+
+<h1>pass</h1>
+<p>The pass statement is used as a placeholder for future code.
+
+When the pass statement is executed, nothing happens, but you avoid getting an error when empty code is not allowed.
+
+Empty code is not allowed in loops, function definitions, class definitions, or in if statements.</p>
+<h4>a = 33<br>
+b = 200<br>
+
+if b > a:<br>
+  pass<br>
+
+# having an empty if statement like this, would raise an error without the pass statement</h4>
+<h3></h3>
+
+<h1>def</h1>
+<p>
+Functions
+Syntax
+Functions
+
+The concept of a function is one of the most important in mathematics. A common usage of functions in computer languages is to implement mathematical functions. Such a function is computing one or more results, which are entirely determined by the parameters passed to it.
+
+This is mathematics, but we are talking about programming and Python. So what is a function in programming? In the most general sense, a function is a structuring element in programming languages to group a bunch of statements so they can be utilized in a program more than once. The only way to accomplish this without functions would be to reuse code by copying it and adapting it to different contexts, which would be a bad idea. Redundant code - repeating code in this case - should be avoided! Using functions usually enhances the comprehensibility and quality of a program. It also lowers the cost for development and maintenance of the software.
+
+Functions are known under various names in programming languages, e.g. as subroutines, routines, procedures, methods, or subprograms.
+
+A function in Python is defined by a def statement. The general syntax looks like this:
+
+def function-name(Parameter list):
+    statements, i.e. the function body
+The parameter list consists of none or more parameters. Parameters are called arguments, if the function is called. The function body consists of indented statements. The function body gets executed every time the function is called.</p>
+<h4>    z = 2 * (x + y)<br>
+    return z<br>
+
+
+print("Program starts!")<br>
+a = 3<br>
+res1 = f(a, 2+a)<br>
+print("Result of function call:", res1)<br>
+a = 4<br>
+b = 7<br>
+res2 = f(a, b)<br>
+print("Result of function call:", res2)</h4>
+<h3>output <br>
+	Program starts!<br>
+Result of function call: 16<br>
+Result of function call: 22</h3>
+
+<h1>if</h1>
+<p>While writing code in any language, you will have to control the flow of your program. This is generally the case when there is decision making involved - you will want to execute a certain line of codes if a condition is satisfied, and a different set of code incase it is not. In Python, you have the if, elif and the else statements for this purpose. In this tutorial, you will work with an example to learn about the simple if statement and gradually move on to if-else and then the if-elif-else statements. You will also learn about nesting and see an nested if example. Lets get started....</p>
+<h4>a = 33<br>
+b = 200<br>
+
+if b > a:<br>
+  print("b is greater than a")</h4>
+<h3>output <br>
+b is greater than a</h3>
+
+<h1>raise</h1>
+<p>The raise keyword is used to raise an exception.
+You can define what kind of error to raise, and the text to print to the user.</p>
+<h4>x = "hello"<br>
+
+if not type(x) is int:<br>
+  raise TypeError("Only integers are allowed")</h4>
+<h3>output <br> 
+	Traceback (most recent call last):<br>
+  File "demo_ref_keyword_raise2.py", line 4, in <module><br>
+    raise TypeError("Only integers are allowed")<br>
+TypeError: Only integers are allowed</h3>
+
+<h1>del</h1>
+<p>The del keyword is used to delete objects. In Python everything is an object, so the del keyword can also be used to delete variables, lists, or parts of a list etc.</p>
+<h4>class MyClass:<br>
+  name = "John"<br>
+
+del MyClass<br>
+
+print(MyClass)</h4>
+<h3>output <br>
+	Traceback (most recent call last):<br>
+  File "demo_ref_keyword_del.py", line 6, in <modulegt;<br>
+    print(MyClass)<br>
+NameError: name 'MyClass' is not defined</h3>
+
+<h1>import</h1>
+<p>Import in python is similar to #include header_file in C/C++. Python modules can get access to code from another module by importing the file/function using import. The import statement is the most common way of invoking the import machinery, but it is not the only way.
+
+import module_name
+When import is used, it searches for the module initially in the local scope by calling __import__() function. The value returned by the function are then reflected in the output of the initial code.</p>
+<h4>#!/usr/bin/python<br>
+# Import module support<br>
+import support<br>
+# Now you can call defined function that module as follows<br>
+support.print_func("Zara")</h4>
+<h3>output <br>
+hello zara</h3>
+
+<h1>return</h1>
+<p>A return statement is used to end the execution of the function call and “returns” the result (value of the expression following the return keyword) to the caller. The statements after the return statements are not executed. If the return statement is without any expression, then the special value None is returned.
+
+Note: Return statement can not be used outside the function.</p>
+<h4># Python program to  <br>
+# demonstrate return statement <br> 
+  
+def add(a, b): <br>
+  
+    # returning sum of a and b <br>
+    return a + b <br>
+  
+def is_true(a): <br>
+  
+    # returning boolean of a <br>
+    return bool(a) <br>
+  
+# calling function <br>
+res = add(2, 3) <br>
+print("Result of add function is {}".format(res)) <br>
+  
+res = is_true(2<5) <br>
+print("\nResult of is_true function is {}".format(res))</h4>
+<h3>output <br>
+	result of add function is: 5 <br>
+result of is_true function is true </h3>
+
+
+<h1>elif</h1>
+<p>The elif statement allows you to check multiple expressions for TRUE and execute a block of code as soon as one of the conditions evaluates to TRUE.
+
+Similar to the else, the elif statement is optional. However, unlike else, for which there can be at most one statement, there can be an arbitrary number of elif statements following an if.</p>
+<h4>#!/usr/bin/python<br>
+
+var = 100<br>
+if var == 200:<br>
+   print "1 - Got a true expression value"<br>
+   print var<br>
+elif var == 150:<br>
+   print "2 - Got a true expression value"<br>
+   print var<br>
+elif var == 100:<br>
+   print "3 - Got a true expression value"<br>
+   print var<br>
+else:<br>
+   print "4 - Got a false expression value"<br>
+   print var<br>
+
+print "Good bye!"</h4>
+<h3>output <br>
+	3 - Got a true expression value<br>
+100<br>
+Good bye!</h3>
+
+<h1>in</h1>
+<p>The in keyword has two purposes:
+
+The in keyword is used to check if a value is present in a sequence (list, range, string etc.).
+
+The in keyword is also used to iterate through a sequence in a for loop:</p>
+<h4>fruits = ["apple", "banana", "cherry"]<br>
+
+for x in fruits:<br>
+  print(x)<br>
+</h4>
+<h3>apple<br>
+banana<br>
+cherry</h3>
+
+<h1>True</h1>
+<p>The True keyword is a Boolean value, and result of a comparison operation.
+The True keyword is the same as 1 (False is the same as 0).</p>
+<h4>print(5 < 6)<br>
+
+print(2 in [1,2,3])<br>
+
+print(5 is 5)<br>
+
+print(5 == 5)<br>
+
+print(5 == 5 or 6 == 7)<br>
+
+print(5 == 5 and 7 == 7)<br>
+
+print("hello" is not "goodbye")<br>
+
+print(not(5 == 7))<br>
+
+print(4 not in [1,2,3])</h4>
+<h3>output <BR> 
+	True<BR> 
+True<BR> 
+True<BR> 
+True<BR> 
+True<BR> 
+True<BR> 
+True<BR> 
+True<BR> 
+True</h3>
+
+<h1>else</h1>
+<p>The if..else statement evaluates test expression and will execute the body of if only when the test condition is True.
+If the condition is False, the body of else is executed. Indentation is used to separate the blocks.</p>
+<h4># Program checks if the number is positive or negative<br>
+# And displays an appropriate message<br>
+num = 3<br>
+
+# Try these two variations as well.<br> 
+# num = -5<br>
+# num = 0<br>
+
+if num >= 0:<br>
+    print("Positive or Zero")<br>
+else:<br>
+    print("Negative number")</h4>
+<h3>output <br>
+positive or zero</h3>
+
+
+<h1>try</h1>
+<p>The try block lets you test a block of code for errors.
+The except block lets you handle the error.
+The finally block lets you execute code, regardless of the result of the try- and except blocks.
+</p>
+<h4>#The try block will generate an error, because x is not defined:<br>
+try:<br>
+  print(x)<br>
+except:<br>
+  print("An exception occurred")<br>
+</h4>
+<h3>output <br>
+an exception occured</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</BODY>
+	</html>

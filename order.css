@@ -1,0 +1,119 @@
+#allorder {
+
+          width: 100%;
+          overflow: hidden;
+          line-height: 30px;
+          margin-top: 30px;
+        }
+
+        .ordersv {
+          width: 60%;
+          height: 80px;
+           display: inline-block;
+            text-shadow: 3px 3px 3px white;
+            line-height: 30px;
+            word-spacing: 15px  
+
+        }
+
+        #svvnet {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet1 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet2 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet3 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet4 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet5 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet6 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet7 {background-color: #7FFFD4; margin-bottom: 80px;}
+        #svvnet8 {background-color: #7FFFD4; }  
+
+
+#img2 {
+  width: 30%;
+  min-height: 70%;
+}
+
+
+.fillout {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px blue;
+  transition: all .2s ease-in-out;
+  color: white;
+  
+  
+}
+
+.fillout:hover {
+  background-color: gray;
+  transform: scale(1.2);
+}
+   h1 {
+    position: relative;
+    top: 40px;
+    left: 33%;
+    color: gray;
+    text-shadow: 2px 2px 2px blue;
+    font-weight: bold;
+
+}
+
+#formform {
+  display: none;
+    position: fixed;
+    top: 15%;
+    margin-left: 25%;
+    width: 40%;
+    height: 65%;
+    text-align: center;
+    background-color: #3CB371;
+    padding: 40px;
+    line-height: 40px;
+    border: 1px solid blue;
+    opacity: 0.9;
+   }
+
+
+   label {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px blue;
+    font-size: 20px;
+   }
+
+.inputv{
+    width: 350px;
+    height: 40px;
+    text-align: center;
+   }
+
+
+   #sub22{
+    position: relative;
+    bottom: 80px;
+    left: 45%;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px blue;
+    color: white;
+    transition: all .2s ease-in-out;
+   }
+
+
+   #cls33{
+    position: relative;
+    left: 50%;
+    transition: all .2s ease-in-out;
+   }
+
+
+  #cls33:hover {
+    background-color: gold;
+    transform: scale(1.2);
+  }
+
+  #sub22:hover {
+   background-color: #3CB371;
+   transform: scale(1.2);
+  }

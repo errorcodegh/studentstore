@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+	<html>
+	<head><title>THE CSS RESERVED WORDS EXPLAINATION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  	
+  #allcss {
+  	width: 100%;
+  	background-color: silver;
+
+  }
+
+  h3 {
+  	font-family: comic sans ms;
+  	display: block;
+  	color: blue;
+  	text-shadow: 1px 1px 1px red;
+  	border-bottom: 5px solid black;
+  	
+  }
+
+  h4 {
+  	font-size: 20px;
+  	font-weight: bold;
+  	color: black;
+  }
+
+  p {
+  	word-spacing: 10px;
+  	font-weight: bold;
+  	background-color: maroon;
+  	width: 80%;
+  	margin-left: 10%;
+  	max-height: 50%;
+  	color: white;
+  	text-align: center;
+  }
+
+   h1 {
+   	text-align: center;
+   	color: blue;
+   	text-transform: capitalize;
+   	text-shadow: 1px 1px 1px white;
+   }
+
+  
+
+ 
+
+@media screen and (max-width: 440px ){
+  #allcss{
+    width: 100vw;
+    height: 100%vh;
+    background: gold;
+    margin: 0px;
+  }
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+	</head>
+	  <body>
+
+<div id="allcss">
+<h1>asm</h1>
+<p>asm-declaration gives the ability to embed assembly language source code within a C++ program. This declaration is conditionally-supported and implementation defined, meaning that it may not be present and, even when provided by the implementation, it does not have a fixed meaning.
+The string_literal is typically a short program written in assembly language, which is executed whenever this declaration is executed. Different C++ compilers have wildly varying rules for asm-declarations, and different conventions for the interaction with the surrounding C++ code.
+
+As other block declarations, this declaration can appear inside a block (a function body or another compound statement), and, as all other declarations, this declaration can also appear outside a block.</p><br>
+  <h4>
+#include<bits/stdc++.h> <br>
+using namespace std; <br>
+  
+int main() { <br>
+int res; <br>
+// move value to register %eax <br>
+// move value to register %ebx <br>
+// subtracting and storing result in res <br>
+__asm__ ( "movl $20, %%eax;"<br>
+                "movl $10, %%ebx;"<br>
+                "subl %%ebx, %%eax ":"=a"(res)); <br>
+    cout<<res; <br>
+   return 0; <br>
+  
+}<br>
+</h4>
+    <h2>OUTPUT IS: 10</h2><br>
+
+<h1>noexcept</h1>
+<p>A unary operator that determines whether the evaluation of its operand can propagate an exception. Note that the bodies of called functions are not examined, so noexcept can yield false negatives. The operand is not evaluated.
+</p>
+  <h4>#include <iostream><br>
+#include <stdexcept><br>
+void foo() { throw std::runtime_error("oops"); }<br>
+void bar() {}<br>
+struct S {};<br>
+int main() {<br>
+    std::cout << noexcept(foo()) << '\n'; // prints 0<br>
+    std::cout << noexcept(bar()) << '\n'; // prints 0<br>
+    std::cout << noexcept(1 + 1) << '\n'; // prints 1<br>
+    std::cout << noexcept(S()) << '\n';   // prints 1
+}
+
+<p>In this example, even though bar() can never throw an exception, noexcept(bar()) is still false because the fact that bar() cannot propagate an exception has not been explicitly specified.</p>
+</h4>
+
+<h1>auto(1)</h1>
+<p>The auto keyword specifies that the type of the variable that is being declared will be automatically deducted from its initializer. In case of functions, if their return type is auto then that will be evaluated by return type expression at runtime.</p>
+  <h4>/ C++ program to demonstrate working of auto <br>
+// and type inference <br>
+#include <bits/stdc++.h> <br>
+using namespace std; <br>
+  
+int main() <br>
+{ <br>
+    auto x = 4; <br>
+    auto y = 3.37; <br>
+    auto ptr = &x; <br>
+    cout << typeid(x).name() << endl <br>
+         << typeid(y).name() << endl <br>
+         << typeid(ptr).name() << endl; <br>
+  
+    return 0; <br>
+} <br>
+
+<h3>OUTPUT <BR> I <BR> D<BR> PI<BR></h3>
+</h4>
+
+<h1>bitand</h1>
+<p>"bitand" is an inbuilt keyword that has been around since at least C++98. It is an alternative to & (Bitwise AND) operator and it mostly uses for bit manipulations.
+
+The bitand keyword compares two bits and returns 1 if both bits are 1; otherwise, it returns 0.</p>
+  <h4>// C++ example to demonstrate the use of
+// 'bitand' keyword
+
+#include <iostream><br>
+#include <bitset><br>
+using namespace std;<br>
+
+int main()<br>
+{<br>
+    //bitsets<br>
+    bitset<4> value("1011");<br>
+    bitset<4> mask1("1100");<br>
+    bitset<4> mask2("0100");<br>
+
+    // before operation<br>
+    cout << "value: " << value << endl;<br>
+    cout << "mask1: " << mask1 << endl;<br>
+    cout << "mask2: " << mask2 << endl;<br>
+
+    value = value bitand mask1;<br>
+
+    cout << "After operation (1)...\n";<br>
+    cout << "value: " << value << endl;<br>
+
+    value = value bitand mask2;<br>
+
+    cout << "After operation (1)...\n";<br>
+    cout << "value: " << value << endl;<br>
+
+    return 0;<br>
+}</h4>
+
+<h3>OUTPUT<BR>
+value: 1011<BR>
+mask1: 1100<BR>
+mask2: 0100<BR>
+After operation (1)...<BR>
+value: 1000<BR>
+After operation (2)...<BR>
+value: 0000</h3>
+
+<h1>bitor</h1>
+<p>"bitor" is an inbuilt keyword that has been around since at least C++98. It is an alternative to | (Bitwise OR) operator and it mostly uses for bit manipulations.
+
+The bitor keyword compares two bits and returns 1 if either of the bits is 1 and it returns 0 if both bits are 0 or 1.</p>
+  <h4>// C++ example to demonstrate the use of
+// 'bitor' keyword
+
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+int main()
+{
+    //bitsets
+    bitset<4> value("1011");
+    bitset<4> mask1("1100");
+    bitset<4> mask2("0100");
+
+    // before operation
+    cout << "value: " << value << endl;
+    cout << "mask1: " << mask1 << endl;
+    cout << "mask2: " << mask2 << endl;
+
+    value = value bitor mask1;
+
+    cout << "After operation (1)...\n";
+    cout << "value: " << value << endl;
+
+    value = value bitor mask2;
+
+    cout << "After operation (2)...\n";
+    cout << "value: " << value << endl;
+
+    return 0;
+}</h4>
+
+<h3>OUTPUT<BR>
+value: 1011<BR>
+mask1: 1100<BR>
+mask2: 0100<BR>
+After operation (1)...<BR>
+value: 1111<BR>
+After operation (2)...<BR>
+value: 1111</h3>
+
+<H1>bool</H1>
+<p>In C++, the data type bool has been introduced to hold a boolean value, true or false.The values true or false have been added as keywords in the C++ language.
+bool b1 = true;      // declaring a boolean variable with true value   </p>
+  <h4>// CPP program to illustrate bool <BR> 
+// data type in C++ <BR>
+#include<iostream> 
+using namespace std; <BR>
+int main() <BR>
+{ <BR>
+    int x1 = 10, x2 = 20, m = 2; <BR>
+    bool b1, b2; <BR>
+    b1 = x1 == x2; // false <BR>
+      
+    b2 = x1 < x2; // true <BR>
+      
+    cout << "b1 is = " << b1 << "\n"; <BR>
+    cout << "b2 is = " << b2 << "\n"; <BR>
+    bool b3 = true; <BR>
+      
+    if (b3) <BR>
+        cout << "Yes" << "\n"; <BR>
+    else<BR>
+        cout << "No" << "\n"; <BR>
+          
+    int x3 = false + 5 * m - b3; <BR>
+    cout << x3; <BR>
+      
+return 0; <BR>
+      
+} </h4>
+
+<H3>OUTPUT<BR>
+b1 is = 0<BR>
+b2 is = 1<BR>
+Yes<BR>
+9</H3>
+
+<H1>break</H1>
+<p>The break statement can also be used to jump out of a loop.<BR>
+
+This example jumps out of the loop when i is equal to 4:</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+  for (int i = 0; i < 10; i++) {<BR>
+    if (i == 4) {<BR>
+      break;<BR>
+    }<BR>
+    cout << i << "\n";<BR>
+  } <BR>
+  return 0;<BR>
+}</h4>
+
+<h3>OUTPUT
+0<BR>
+1<BR>
+2<BR>
+3</h3>
+
+<h1>case</h1>
+<p>The switch statement allows us to execute a block of code among many alternatives.<BR>
+The syntax of the switch statement in C++ is:</p><BR>
+  <h4>// Program to build a simple calculator using switch Statement
+#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+    char oper;<BR>
+    float num1, num2;<BR>
+    cout << "Enter an operator (+, -, *, /): ";<BR>
+    cin >> oper;<BR>
+    cout << "Enter two numbers: " << endl;<BR>
+    cin >> num1 >> num2;<BR>
+
+    switch (oper) {<BR>
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2;<BR>
+            break;<BR>
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 -num2;<BR>
+            break;<BR>
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2;<BR>
+            break;<BR>
+        case '/':<BR>
+            cout << num1 << " / " << num2 << " = " << num1 / num2;<BR>
+            break;<BR>
+        default:
+            // operator is doesn't match any case constant (+, -, *, /)<BR>
+            cout << "Error! The operator is not correct";<BR>
+            break;<BR>
+    }<BR>
+
+    return 0;<BR>
+}<BR>
+}</h4>
+
+<H3>Enter an operator (+, -, *, /): +
+Enter two numbers: 
+2.3
+4.5
+2.3 + 4.5 = 6.8</H3>
+
+<H1>catch<H1>
+<p>To catch exceptions, a portion of code is placed under exception inspection. This is done by enclosing that portion of code in a try-block. When an exceptional circumstance arises within that block, an exception is thrown that transfers the control to the exception handler. If no exception is thrown, the code continues normally and all handlers are ignored.
+
+An exception is thrown by using the throw keyword from inside the try block. Exception handlers are declared with the keyword catch, which must be placed immediately after the try block:</p>
+  <h4>// exceptions<BR>
+#include <iostream><BR>
+using namespace std;<BR>
+
+int main () {<BR>
+  try<BR>
+  {<BR>
+    throw 20;<BR>
+  }<BR>
+  catch (int e)<BR>
+  {<BR>
+    cout << "An exception occurred. Exception Nr. " << e << '\n';<BR>
+  }<BR>
+  return 0;<BR>
+}</h4>
+
+<h4>char</h4>
+<p>The char data type is used to store a single character. The character must be surrounded by single quotes, like 'A' or 'c':</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+ 
+int main () {<BR>
+  char myGrade = 'B';<BR>
+  cout << myGrade;<BR>
+  return 0;<BR>
+}
+</h4>
+
+<h1>class</h1>
+<p>C++ is an object-oriented programming language.
+
+Everything in C++ is associated with classes and objects, along with its attributes and methods. For example: in real life, a car is an object. The car has attributes, such as weight and color, and methods, such as drive and brake.
+
+Attributes and methods are basically variables and functions that belongs to the class. These are often referred to as "class members".
+
+A class is a user-defined data type that we can use in our program, and it works as an object constructor, or a "blueprint" for creating objects.
+
+</p>
+  <h4>class MyClass {       // The class<BR>
+  public:             // Access specifier<BR>
+    int myNum;        // Attribute (int variable)<BR>
+    string myString;  // Attribute (string variable)<BR>
+};< /h4><BR>
+
+<p>Example explained<BR>
+The class keyword is used to create a class called MyClass.<BR>
+The public keyword is an access specifier, which specifies that members (attributes and methods) of the class are accessible from outside the class. You will<BR> learn more about access specifiers later.<BR>
+Inside the class, there is an integer variable myNum and a string variable myString. When variables are declared within a class, they are called attributes.<BR>
+At last, end the class definition with a semicolon ;.</p>
+
+<h1>compl</h1>
+<p>"compl" is an inbuilt keyword that has been around since at least C++98. It is an alternative to ~ (Compliment) operator and it mostly uses for bit manipulations.
+
+The compl keyword inverts all of the bits of the operand.</p>
+  <h4>// C++ example to demonstrate the use of<BR>
+// 'compl' keyword<BR>
+
+#include <iostream><BR>
+#include <bitset><BR>
+using namespace std;<BR>
+
+int main()<BR>
+{<BR>
+    //bitsets<BR>
+    bitset<4> value("1011");<BR>
+
+    // before operation<BR>
+    cout << "value: " << value << endl;<BR>
+
+    value = compl value;<BR>
+
+    cout << "After operation (1)...\n";<BR>
+    cout << "value: " << value << endl;<BR>
+
+    value = compl value;<BR>
+
+    cout << "After operation (2)...\n";<BR>
+    cout << "value: " << value << endl;<BR>
+
+    return 0;<BR>
+}</h4>
+
+<h3>OUTPUT 
+	value: 1011
+}
+After operation (1)...<BR>
+}
+value: 0100<BR>
+}
+After operation (2)...<BR>
+value: 1011<BR>
+</h3>
+
+
+<h1>const</h1>
+<p>Constant is something that doesn't change. In C language and C++ we use the keyword const to make program elements constant. const keyword can be used in many contexts in a C++ program. It can be used with:
+
+Variables
+Pointers
+Function arguments and return types
+Class Data members
+Class Member functions
+Objects</p>
+  <h4>int main
+{
+    const int i = 10;<BR>
+    const int j = i + 10;     // works fine<BR>
+    i++;    // this leads to Compile time error  <BR> 
+}</h4>
+
+<h1>constexpr</h1>
+<p>constexpr is a feature added in C++ 11. The main idea is performance improvement of programs by doing computations at compile time rather than run time. Note that once a program is compiled and finalized by developer, it is run multiple times by users. The idea is to spend time in compilation and save time at run time (similar to template metaprogramming)
+
+ 
+
+constexpr specifies that the value of an object or a function can be evaluated at compile time and the expression can be used in other constant expressions. For example, in below code product() is evaluated at compile time.</p>
+  <h4>// constexpr function for product of two numbers.  <BR> 
+// By specifying constexpr, we suggest compiler to   <BR> 
+// to evaluate value at compile time  <BR> 
+constexpr int product(int x, int y)  <BR> 
+{  <BR> 
+    return (x * y);  <BR> 
+}  <BR> 
+  
+int main()  <BR> 
+{ 
+    const int x = product(10, 20);  <BR> 
+    cout << x;  <BR> 
+    return 0;  <BR> 
+} </h4>
+
+<h1>const_cast</h1>
+<p>const_cast can be used to change non-const class members inside a const member function. Consider the following code snippet. Inside const member function fun(), ‘this’ is treated by the compiler as ‘const student* const this’, i.e. ‘this’ is a constant pointer to a constant object, thus compiler doesn’t allow to change the data members through ‘this’ pointer. const_cast changes the type of ‘this’ pointer to ‘student* const this’.</p>
+  <h4>#include <iostream> <BR> 
+using namespace std; <BR> 
+  
+class student<BR>  
+{ <BR> 
+private: <BR> 
+    int roll; <BR> 
+public: <BR> 
+    // constructor <BR>
+    student(int r):roll(r) {} <BR>
+  
+    // A const function that changes roll with the help of const_cast <BR>
+    void fun() const<BR>
+    { <BR>
+        ( const_cast <student*> (this) )->roll = 5; <BR>
+    } <BR>
+  
+    int getRoll()  { return roll; } <BR>
+}; <BR>
+  
+int main(void) <BR>
+{ <BR>
+    student s(3); 
+    cout << "Old roll number: " << s.getRoll() << endl; <BR>
+  
+    s.fun(); <BR>
+  
+    cout << "New roll number: " << s.getRoll() << endl; <BR>
+  
+    return 0; <BR>
+} <BR>
+</h4>
+
+<h1>continue</h1>
+<p>As you can see that the output is missing the value 3, however the for loop iterate though the num value 0 to 6. This is because we have set a condition inside loop in such a way, that the continue statement is encountered when the num value is equal to 3. So for this iteration the loop skipped the cout statement and started the next iteration of loop.</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+int main(){<BR>
+   for (int num=0; num<=6; num++) {<BR>
+      /* This means that when the value of<BR>
+       * num is equal to 3 this continue statement<BR>
+       * would be encountered, which would make the<BR>
+       * control to jump to the beginning of loop for<BR>
+       * next iteration, skipping the current iteration<BR>
+       */ <BR>
+     
+      if (num==3) {<BR>
+          continue;<BR>
+      }
+      cout<<num<<" ";<BR>
+   }<BR>
+   return 0;<BR>
+}</h4>
+
+
+<h1>return</h1>
+<p>The return statement returns the flow of the execution to the function from where it is called. This statement does not mandatorily need any conditional statements. As soon as the statement is executed, the flow of the program stops immediately and return the control from where it was called. The return statement may or may not return anything for a void function, but for a non-void function, a return value is must be returned.</p>
+  <h4>
+ #include <iostream> <BR>
+using namespace std; <BR>
+  
+// void method <BR>
+void Print() <BR>
+{ <BR>
+    printf("Welcome to GeeksforGeeks"); <BR>
+} <BR>
+  
+// Driver method <BR>
+int main() <BR>
+{ <BR>
+  
+    // Calling print <BR>
+    Print(); <BR>
+  
+    return 0; <BR>
+} <BR>
+  </h4>
+
+
+<h1>decltype</h1>
+<p>Up till C++11 the programmer needed to mention the data type of the variable being used in the code but now we can use the keyword decltype and auto the type will be idetified by the compiler itself.
+
+This property is called type inference and helps in saving a lot of time, doing this will only lead to an increase in compilation time but there will be no reduction in the rum time.
+
+NOTE : decltype type specifier, together with the auto keyword, is useful primarily to developers who write template libraries.
+
+Decltype stands for declared type of an entity or the type of an expression. It lets you extract the type from the variable so decltype is sort of an operator that evaluates the type of passed expression.</p>
+
+  <h4>// C++ program to demonstrate use of decltype <BR>
+#include <bits/stdc++.h> <BR>
+using namespace std; <BR>
+  
+int function1() { return 24; } <BR>
+char function2() { return 'o'; } <BR>
+  
+int main() <BR>
+{ <BR>
+    // Data type of x is same as return type of fun1() <BR>
+    // and type of y is same as return type of fun2() <BR>
+    decltype(function1()) x; <BR>
+    decltype(function2()) y; <BR>
+  
+    cout << typeid(x).name() << endl; <BR>
+    cout << typeid(y).name() << endl; <BR>
+  
+    return 0; <BR>
+} </h4>
+<h3>OUTPUT <BR>
+i<BR>
+c<BR>
+</h3>
+
+<h1>default</h1>
+<p>A default argument is a value provided in a function declaration that is automatically assigned by the compiler if the caller of the function doesn’t provide a value for the argument with a default value.
+Following is a simple C++ example to demonstrate the use of default arguments. We don’t have to write 3 sum functions, only one function works by using default values for 3rd and 4th arguments.</p>
+  <h4>#include<iostream> <BR>
+using namespace std; <BR>
+  
+// A function with default arguments, it can be called with  <BR>
+// 2 arguments or 3 arguments or 4 arguments. <BR>
+int sum(int x, int y, int z=0, int w=0) <BR>
+{ <BR>
+    return (x + y + z + w); <BR>
+} <BR>
+  
+/* Driver program to test above function*/<BR>
+int main() <BR>
+{ <BR>
+    cout << sum(10, 15) << endl; <BR>
+    cout << sum(10, 15, 25) << endl; <BR>
+    cout << sum(10, 15, 25, 30) << endl; <BR>
+    return 0; <BR>
+}</h4>
+
+<h3>OUTPUT<BR>
+25<BR>
+50<BR>
+80</h3>
+
+<H1>delete</H1>
+<p>Delete is an operator that is used to destroy array and non-array(pointer) objects which are created by new expression.
+
+Delete can be used by either using Delete operator or Delete [ ] operator
+New operator is used for dynamic memory allocation which puts variables on heap memory.
+Which means Delete operator deallocates memory from heap.
+Pointer to object is not destroyed, value or memory block pointed by pointer is destroyed.
+Here, Below are examples where we can apply delete operator:</p>
+5
+  <h4>#include <bits/stdc++.h> <BR>
+using namespace std; <BR>
+  
+int main() <BR>
+{ <BR>
+    // Creating int pointer  <BR> 
+    int* ptr1 = new int;   <BR>
+      
+    // Initializing pointer with value 20  <BR>
+    int* ptr2 = new int(20);   <BR>
+  
+    cout << "Value of ptr1 = " << *ptr1 << "\n";  <BR>
+    cout << "Value of ptr2 = " << *ptr2 << "\n";  <BR>
+  
+    delete ptr1; // Destroying ptr1  <BR>
+    delete ptr2; // Detroying ptr2  <BR>
+  
+    return 0;  <BR>
+} </h4>
+
+<h3>OUTPUT <BR>
+Value of ptr1 = 0<BR>
+Value of ptr2 = 20</h3>
+
+<h1>do</h1>
+<p>The example below uses a do/while loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+  int i = 0;<BR>
+  do {<BR>
+    cout << i << "\n";<BR>
+    i++;<BR>
+  }<BR>
+  while (i < 5);<BR>
+  return 0;<BR>
+}</h4>
+
+<h3>OUTPUT <BR>
+0<BR>
+1<BR>
+2<BR>
+3<BR>
+4</h3>
+
+<H1>double</H1>
+<p>	Stores fractional numbers, containing one or more decimals. Sufficient for storing 15 decimal digits</p>
+  <h4>
+  	#include <iostream>
+    using namespace std;<BR>
+  double myDoubleNum = 9.98; <BR>
+   cout << mydoublenum << endl; </h4>
+
+<h1>dynamic</h1>
+<p>When allocation of memory is done dynamically using dynamic memory allocator new in a constructor, it is known as dynamic constructor. By using this, we can dynamically initialize the objects.</p>
+  <h4>#include <iostream> <BR>
+using namespace std; <BR>
+  
+class geeks { <BR>
+    const char* p; <BR>
+  
+public: <BR>
+    // default constructor <BR>
+    geeks() <BR>
+    { <BR>
+  
+        // allocating memory at run time <BR>
+        p = new char[6]; <BR>
+        p = "geeks"; <BR>
+    } <BR>
+  
+    void display() <BR>
+    { <BR>
+        cout << p << endl; <BR>
+    } <BR>
+}; <BR>
+  
+int main() <BR>
+{ <BR>
+    geeks obj = new geeks();<BR> 
+    obj.display(); <BR>
+} </h4>
+
+<h3>OUTPUT IS: GEEKS</h3>
+
+<H1>else</H1>
+<p>Use the else statement to specify a block of code to be executed if the condition is false.</p>
+
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+  int time = 20;<BR>
+  if (time < 18) {<BR>
+    cout << "Good day.";<BR>
+  } else {<BR>
+    cout << "Good evening.";<BR>
+  }<BR>
+  return 0;<BR>
+}</h4>
+
+<h1>enum</h1>
+<p>An enumeration is a user-defined data type that consists of integral constants. To define an enumeration, keyword enum is used.</p>
+  <h4>enum season <BR>
+{   spring = 0, <BR>
+    summer = 4, <BR>
+    autumn = 8,<BR>
+    winter = 12<BR>
+};</h4>
+
+
+<H1>export</H1>
+<p>C++’s export keyword was originally meant to permit the separation of the definition of a template from its usages. It proved to be incredibly difficult to implement, and the “export templates” C++ feature was dropped in C++11, having never seen widespread usage.
+
+It remained a reserved identifier for several years, and now it returns with renewed purpose and meaning for C++ Modules.
+
+The New and Improved (and Completely Repurposed) export
+The export keyword may only be used in a module interface unit. The keyword is attached to a declaration of an entity, and causes that declaration (and sometimes the definition) to become visible to module importers.
+
+(The only weird one is the export keyword in the module-declaration, which is just a re-use of the keyword and does not actually “export” any entities.)
+
+What Can I export?
+This isn’t the wild west, and export isn’t free to be plastered everywhere, namely:
+
+You cannot export entities with internal linkage (static variables and functions; and functions, variables, and classes defined within an anonymous namespace):</p>
+  <h4>namespace {<BR>
+
+   // ILLEGAL! This is an anonymous namespace<BR>
+   export void do_stuff() {<BR>
+       // ...<BR>
+   }<BR>
+
+   // ILLEGAL! This is an anonymous namespace<BR>
+   export int five = 5;<BR>
+
+   // ILLEGAL! This is an anonymous namespace<BR>
+   export class stuff {<BR>
+       // ...<BR>
+   };<BR>
+
+}<BR>
+
+// ILLEGAL! This is declared `static`<BR>
+export static void do_more_stuff() {<BR>
+    // ...<BR>
+}<BR>
+
+// ILLEGAL! This is declared `static`<BR>
+export static int twelve = 12;</h4>
+
+<h1>extern</h1>
+<p>I’m sure this post will be as interesting and informative to C virgins (i.e. beginners) as it will be to those who are well-versed in C. So let me start by saying that the extern keyword applies to C variables (data objects) and C functions. Basically, the extern keyword extends the visibility of the C variables and C functions. That’s probably the reason why it was named extern.
+
+Though most people probably understand the difference between the “declaration” and the “definition” of a variable or function, for the sake of completeness, I would like to clarify them.
+
+Declaration of a variable or function simply declares that the variable or function exists somewhere in the program, but the memory is not allocated for them. The declaration of a variable or function serves an important role–it tells the program what its type is going to be. In case of function declarations, it also tells the program the arguments, their data types, the order of those arguments, and the return type of the function. So that’s all about the declaration.
+Coming to the definition, when we define a variable or function, in addition to everything that a declaration does, it also allocates memory for that variable or function. Therefore, we can think of definition as a superset of the declaration (or declaration as a subset of definition).
+A variable or function can be declared any number of times, but it can be defined only once. (Remember the basic principle that you can’t have two locations of the same variable or function).
+
+Now back to the extern keyword. First, Let’s consider the use of extern in functions. It turns out that when a function is declared or defined, the extern keyword is implicitly assumed. When we write.</p>
+  <h4>int var; <BR>
+int main(void) <BR>
+{ <BR>
+   var = 10; <BR>
+   return 0; <BR>
+} <BR>
+
+extern int var; <BR>
+int main(void) <BR>
+{ <BR>
+  var = 10; <BR>
+  return 0; <BR>
+} <BR>
+</h4>
+
+<h1>false</h1>
+<p>A boolean variable is declared with the bool keyword and can only take the values true or false:</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+  bool isCodingFun = true;<BR>
+  bool isFishTasty = false;<BR>
+  cout << isCodingFun << "\n";<BR>
+  cout << isFishTasty;<BR>
+  return 0;<BR>
+}</h4>
+
+<h3>OUTPUT <BR>
+1<BR>
+0</h3>
+
+<H1>float</H1>
+<p>In C++, both float and double data types are used for floating-point values. Floating-point numbers are used for decimal and exponential values. For example,</p>
+  <h4>// creating float type variables<BR>
+float num1 = 3.0f;<BR>
+float num2 = 3.5f;<BR>
+float num3 = 3E-5f; // 3x10^-5<BR>
+
+// creating double type variables<BR>
+double num4 = 3.0;<BR>
+double num5 = 3.5;<BR>
+double num6 = 3E-5; // 3x10^-5<BR></h4>
+
+<H1>for</H1>
+<p>When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+  for (int i = 0; i < 5; i++) {<BR>
+    cout << i << "\n";<BR>
+  }<BR>
+  return 0;<BR>
+}</h4>
+
+<H3>OUTPUT 
+0<BR>
+1<BR>
+2<BR>
+3<BR>
+4</H3>
+
+<H1>friend</H1>
+<p>If a function is defined as a friend function then, the private and protected data of a class can be accessed using the function.
+
+The complier knows a given function is a friend function by the use of the keyword friend.
+
+For accessing the data, the declaration of a friend function should be made inside the body of the class (can be anywhere inside class either in private or public section) starting with keyword friend.</p>
+  <h4>/* C++ program to demonstrate the working of friend function.*/<BR>
+#include <iostream><BR>
+using namespace std;<BR>
+
+class Distance<BR>
+{<BR>
+    private:<BR>
+        int meter;<BR>
+    public:<BR>
+        Distance(): meter(0) { }<BR>
+        //friend function<BR>
+        friend int addFive(Distance);<BR>
+};<BR>
+
+// friend function definition<BR>
+int addFive(Distance d)<BR>
+{<BR>
+    //accessing private data from non-member function<BR>
+    d.meter += 5;<BR>
+    return d.meter;<BR>
+}<BR>
+
+int main()<BR>
+{<BR>
+    Distance D;<BR>
+    cout<<"Distance: "<< addFive(D);<BR>
+    return 0;<BR>
+}</h4>
+
+<h3>OUTPUT <BR>
+Distance: 5</h3>
+
+<H1>goto</H1>
+<p>In C++ programming, goto statement is used for altering the normal sequence of program execution by transferring control to some other part of the program.</p>
+  <h4>// This program calculates the average of numbers entered by user.
+// If user enters negative number, it ignores the number and 
+// calculates the average of number entered before it.
+
+# include <iostream><BR>
+using namespace std;<BR>
+
+int main()<BR>
+{<BR>
+    float num, average, sum = 0.0;<BR>
+    int i, n;<BR>
+
+    cout << "Maximum number of inputs: ";<BR>
+    cin >> n;<BR>
+
+    for(i = 1; i <= n; ++i)<BR>
+    {<BR>
+        cout << "Enter n" << i << ": ";<BR>
+        cin >> num;<BR>
+        
+        if(num < 0.0)<BR>
+        {<BR>
+           // Control of the program move to jump:<BR>
+            goto jump;<BR>
+        } <BR>
+        sum += num;<BR>
+    }<BR>
+    
+jump:<BR>
+    average = sum / (i - 1);<BR>
+    cout << "\nAverage = " << average;<BR>
+    return 0;<BR>
+}
+</h4>
+   <h3>Maximum number of inputs: 10<BR>
+Enter n1: 2.3<BR>
+Enter n2: 5.6<BR>
+Enter n3: -5.6<BR>
+
+Average = 3.95</h3>
+
+
+<h1>if</h1>
+<p>Use the if statement to specify a block of C++ code to be executed if a condition is true.</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+  if (20 > 18) {<BR>
+    cout << "20 is greater than 18";<BR>
+  }  <BR>
+  return 0;<BR>
+}</h4>
+
+<h3>OUTPUT <BR>
+20 is greater than 18</h3>
+
+
+<h1>inline</h1>
+<p>Inline function is one of the important feature of C++. So, let’s first understand why inline functions are used and what is the purpose of inline function?
+When the program executes the function call instruction the CPU stores the memory address of the instruction following the function call, copies the arguments of the function on the stack and finally transfers control to the specified function. The CPU then executes the function code, stores the function return value in a predefined memory location/register and returns control to the calling function. This can become overhead if the execution time of function is less than the switching time from the caller function to called function (callee). For functions that are large and/or perform complex tasks, the overhead of the function call is usually insignificant compared to the amount of time the function takes to run. However, for small, commonly-used functions, the time needed to make the function call is often a lot more than the time needed to actually execute the function’s code. This overhead occurs for small functions because execution time of small function is less than the switching time.
+
+C++ provides an inline functions to reduce the function call overhead. Inline function is a function that is expanded in line when it is called. When the inline function is called whole code of the inline function gets inserted or substituted at the point of inline function call. This substitution is performed by the C++ compiler at compile time. Inline function may increase efficiency if it is small.
+The syntax for defining the function inline is:</p>
+  <h4>#include <iostream>  <BR>
+using namespace std;  <BR>
+inline int cube(int s)  <BR>
+{  <BR>
+    return s*s*s;  <BR>
+}  <BR>
+int main()  <BR>
+{  <BR>
+    cout << "The cube of 3 is: " << cube(3) << "\n"; <BR> 
+    return 0;  <BR>
+} <BR>
+ //Output: The cube of 3 is: 27 </h4>
+
+<h1>int</h1>
+<p>Int, short for "integer," is a fundamental variable type built into the compiler and used to define numeric variables holding whole numbers. Other data types include float and double. C, C++, C# and many other programming languages recognize int as a data type.</p>
+
+<h4> #include<iostream> <BR>
+	int a; <BR>
+	a=10; <BR>
+	cout << a <<endl; <BR>
+	return 0; <BR>
+</h4>
+
+
+<h1> long</h1>
+<p>If we need to store a large integer(in the range -2147483647 to 2147483647), we can use the type specifier long. For example,</p>
+  <h4>// large integer <BR>
+long b = 123456;<BR>
+Note: long is equivalent to long int.<BR>
+// large floating-point number <BR>
+long double c = 0.333333333333333333L;
+</h4>
+
+<h1>module</h1> 
+<p>Modules can be used side by side with header files. A C++ source file can import modules and also #include header files. In some cases, a header file can be imported as a module rather than textually #included by the preprocessor. We recommend that new projects use modules rather than header files as much as possible. For larger existing projects under active development, we suggest that you experiment with converting legacy headers to modules to see whether you get a meaningful reduction in compilation times.</p>
+  <h4>export module Foo;<BR>
+
+#define ANSWER 42<BR>
+
+namespace Bar<BR>
+{<BR>
+   int f_internal() {<BR>
+        return ANSWER;<BR>
+      }<BR>
+
+   export int f() {<BR>
+      return f_internal();<BR>
+   }<BR>
+}<BR>
+<BR><BR>
+
+import Foo;<BR>
+import std.core;<BR>
+
+using namespace std;<BR>
+
+int main()<BR>
+{<BR>
+   cout << "The result of f() is " << Bar::f() << endl; // 42<BR>
+   // int i = Bar::f_internal(); // C2039<BR>
+   // int j = ANSWER; //C2065<BR>
+}<BR>
+</h4>
+
+<h1>mutable</h1>
+<p>The mutable storage class specifier in C++ (or use of mutable keyword in C++)
+auto, register, static and extern are the storage class specifiers in C. typedef is also considered as a storage class specifier in C. C++ also supports all these storage class specifiers. In addition to this C++, adds one important storage class specifier whose name is mutable.
+
+
+What is the need of mutable?
+Sometimes there is requirement to modify one or more data members of class / struct through const function even though you don’t want the function to update other members of class / struct. This task can be easily performed by using mutable keyword. Consider this example where use of mutable can be useful. Suppose you go to hotel and you give the order to waiter to bring some food dish. After giving order, you suddenly decide to change the order of food. Assume that hotel provides facility to change the ordered food and again take the order of new food within 10 minutes after giving the 1st order. After 10 minutes order can’t be cancelled and old order can’t be replaced by new order. See the following code for details.</p>
+  <h4>#include <iostream> <BR>
+#include <string.h> <BR>
+using std::cout; <BR>
+using std::endl; <BR>
+  
+class Customer <BR>
+{ <BR>
+    char name[25]; <BR>
+    mutable char placedorder[50]; <BR>
+    int tableno; <BR>
+    mutable int bill; <BR>
+public: <BR>
+    Customer(char* s, char* m, int a, int p) <BR>
+    { <BR>
+        strcpy(name, s); <BR>
+        strcpy(placedorder, m); <BR>
+        tableno = a; <BR>
+        bill = p; <BR>
+    } <BR>
+    void changePlacedOrder(char* p) const<BR>
+    { <BR>
+        strcpy(placedorder, p); <BR>
+    } <BR>
+    void changeBill(int s) const<BR>
+    { <BR>
+        bill = s; <BR>
+    } <BR>
+    void display() const<BR>
+    { <BR>
+        cout << "Customer name is: " << name << endl; <BR>
+        cout << "Food ordered by customer is: " << placedorder << endl; <BR>
+        cout << "table no is: " << tableno << endl; <BR>
+        cout << "Total payable amount: " << bill << endl; <BR>
+    } <BR>
+}; <BR>
+  
+int main() <BR>
+{ <BR>
+    const Customer c1("Pravasi Meet", "Ice Cream", 3, 100); <BR>
+    c1.display(); <BR>
+    c1.changePlacedOrder("GulabJammuns"); <BR>
+    c1.changeBill(150); <BR>
+    c1.display(); <BR>
+    return 0; <BR>
+}<BR>
+</h4>
+
+<h3>OUTPUT<BR>
+Customer name is: Pravasi Meet<BR>
+Food ordered by customer is: Ice Cream<BR>
+table no is: 3<BR>
+Total payable amount: 100<BR>
+Customer name is: Pravasi Meet<BR>
+Food ordered by customer is: GulabJammuns<BR>
+table no is: 3<BR>
+Total payable amount: 150 <BR></h4>
+
+<H1>namespace</H1>
+<p>Namespace is a feature added in C++ and not present in C. A namespace is a declarative region that provides a scope to the identifiers (names of the types, function, variables etc) inside it. Multiple namespace blocks with the same name are allowed. All declarations within those blocks are declared in the named scope.</p>
+
+  <h4>// Here we can see that more than one variables  <BR>
+// are being used without reporting any error. <BR>
+// That is because they are declared in the <BR> 
+// different namespaces and scopes. <BR>
+#include <iostream>  <BR>
+using namespace std;  <BR>
+  
+// Variable created inside namespace  <BR>
+namespace first  <BR>
+{  <BR>
+    int val = 500;  <BR>
+}  <BR>
+  
+// Global variable  <BR>
+int val = 100;  <BR>
+  
+int main()  <BR>
+{  <BR>
+    // Local variable  <BR>
+    int val = 200;  <BR>
+  
+    // These variables can be accessed from  <BR>
+    // outside the namespace using the scope  <BR>
+    // operator ::  <BR>
+    cout << first::val << '\n';   <BR>
+  
+    return 0;  <BR>
+}  <BR>
+Output: <BR>
+
+500 <BR>
+
+</h4>
+
+<h1>new</h1>
+<p>C++ allows us to allocate the memory of a variable or an array in run time. This is known as dynamic memory allocation.
+
+In other programming languages such as Java and Python, the compiler automatically manages the memories allocated to variables. But this is not the case in C++.
+
+In C++, we need to deallocate the dynamically allocated memory manually after we have no use for the variable.
+
+We can allocate and then deallocate memory dynamically using the new and delete operators respectively..</p>
+int* pointVar;<BR>
+  <h4>// declare an int pointer<BR>
+int* pointVar;<BR>
+
+// dynamically allocate memory<BR>
+// using the new keyword <BR>
+pointVar = new int;<BR>
+
+// assign value to allocated memory<BR>
+*pointVar = 45;</h4>
+
+<h1>noexcept</h1>
+<p>n this post I would like to share my observation on where using noexcept really adds value. It is less often than what one might expect, and it does not have that much to do with throwing or not throwing exceptions. The conclusion surprises me a bit, and I hesitate to present it because it is counter to the advice I hear from people I consider authorities on the subject.
+
+Semantics of noexcept
+What does it mean to the program that a function is declared as noexcept? Forget what the intent of the programmer is, or could be. Just answer a ‘technical’ question: what does it change in the program from the perspective of run-time behaviour, observable results and the type system?
+
+Two most important things:
+
+It turns an exception throw into a call to std::terminate().
+One can make a compile-time query if the function has been declared as noexcept.</p>
+<p>// DON'T DO IT AT HOME!
+ 
+void printMessage()<BR>
+{<BR>
+  cout << "Hello World!" << endl;<BR>
+  exit(0);<BR>
+}<BR>
+ 
+void execute() noexcept<BR>
+{<BR>
+  if (noexcept(execute())) throw "Ha!";<BR>
+}<BR>
+ 
+int main()<BR>
+{<BR>
+  set_terminate(&printMessage);<BR>
+  execute();<BR>
+}</h4>
+
+<h1>not</h1>
+<p>alternative operators: as an alternative for !</p>
+  <h4>#include <iostream><BR>
+ 
+void show(bool z, const char* s, int n)<BR>
+{<BR>
+    const char* r{z ? " true  " : " false "};<BR>
+    if (n == 0) std::cout << "┌───────────┬─────────┐\n";<BR>
+    if (n <= 1) std::cout << "│ " <<s<< " │ "<<r<<" │\n";<BR>
+    if (n == 1) std::cout << "└───────────┴─────────┘\n";<BR>
+}<BR>
+ 
+int main()<BR>
+{<BR>
+    show(not true , "not true ", 0);<BR>
+    show(not false, "not false", 1);<BR>
+}</h4>
+<h3>Output:
+
+┌───────────┬─────────┐<BR>
+│ not true  │  false  │
+│ not false │  true   │<BR>
+└───────────┴─────────┘</h3>
+
+
+<h1>nullptr</h1>
+<p>nullptr is a keyword that can be used at all places where NULL is expected. Like NULL, nullptr is implicitly convertible and comparable to any pointer type. Unlike NULL, it is not implicitly convertible or comparable to integral types.</p>
+  <h4>// This program compiles 
+#include<iostream> <BR>
+using namespace std; <BR>
+  
+int main()  <BR>
+{ 
+   int *ptr = nullptr; <BR>
+  
+   // Below line compiles <BR>
+   if (ptr) { cout << "true"; }  <BR>   
+   else { cout << "false"; }    <BR> 
+} </h4>
+
+<h1>operator</h1>
+<p>Operators are symbols that perform operations on variables and values. For example, + is an operator used for addition, while - is an operator used for subtraction.
+
+Operators in C++ can be classified into 6 types: <BR>
+
+Arithmetic Operators <BR>
+Assignment Operators <BR>
+Relational Operators <BR>
+Logical Operators <BR>
+Bitwise Operators <BR>
+Other Operators</p>
+  <h4>
+#include <iostream><BR>
+using namespace std;<BR>
+
+int main() {<BR>
+    int a, b;<BR>
+    a = 7;<BR>
+    b = 2;<BR>
+
+    // printing the sum of a and b<BR>
+    cout << "a + b = " << (a + b) << endl;<BR>
+
+    // printing the difference of a and b<BR>
+    cout << "a - b = " << (a - b) << endl;<BR>
+
+    // printing the product of a and b<BR>
+    cout << "a * b = " << (a * b) << endl;<BR>
+
+    // printing the division of a by b<BR>
+    cout << "a / b = " << (a / b) << endl;<BR>
+
+    // printing the modulo of a by b<BR>
+    cout << "a % b = " << (a % b) << endl;<BR>
+
+    return 0;<BR>
+}</h4>
+
+<h1>or</h1>
+<p>The logical OR operator (||) returns the boolean value true if either or both operands is true and returns false otherwise. The operands are implicitly converted to type bool before evaluation, and the result is of type bool. Logical OR has left-to-right associativity.
+
+The operands to the logical OR operator don't have to have the same type, but they must be of boolean, integral, or pointer type. The operands are commonly relational or equality expressions.
+
+The first operand is completely evaluated and all side effects are completed before continuing evaluation of the logical OR expression.
+
+The second operand is evaluated only if the first operand evaluates to false, because evaluation isn't needed when the logical OR expression is true. It's known as short-circuit evaluation.</p>
+
+  <h4>// expre_Logical_OR_Operator.cpp<BR>
+// compile with: /EHsc<BR>
+// Demonstrate logical OR<BR>
+#include <iostream><BR>
+using namespace std;<BR>
+int main() {<BR>
+   int a = 5, b = 10, c = 15;<BR>
+   cout  << boolalpha<BR>
+         << "The true expression "<BR>
+         << "a < b || b > c yields "<BR>
+         << (a < b || b > c) << endl<BR>
+         << "The false expression "<BR>
+         << "a > b || b > c yields "<BR>
+         << (a > b || b > c) << endl;<BR>
+}</h4>
+
+<h1>private</h1>
+  <p>A private member variable or function cannot be accessed, or even viewed from outside the class. Only the class and friend functions can access private members.
+
+By default all the members of a class would be private, for example in the following class width is a private member, which means until you label a member, it will be assumed a private member −</p>
+  <h4>#include <iostream><BR>
+ 
+using namespace std;<BR>
+ 
+class Box {<BR>
+   public:<BR>
+      double length;<BR>
+      void setWidth( double wid );<BR>
+      double getWidth( void );<BR>
+ 
+   private:<BR>
+      double width;<BR>
+};<BR>
+ 
+// Member functions definitions<BR>
+double Box::getWidth(void) {<BR>
+   return width ;<BR>
+}<BR>
+ 
+void Box::setWidth( double wid ) {<BR>
+   width = wid;<BR>
+}<BR>
+ 
+// Main function for the program<BR>
+int main() {<BR>
+   Box box;<BR>
+ 
+   // set box length without member function<BR>
+   box.length = 10.0; // OK: because length is public<BR>
+   cout << "Length of box : " << box.length <<endl;<BR>
+ 
+   // set box width without member function<BR>
+   // box.width = 10.0; // Error: because width is private<BR>
+   box.setWidth(10.0);  // Use member function to set it.<BR>
+   cout << "Width of box : " << box.getWidth() <<endl;<BR>
+ 
+   return 0;<BR>
+}</h4>
+
+<h3>OUTPUT <BR>Length of box : 10<BR>
+Width of box : 10</h3>
+
+<H1>protected</H1>
+ <p>A protected member variable or function is very similar to a private member but it provided one additional benefit that they can be accessed in child classes which are called derived classes.
+
+You will learn derived classes and inheritance in next chapter. For now you can check following example where I have derived one child class SmallBox from a parent class Box.
+
+Following example is similar to above example and here width member will be accessible by any member function of its derived class SmallBox.</p>
+  <h4>
+#include <iostream><BR>
+using namespace std;<BR>
+ 
+class Box {<BR>
+   protected:<BR>
+      double width;<BR>
+};<BR>
+ 
+class SmallBox:Box { // SmallBox is the derived class.<BR>
+   public:<BR>
+      void setSmallWidth( double wid );<BR>
+      double getSmallWidth( void );<BR>
+};<BR>
+ 
+// Member functions of child class<BR>
+double SmallBox::getSmallWidth(void) {<BR>
+   return width ;<BR>
+}<BR>
+ 
+void SmallBox::setSmallWidth( double wid ) {<BR>
+   width = wid;<BR>
+}<BR>
+ 
+// Main function for the program<BR>
+int main() {<BR>
+   SmallBox box;<BR>
+ 
+   // set box width using member function<BR>
+   box.setSmallWidth(5.0);<BR>
+   cout << "Width of box : "<< box.getSmallWidth() << endl;<BR>
+ 
+   return 0;<BR>
+}</h4>
+
+<H3>OUTPUT <BR>
+Width of box : 5<BR></H3>
+
+
+<h1>public</h1>
+<p>A public member is accessible from anywhere outside the class but within a program. You can set and get the value of public variables without any member function as shown in the following example −</p>
+  <h4>
+#include <iostream><BR>
+ 
+using namespace std;<BR>
+ 
+class Line {<BR>
+   public:<BR>
+      double length;<BR>
+      void setLength( double len );<BR>
+      double getLength( void );<BR>
+};<BR>
+ 
+// Member functions definitions<BR>
+double Line::getLength(void) {<BR>
+   return length ;<BR>
+}<BR>
+ 
+void Line::setLength( double len) {<BR>
+   length = len;<BR>
+}<BR>
+ 
+// Main function for the program<BR>
+int main() {<BR>
+   Line line;<BR>
+ 
+   // set line length<BR>
+   line.setLength(6.0); <BR>
+   cout << "Length of line : " << line.getLength() <<endl;<BR>
+ 
+   // set line length without member function<BR>
+   line.length = 10.0; // OK: because length is public<BR>
+   cout << "Length of line : " << line.length <<endl;<BR>
+   
+   return 0;<BR>
+}</h4>
+
+<h3>OUTPUT <BR>
+Length of line : 6<BR>
+Length of line : 10</h3>
+
+
+<H1>register</H1>
+<p>Registers are faster than memory to access, so the variables which are most frequently used in a C program can be put in registers using register keyword. The keyword register hints to compiler that a given variable can be put in a register. It’s compiler’s choice to put it in a register or not. Generally, compilers themselves do optimizations and put the variables in register.
+
+1) If you use & operator with a register variable then compiler may give an error or warning (depending upon the compiler you are using), because when we say a variable is a register, it may be stored in a register instead of memory and accessing address of a register is invalid. Try below program.</p>
+  <h4>#include<stdio.h> <BR>
+  
+  
+int main() <BR>
+{ <BR>
+    register int i = 10; <BR>
+    int* a = &i; <BR>
+    printf("%d", *a); <BR>
+    getchar(); <BR>
+    return 0; <BR>
+} </h4>
+
+<h1>reinterpret</h1>
+<p>reinterpret_cast is a type of casting operator used in C++.
+
+It is used to convert one pointer of another pointer of any type, no matter either the class is related to each other or not.
+It does not check if the pointer type and data pointed by the pointer is same or not.</p>
+  <h4>// CPP program to demonstrate working of  
+// reinterpret_cast <BR>
+#include <iostream> <BR>
+using namespace std; <BR>
+  
+int main() <BR>
+{ <BR>
+    int* p = new int(65); <BR>
+    char* ch = reinterpret_cast<char*>(p); <BR>
+    cout << *p << endl; <BR>
+    cout << *ch << endl; <BR>
+    cout << p << endl; <BR>
+    cout << ch << endl; <BR>
+    return 0; <BR>
+} </h4>
+
+<h3>OUTPUT<BR>
+65<BR>
+A<BR>
+0x1609c20<BR>
+A</h3>
+
+
+
+<h1>return</h1>
+<p>In C++ Programming, not only can you pass values by reference to a function but you can also return a value by reference.
+To understand this feature, you should have the knowledge of:</p>
+  <h4>#include <iostream><BR>
+using namespace std;<BR>
+
+// Global variable<BR>
+int num;<BR>
+
+// Function declaration<BR>
+int& test();<BR>
+
+int main()<BR>
+{<BR>
+    test() = 5;<BR>
+
+    cout << num;<BR>
+
+    return 0;<BR>
+}<BR>
+
+int& test()<BR>
+{<BR>
+    return num;<BR>
+}</h4>
+<h3>OUTPUT <BR>
+5<BR></h3>
+
+<H1>short</H1>
+<p>We can use short for small integers (in the range −32,767 to +32,767).
+
+For example,</p>
+  <h4>// small integer<BR>
+short a = 12345;</h4>
+
+
+<h1>signed</h1>
+<p>When writing negative numbers in everyday life, we use a negative sign. For example, -3 means “negative 3”. We’d also typically recognize +3 as “positive 3” (though common convention dictates that we typically omit plus prefixes). This attribute of being positive, negative, or zero is called the number’s sign.
+
+By default, integers are signed, which means the number’s sign is preserved. Therefore, a signed integer can hold both positive and negative numbers (and 0).</p>
+  <h4>Here is the preferred way to define the four types of signed integers:<BR>
+short s;<BR>
+int i;<BR>
+long l;<BR>
+long long ll;</h4>
+
+<h1>sizeof</h1>
+<p>The sizeof keyword refers to an operator that works at compile time to report on the size of the storage occupied by a type of the argument passed to it (equivalently, by a variable of that type). That size is returned as a multiple of the size of a char, which on many personal computers is 1 byte (or 8 bits). The number of bits in a char is stored in the CHAR_BIT constant defined in the <climits> header file. This is one of the operators for which operator overloading is not allowed.</p>
+  <h4>  struct EmployeeRecord {<BR>
+      int ID;<BR>
+      int age;<BR>
+      double salary;<BR>
+      EmployeeRecord* boss;<BR>
+    };<BR>
+ 
+    //...<BR>
+    cout << "sizeof(int): " << sizeof(int) << endl<BR>
+         << "sizeof(float): " << sizeof(float) << endl<BR>
+         << "sizeof(double): " << sizeof(double) << endl<BR>
+         << "sizeof(char): " << sizeof(char) << endl<BR>
+         << "sizeof(EmployeeRecord): " << sizeof(EmployeeRecord) << endl;<BR>
+ 
+    int i;<BR>
+    float f;<BR>
+    double d;<BR>
+    char c;<BR>
+    EmployeeRecord er;<BR>
+ 
+    cout << "sizeof(i): " << sizeof(i) << endl<BR>
+         << "sizeof(f): " << sizeof(f) << endl<BR>
+         << "sizeof(d): " << sizeof(d) << endl<BR>
+         << "sizeof(c): " << sizeof(c) << endl<BR>
+         << "sizeof(er): " << sizeof(er) << endl;</h4><BR>
+
+         <h3> sizeof(int): 4<BR>
+    sizeof(float): 4<BR>
+    sizeof(double): 8<BR>
+    sizeof(char): 1<BR>
+    sizeof(EmployeeRecord): 20<BR>
+    sizeof(i): 4<BR>
+    sizeof(f): 4<BR>
+    sizeof(d): 8<BR>
+    sizeof(c): 1<BR>
+    sizeof(er): 20</h3>
+
+<h1>static</h1>
+<p>
+C++ static
+In C++, static is a keyword or modifier that belongs to the type not instance. So instance is not required to access the static members. In C++, static can be field, method, constructor, class, properties, operator and event.
+Memory efficient: Now we don't need to create instance for accessing the static members, so it saves memory. Moreover, it belongs to the type, so it will not get memory each time when instance is created.</p>
+  <h4>#include <iostream>  <BR>
+using namespace std;  <BR>
+class Account {  <BR>
+   public:  <BR>
+       int accno; //data member (also instance variable) <BR>     
+       string name; //data member(also instance variable)  <BR>
+       static float rateOfInterest;   <BR>
+       Account(int accno, string name)   <BR>
+        {    <BR>
+             this->accno = accno;  <BR>  
+            this->name = name;    <BR>
+        }    <BR>
+       void display() <BR>   
+        {    
+            cout<<accno<< "<<name<< " "<<rateOfInterest<<endl;   <BR>
+        }    <BR>
+};  <BR>
+float Account::rateOfInterest=6.5;  // CPP program to illustrate <BR>
+// declaring static_assert in namespace scope <BR>
+#include <iostream> <BR>
+static_assert(sizeof(void*) == 8,  <BR>
+"DTAMDL(*LLP64) is not allowed for this module."); <BR>
+int main() <BR>
+{ <BR>
+    cout << "Assertion passed.  <BR>
+    The program didn't produce an error"; <BR>
+    return 0; <BR>
+} <BR>
+
+int main(void) {  <BR>
+    Account a1 =Account(201, "Sanjay"); //creating an object of Employee  <BR> 
+    Account a2=Account(202, "Nakul"); //creating an object of Employee  <BR>
+    a1.display();    <BR>
+    a2.display();   <BR> 
+    return 0;  <BR>
+}  </h4>
+
+<h3>Output:<BR>
+201 Sanjay 6.5<BR>
+202 Nakul 6.5</h3>
+
+<h1>static_assert</h1>
+<p>Static assertions are a way to check if a condition is true when the code is compiled. If it isn’t, the compiler is required to issue an error message and stop the compiling process. The condition that needs to be checked is a constant expression.
+
+Performs compile-time assertion checking
+</p>
+  <h4>// CPP program to illustrate  <BR>
+// declaring static_assert in namespace scope  <BR>
+#include <iostream>  <BR>
+static_assert(sizeof(void*) == 8,   <BR>
+"DTAMDL(*LLP64) is not allowed for this module.");  <BR>
+int main()  <BR>
+{  <BR>
+    cout << "Assertion passed.   <BR>
+    The program didn't produce an error";  <BR>
+    return 0;  <BR>
+} </h4>
+
+
+<h3>output <br>
+assertion passed. The program didn't produce an error</h3>
+
+<h1>static_cast</h1>
+<p>Static Cast: This is the simplest type of cast which can be used. It is a compile time cast.It does things like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones).
+For e.g.</p>
+  <h4>#include <iostream> <br>
+using namespace std; <br>
+int main() <br>
+{ <br>
+    float f = 3.5; <br>
+    int a = f; // this is how you do in C <br>
+    int b = static_cast<int>(f); <br>
+    cout << b; <br>
+} </h4>
+
+<h3>output <br>
+3</h3>
+
+<h1>struct</h1>
+<p>We often come around situations where we need to store a group of data whether of similar data types or non-similar data types. We have seen Arrays in C++ which are used to store set of data of similar data types at contiguous memory locations.
+
+Unlike Arrays, Structures in C++ are user defined data types which are used to store group of items of non-similar data types.
+
+What is a structure?
+
+A structure is a user-defined data type in C/C++. A structure creates a data type that can be used to group items of possibly different types into a single type.</p>
+  <h4>
+
+#include <iostream> <br>
+using namespace std; <br>
+  
+struct Point { <br>
+    int x, y; <br>
+}; <br>
+  
+int main() <br>
+{ <br>
+    struct Point p1 = { 0, 1 }; <br>
+  
+    // Accessing members of point p1 <br>
+    p1.x = 20; <br>
+    cout << "x = " << p1.x << ", y = " << p1.y; <br>
+  
+    return 0; <br>
+}</h4>
+  <h3>Output: <br>
+x = 20, y = 1</h3>
+
+<h1>switch</h1>
+<p>A switch statement allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case</p>
+  <h4>#include <iostream><br>
+using namespace std;<br>
+ 
+int main () {<br>
+   // local variable declaration:<br>
+   char grade = 'D';<br>
+
+   switch(grade) {<br>
+      case 'A' :<br>
+         cout << "Excellent!" << endl; <br>
+         break;<br>
+      case 'B' :<br>
+      case 'C' :<br>
+         cout << "Well done" << endl;<br>
+         break;<br>
+      case 'D' :
+         cout << "You passed" << endl;<br>
+         break;<br>
+      case 'F' :<br>
+         cout << "Better try again" << endl;<br>
+         break;<br>
+      default :<br>
+         cout << "Invalid grade" << endl;<br>
+   }<br>
+   cout << "Your grade is " << grade << endl;<br>
+ 
+   return 0;<br>
+}</h4>
+<h3>You passed<br>
+Your grade is D</h3>
+
+
+<h1>synchronized</h1>
+<p>The synchronize C++ attribute implements support for synchronizing the target method of an object. Synchronization allows multiple objects to use a common resource (such as a method of a class) by controlling the access of the target method.
+
+The code inserted by this attribute calls the proper Lock method (determined by the threading model) at the beginning of the target method. When the method is exited, Unlock is automatically called. For more information on these functions, see CComAutoThreadModule::Lock
+
+This attribute requires that the coclass, progid, or vi_progid attribute (or another attribute that implies one of these) also be applied to the same element. If any single attribute is used, the other two are automatically applied. For example, if progid is applied, vi_progid and coclass are also applied.</p>
+  <h4>// cpp_attr_ref_synchronize.cpp<br>
+// compile with: /LD<br>
+#define _ATL_ATTRIBUTES<br>
+#include "atlbase.h"<br>
+#include "atlcom.h"<br>
+
+[module(name="SYNC")];<br>
+
+[coclass,<br>
+threading(both),<br>
+vi_progid("MyProject.MyClass"),<br>
+progid("MyProject.MyClass.1"),<br>
+uuid("7a7baa0d-59b8-4576-b754-79d07e1d1cc3")<br>
+]<br>
+class CMyClass {<br>
+   float m_nBalance;<br>
+
+   [synchronize]<br>
+   void UpdateBalance(float nAdjust) {<br>
+      m_nBalance += nAdjust;<br>
+   }<br>
+};</h4>
+
+<h1>template</h1>
+<p>A template is a simple and yet very powerful tool in C++. The simple idea is to pass data type as a parameter so that we don’t need to write the same code for different data types. For example, a software company may need sort() for different data types. Rather than writing and maintaining the multiple codes, we can write one sort() and pass data type as a parameter.
+
+C++ adds two new keywords to support templates: ‘template’ and ‘typename’. The second keyword can always be replaced by keyword ‘class’.
+
+How templates work?
+Templates are expanded at compiler time. This is like macros. The difference is, compiler does type checking before template expansion. The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of same function/class.</p>
+  <h4>#include <iostream> <br>
+using namespace std; <br>
+  
+// One function works for all data types.  This would work <br>
+// even for user defined types if operator '>' is overloaded <br>
+template <typename T> <br>
+T myMax(T x, T y) <br>
+{ <br>
+   return (x > y)? x: y; <br>
+} <br>
+  
+int main() <br>
+{ <br>
+  cout << myMax<int>(3, 7) << endl;  // Call myMax for int <br>
+  cout << myMax<double>(3.0, 7.0) << endl; // call myMax for double <br>
+  cout << myMax<char>('g', 'e') << endl;   // call myMax for char <br>
+  
+  return 0; <br>
+}</h4>
+
+<h3>output <br>
+7<br>
+g</h3>
+
+<h1>this</h1>
+<p>To understand ‘this’ pointer, it is important to know how objects look at functions and data members of a class.
+
+Each object gets its own copy of the data member.
+All-access the same function definition as present in the code segment.
+Meaning each object gets its own copy of data members and all objects share a single copy of member functions.
+Then now question is that if only one copy of each member function exists and is used by multiple objects, how are the proper data members are accessed and updated?
+The compiler supplies an implicit pointer along with the names of the functions as ‘this’.
+The ‘this’ pointer is passed as a hidden argument to all nonstatic member function calls and is available as a local variable within the body of all nonstatic functions. ‘this’ pointer is not available in static member functions as static member functions can be called without any object (with class name).
+For a class X, the type of this pointer is ‘X* ‘. Also, if a member function of X is declared as const, then the type of this pointer is ‘const X *’ (see this GFact)
+
+In the early version of C++ would let ‘this’ pointer to be changed; by doing so a programmer could change which object a method was working on. This feature was eventually removed, and now this in C++ is an r-value.
+C++ lets object destroy themselves by calling the following code :
+
+delete this; 
+As Stroustrup said ‘this’ could be the reference than the pointer, but the reference was not present in the early version of C++. If ‘this’ is implemented as a reference then, the above problem could be avoided and it could be safer than the pointer.
+
+Following are the situations where ‘this’ pointer is used:</p>
+  <h4>#include<iostream> <br>
+using namespace std; <br>
+  
+/* local variable is same as a member's name */<br>
+class Test <br>
+{ <br>
+private: <br>
+   int x; <br>
+public: <br>
+   void setX (int x) <br>
+   { <br>
+       // The 'this' pointer is used to retrieve the object's x <br>
+       // hidden by the local variable 'x' <br>
+       this->x = x; <br>
+   } <br>
+   void print() { cout << "x = " << x << endl; } <br>
+}; <br>
+  
+int main() <br>
+{ <br>
+   Test obj; <br>
+   int x = 20; <br>
+   obj.setX(x); <br>
+   obj.print(); <br>
+   return 0; <br>
+} </h4>
+
+<h3>output <br>
+x=20 </h3>
+
+<h1>thread_local</h1>
+<p>Thread-local storage can be created using the thread_local keyword. A variable declared with the thread_local specifier is said to have thread storage duration.
+
+Each thread in a program has its own copy of each thread-local variable.
+A thread-local variable with function (local) scope will be initialized the first time control passes through its definition. Such a variable is implicitly static, unless declared extern.
+A thread-local variable with namespace or class (non-local) scope will be initialized as part of thread startup.
+Thread-local variables are destroyed upon thread termination.
+A member of a class can only be thread-local if it is static. There will therefore be one copy of that variable per thread, rather than one copy per (thread, instance) pair.</p>
+  <h4>void debug_counter() {<br>
+    thread_local int count = 0;<br>
+    Logger::log("This function has been called %d times by this thread", ++count);
+}</h4>
+
+
+<h1>throw</h1>
+<p>Exceptions provide a way to react to exceptional circumstances (like runtime errors) in programs by transferring control to special functions called handlers.
+
+To catch exceptions, a portion of code is placed under exception inspection. This is done by enclosing that portion of code in a try-block. When an exceptional circumstance arises within that block, an exception is thrown that transfers the control to the exception handler. If no exception is thrown, the code continues normally and all handlers are ignored.
+
+An exception is thrown by using the throw keyword from inside the try block. Exception handlers are declared with the keyword catch, which must be placed immediately after the try block:</p>
+  <h4>// exceptions<br>
+#include <iostream><br>
+using namespace std;<br>
+
+int main () {<br>
+  try<br>
+  {<br>
+    throw 20;<br>
+  }<br>
+  catch (int e)<br>
+  {<br>
+    cout << "An exception occurred. Exception Nr. " << e << '\n';<br>
+  }<br>
+  return 0;<br>
+}</h4>
+
+<h3>output <br>
+throw  20;</h3>
+
+
+<h1>typedef</h1>
+<p>The typedef keyword allows the programmer to create new names for types such as int or, more commonly in C++, templated types--it literally stands for "type definition". Typedefs can be used both to provide more clarity to your code and to make it easier to make changes to the underlying data types that you use.</p>
+  <h4>// C program to demonstrate typedef  <br>
+#include <stdio.h>  <br>
+  
+// After this line BYTE can be used  <br>
+// in place of unsigned char  <br>
+typedef unsigned char BYTE;  <br>
+  
+int main()  <br>
+{  <br>
+    BYTE b1, b2;  <br>
+    b1 = 'c';  <br>
+    printf("%c ", b1);  <br>
+    return 0;  <br>
+} </h4>
+
+<h1>typeid</h1>
+<p>typeid is an operator in C++.
+
+It is used where the dynamic type or runtime type information of an object is needed.
+It is included in the <typeinfo> library. Hence inorder to use typeid, this library should be included in the program.
+The typeid expression is an lvalue expression.
+Parameters: typeid operator accepts a parameter, based on the syntax used in the program:
+
+type: This parameter is passed when the runtime type information of a variable or an object is needed. In this, there is no evaluation that needs to be done inside type and simply the type information is to be known.
+expression: This parameter is passed when the runtime type information of an expression is needed. In this, the expression is first evaluated. Then the type information of the final result is then provided.</p>
+  <h4>// C++ program to show the use of typeid operator 
+  
+#include <iostream> <br>
+#include <typeinfo> <br>
+using namespace std; <br>
+  
+int main() <br>
+{ <br>
+    int i, j; <br>
+    char c; <br>
+  
+    // Get the type info using typeid operator <br>
+    const type_info& ti1 = typeid(i); <br>
+    const type_info& ti2 = typeid(j); <br>
+    const type_info& ti3 = typeid(c); <br>
+  
+    // Check if both types are same <br>
+    if (ti1 == ti2) <br>
+        cout << "i and j are of"<br>
+             << " simiar type" << endl; <br>
+    else<br>
+        cout << "i and j are of"<br>
+             << " different type" << endl; <br>
+  
+    // Check if both types are same <br>
+    if (ti2 == ti3) <br>
+        cout << "j and c are of"<br>
+             << " simiar type" << endl; <br>
+    else<br>
+        cout << "j and c are of"<br>
+             << " different type" << endl; <br>
+  
+    return 0; <br>
+} </h4>
+<h3>output <br>
+i and j are of simiar type<br>
+j and c are of different type</h3>
+
+<h1>typename</h1>
+<p>In template definitions, provides a hint to the compiler that an unknown identifier is a type. In template parameter lists, is used to specify a type parameter.This keyword must be used if a name in a template definition is a qualified name that is dependent on a template argument; it is optional if the qualified name is not dependent. For more information, see Templates and Name</p>
+  <h4>// typename.cpp<br>
+template<class T> class X<br>
+{<br>
+   typename T::Y m_y;   // treat Y as a type<br>
+};<br>
+
+int main()<br>
+{<br>
+}<br></h4>
+
+<h1>union</h1>
+<p>A union is a special class type that can hold only one of its non-static data members at a time.
+
+The class specifier for a union declaration is similar to class or struct declaration:
+A union can have member functions (including constructors and destructors), but not virtual functions.
+
+A union cannot have base classes and cannot be used as a base class.
+
+A union cannot have non-static data members of reference types.</p>
+  <h4>#include <iostream><br>
+ 
+// S has one non-static data member (tag), three enumerator members (CHAR, INT, DOUBLE), <br>
+// and three variant members (c, i, d)<br>
+struct S<br>
+{<br>
+    enum{CHAR, INT, DOUBLE} tag;<br>
+    union<br>
+    {<br>
+        char c;<br>
+        int i;<br>
+        double d;<br>
+    };<br>
+};<br>
+ 
+void print_s(const S& s)<br>
+{<br>
+    switch(s.tag)<br>
+    {<br>
+        case S::CHAR: std::cout << s.c << '\n'; break;<br>
+        case S::INT: std::cout << s.i << '\n'; break;<br>
+        case S::DOUBLE: std::cout << s.d << '\n'; break;<br>
+    }<br>
+}<br>
+ 
+int main()<br>
+{<br>
+    S s = {S::CHAR, 'a'};<br>
+    print_s(s);<br>
+    s.tag = S::INT;<br>
+    s.i = 123;<br>
+    print_s(s);<br>
+}</h4>
+
+<h1>unsigned</h1>
+<p>A 1-byte unsigned integer has a range of 0 to 255. Compare this to the 1-byte signed integer range of -128 to 127. Both can store 256 different values, but signed integers use half of their range for negative numbers, whereas unsigned integers can store positive numbers that are twice as large.
+
+Here’s a table showing the range for unsigned integers:
+
+Size/Type	Range
+1 byte unsigned	0 to 255
+2 byte unsigned	0 to 65,535
+4 byte unsigned	0 to 4,294,967,295
+8 byte unsigned	0 to 18,446,744,073,709,551,615
+</p>
+  <h4>#include <iostream><br>
+ 
+int main()<br>
+{<br>
+    unsigned short x{ 65535 }; // largest 16-bit unsigned value possible<br>
+    std::cout << "x was: " << x << '\n';<br>
+ 
+    x = 65536; // 65536 is out of our range, so we get wrap-around<br>
+    std::cout << "x is now: " << x << '\n';<br>
+ 
+    x = 65537; // 65537 is out of our range, so we get wrap-around<br>
+    std::cout << "x is now: " << x << '\n';<br>
+ 
+    return 0;<br>
+}</h4>
+
+<h3>output <br>
+x was: 65535<br>
+x is now: 0<br>
+x is now: 1</h3>
+
+
+<h1>using</h1>
+<p>Bring a specific member from the namespace into the current scope.
+Bring all members from the namespace into​ the current scope.
+Bring a base class method ​or variable into the current class’s scope.</p>
+  <h4>#include <iostream><br>
+
+int main() {<br>
+  using std::string;<br>
+  using std::cout;<br>
+  string s = "Hello World";<br>
+  cout << s;<br>
+  return 0;<br>
+}</h4>
+
+<h1>virtual</h1>
+<p>A virtual function is a member function which is declared within a base class and is re-defined(Overriden) by a derived class. When you refer to a derived class object using a pointer or a reference to the base class, you can call a virtual function for that object and execute the derived class’s version of the function.
+
+Virtual functions ensure that the correct function is called for an object, regardless of the type of reference (or pointer) used for function call.
+They are mainly used to achieve Runtime polymorphism
+Functions are declared with a virtual keyword in base class.
+The resolving of function call is done at Run-time.
+Rules for Virtual Functions
+
+Virtual functions cannot be static and also cannot be a friend function of another class.
+Virtual functions should be accessed using pointer or reference of base class type to achieve run time polymorphism.
+The prototype of virtual functions should be same in base as well as derived class.
+They are always defined in base class and overridden in derived class. It is not mandatory for derived class to override (or re-define the virtual function), in that case base class version of function is used.
+A class may have virtual destructor but it cannot have a virtual constructor.</p>
+  <h4>// CPP program to illustrate 
+// concept of Virtual Functions 
+  
+#include <iostream> <br>
+using namespace std; <br>
+  
+class base { <br>
+public: <br>
+    virtual void print() <br>
+    { <br>
+        cout << "print base class" << endl;<br> 
+    } <br>
+  
+    void show() <br>
+    { <br>
+        cout << "show base class" << endl; <br>
+    } <br>
+}; <br>
+  
+class derived : public base { <br>
+public: <br>
+    void print() <br>
+    { <br>
+        cout << "print derived class" << endl; <br>
+    } <br>
+  
+    void show() <br>
+    { <br>
+        cout << "show derived class" << endl; <br>
+    } <br>
+}; <br>
+  
+int main() <br>
+{ <br>
+    base* bptr; <br>
+    derived d; <br>
+    bptr = &d; 
+  
+    // virtual function, binded at runtime <br>
+    bptr->print(); <br>
+  
+    // Non-virtual function, binded at compile time <br>
+    bptr->show(); <br>
+} </h4>
+
+<h1>void</h1>
+<p>Void functions are “void” due to the fact that they are not supposed to return values. True, but not completely. We cannot return values but there is something we can surely return from void functions. Some of cases are listed below.
+A void function can do return
+We can simply write return statement in a void fun(). In-fact it is considered a good practice (for readability of code) to write return; statement to indicate end of function</p>
+ 
+<h4>#include <iostream> <br>
+using namespace std; <br>
+  
+void fun() <br>
+{ <br>
+   cout << "Hello"; <br>
+  
+   // We can write return in void <br>
+   return;  <br>
+} <br>
+  
+int main() <br>
+{ <br>
+   fun(); <br>
+   return 0; <br>
+} </h4>
+
+<h3>output <br>
+hello; </h3>
+
+
+
+<h1>volatile</h1>
+<p>A type qualifier; when applied to a type, produces the volatile-qualified version of the type. Volatile qualification plays the same role as const qualification in the type system, but volatile does not prevent objects from being modified; instead, it forces the compiler to treat all accesses to such objects as side effects.
+
+In the example below, if memory_mapped_port were not volatile, the compiler could optimize the function so that it performs only the final write, which would be incorrect if sizeof(int) is greater than 1. The volatile qualification forces it to treat all sizeof(int) writes as different side effects and hence perform all of them (in order).</p>
+
+
+
+<h1>wchar_t</h1>
+<p>An integer type large enough to represent all characters of the largest supported extended character set, also known as the wide-character set. (It is not portable to make the assumption that wchar_t uses any particular encoding, such as UTF-16.)
+
+It is normally used when you need to store characters over ASCII 255 , as it has a greater size than the character type char.</p>
+  <h4>char     ch1{ 'a' };  // or { u8'a' }<br>
+wchar_t  ch2{ L'a' };<br>
+char16_t ch3{ u'a' };<br>
+char32_t ch4{ U'a' };<br>
+
+ypedef basic_string<char> string;<br>
+typedef basic_string<char16_t> u16string;<br>
+typedef basic_string<char32_t> u32string;</h4>
+
+<h4>while</h4>
+<p>Unlike for and while loops, which test the loop condition at the top of the loop, the do...while loop checks its condition at the bottom of the loop.
+
+A do...while loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.</p>
+  <h4>#include <iostream><br>
+using namespace std;<br>
+ 
+int main () {<br>
+   // Local variable declaration:<br>
+   int a = 10;<br>
+
+   // do loop execution<br>
+   do {<br>
+      cout << "value of a: " << a << endl;<br>
+      a = a + 1;<br>
+   } while( a < 20 );<br>
+ 
+   return 0;<br>
+}</h4>
+
+<h3>output <br>
+value of a: 10 <br>
+value of a: 11 <br>
+value of a: 12 <br>
+value of a: 13 <br>
+value of a: 14 <br>
+value of a: 15 <br>
+value of a: 16 <br>
+value of a: 17 <br>
+value of a: 18 <br>
+value of a: 19</h3>
+
+<h1>xor</h1>
+<p>The & (bitwise AND) in C or C++ takes two numbers as operands and does AND on every bit of two numbers. The result of AND is 1 only if both bits are 1.
+The | (bitwise OR) in C or C++ takes two numbers as operands and does OR on every bit of two numbers. The result of OR is 1 if any of the two bits is 1.
+The ^ (bitwise XOR) in C or C++ takes two numbers as operands and does XOR on every bit of two numbers. The result of XOR is 1 if the two bits are different.
+The << (left shift) in C or C++ takes two numbers, left shifts the bits of the first operand, the second operand decides the number of places to shift.
+The >> (right shift) in C or C++ takes two numbers, right shifts the bits of the first operand, the second operand decides the number of places to shift.
+The ~ (bitwise NOT) in C or C++ takes one number and inverts all bits of it</p>
+  <h4>// C Program to demonstrate use of bitwise operators  <br>
+#include <stdio.h>  <br>
+int main()  <br>
+{  <br>
+    // a = 5(00000101), b = 9(00001001)  <br>
+    unsigned char a = 5, b = 9;  <br>
+  
+    // The result is 00000001  <br>
+    printf("a = %d, b = %d\n", a, b);  <br>
+    printf("a&b = %d\n", a & b);  <br>
+  
+    // The result is 00001101  <br>
+    printf("a|b = %d\n", a | b);  <br>
+  
+    // The result is 00001100  <br>
+    printf("a^b = %d\n", a ^ b);  <br>
+  
+    // The result is 11111010  <br>
+    printf("~a = %d\n", a = ~a);  <br>
+  
+    // The result is 00010010  <br>
+    printf("b<<1 = %d\n", b << 1);  <br>
+  
+    // The result is 00000100  <br>
+    printf("b>>1 = %d\n", b >> 1);  <br>
+  
+    return 0;  <br>
+} </h4>
+
+<h3>output <br>
+a = 5, b = 9<br>
+a&b = 1<br>
+a|b = 13<br>
+a^b = 12<br>
+~a = 250<br>
+b<<1 = 18<br>
+b>>1 = 4</h3>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  </body>
+	  </html>

@@ -1,0 +1,98 @@
+<plaintext>
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+      body {
+    background-color: #f9563a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+#main {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.container {
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 500px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #0a3d53;
+}
+
+#title {
+    font-size: 3rem;
+    margin-bottom: 0;
+
+}
+
+#counter {
+    font-size: 2rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: #f08782;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    margin: 1rem;
+    cursor: pointer;
+}
+button:hover{
+  background-color: #db579a;
+  color: white;
+}
+h2{
+  color: white;
+}
+h3{
+  color: white;
+}
+
+    </style>
+</head>
+
+<body>
+ 
+<section id="main">
+        <div class="container">
+            <h2 id="title">
+Counter</h2>
+<h3 id="counter">
+0</h3>
+<div class="btn-container">
+                <button id="add" onclick="add()">Add Count</button>
+                <button id="lower" onclick="lower()">Lower Count</button>
+            </div>
+</div>
+</section>
+
+<script>
+
+      var count = 0;
+
+function add() {
+    count += 1;
+    document.getElementById('counter').innerHTML = count;
+}
+
+function lower() {
+    count -= 1;
+    document.getElementById('counter').innerHTML = count;
+}
+    
+</script>
+	</body>
+	</html>

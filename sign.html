@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+	<html>
+	<head><title>ERROR CODE SIGNING CREDENTIALS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+       <style>
+   #signpage {
+   	width: 50%;
+   	background-color: cyan;
+   	text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 20px;
+   
+   }
+
+   .sg {
+   	width: 300px;
+    font-size: 20px;
+   	height: 50px;
+   	background-color: lightblue;
+   	text-align: center;
+   	transition: all .2s ease-in-out; 
+
+   }
+
+   label,legend{
+   	font-family: comic sans ms;
+    font-size: 25px;
+   }
+
+   .subb{
+   	margin-left: 80%;
+   	font-size: 20px;
+   	font-family: comic sans ms;
+   }
+
+
+.sg:hover,.subb:hover,#close:hover {
+	background-color: gold;
+	transform: scale(1.2 ); 
+}
+
+#close1 {
+   margin-left: 93%;
+   font-size: 25px;
+}
+
+.error {
+	color: red;
+	font-family: comic sans ms;
+}
+
+@media screen and (max-width:640px){
+
+#signpage {
+    width: 100%;
+    background: silver;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  
+}
+
+.sg {
+    width: 100%;
+    font-size: 15px;
+    background-color: lightblue;
+    text-align: center;
+   }
+ 
+ label,legend {
+  font-size: 25px;
+ }
+
+ #close1 {
+   margin-left: 90%;
+   font-size: 20px;
+}
+
+.subb{
+    margin-left: 75%;
+    font-size: 15px;
+}
+
+
+</style>
+
+	</head>
+
+  <body>
+
+  <div id="signpage">
+    <button onclick="close1()" id="close1">X</button>
+    <form name="signit" onsubmit = "return checkme()">
+    			<legend>ERROR CODE SIGN IN CREDENTIALS</legend><br><br>
+
+    			<label for="FIRSTNAME">FIRST<span style="color:blue">NAME</span></label><br>
+		<input type="text" name="firstnm" id="fname" class="sg" placeholder="ENTER FIRSTNAME">
+         <BR><BR>
+
+         <label for="LASTNAME">LAST<span style="color:blue">NAME</span></label><br>
+		<input type="text" name="lastnm" id="Lname" class="sg" placeholder="ENTER LASTNAME">
+         <BR><BR>
+
+         <label for="EMAIL">EM<span style="color:blue">AIL</span></label><br>
+		<input type="text" name="eemail" id="eem" class="sg" placeholder="ENTER VALID EMAIL">
+         <BR><BR>
+
+         <label for="PASSWORD">PASS<span style="color:blue">WORD</span></label><br>
+		<input type="text" name="pwd" id="pas" class="sg" placeholder="ENTER PASSWORD">
+         <BR><BR>
+
+         <label for="CONFIRM">CON<span style="color:blue">FIRM</span></label><br>
+		<input type="text" name="confm" id="conf" class="sg" placeholder="CONFIRM PASSWORD">
+	         <BR><BR>
+
+         <input type="submit" class="subb" value="SUBMIT">
+ </form> 
+
+ <script> 
+
+       function close1(){
+            document.getElementById("signpage").style.display ="none";
+           }
+
+ 
+      function checkme(){
+
+        var fn = document.signit.firstnm.value;
+        if(fn ==""){
+        alert  ("firstname empty");
+        return false;
+       }
+
+        var ln = document.signit.lastnm.value;
+         if(ln == ""){
+        alert  ("lastname empty");
+         return false;
+       }
+
+        var em = document.signit.eemail.value;     
+         if(em == ""){
+        alert  ("enter valid email");
+       return false;
+       }
+
+        var pps = document.signit.pwd.value;
+         if(pps == ""){
+        alert  ("password empty");
+         return false;
+       }
+
+        var confirm = document.signit.confm.value;
+        if(pps !== confirm){
+        alert ("deos not match");
+       return false;
+       }
+
+
+    }
+
+
+
+
+
+
+
+        	
+        </script>
+
+  
+</body>
+
+</html>
+
+

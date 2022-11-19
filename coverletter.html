@@ -1,0 +1,82 @@
+<plaintext>
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+ <style>
+    
+    body {
+    background-color: #41529c;
+    color: white;
+}
+  </style>
+
+</head>
+
+<body>
+
+
+ <h1 class="text-center">
+Cover Letter Generator</h1>
+<!-- All of the Node.js APIs are available in this renderer process. -->
+<div class="d-flex justify-content-center">
+  <div class="bg-danger p-4">
+    <form id="info" class="form-group">
+      Company Name:<br>
+      <input type="text" id="cname" class="form-control">
+      <br> Job Position:
+      <input type="text" id="jname" class="form-control">
+      <br> Skills:
+      <input type="text" id="skills" placeholder="familiar with ..." class="form-control">
+      <br>
+      <br>
+      <button onclick="generateCL()" type="button" class="btn-sm btn-success">Generate CL</button>
+      <button type="button" id="copybtn" data-clipboard-target="#result" class="btn-sm btn-warning">Copy Text</button>
+    </form>
+</div>
+</div>
+<div class="d-flex justify-content-center">
+    <div class="col-8  ">
+      <p id="result" class="bg-warning p-2 text-dark">
+</p>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function generateCL() {
+
+    function coverLetter(companyName, position, familiar) {
+        ftext = "YOUR NAME HERE " + "<br />" + " ADDRESS LINE 1 " + "<br />" + " ADDRESS LINE 2 " + "<br />" +
+            " " + "<br />" + companyName + "<br />" + " To whom it may concern," + "<br />" +
+            "Thank you for the opportunity to apply to the " + position +
+            " role at your company. After reviewing your job description, it’s clear that you’re looking for a candidate that is extremely familiar with " +
+            familiar +
+            ". Given these requirements, I am certain that I have the necessary skills to successfully do the job adeptly and perform above expectations. " +
+            "<br />" + "<br />" +
+            " I am a hard-working student currently attending YOUR SCHOOL. During my academic career, I also managed to further develop my professional skills by INSERT STUFF HERE..., which I hope to leverage into the " +
+            position + " role at " + companyName + ". " + "<br />" + "<br />" +
+            " After reviewing my resume, I hope you will agree that I am the greatest. I look forward to elaborating on how my greatness will benefit your organization. Please contact me at my PHONE NUMBER or via email at EMAIL HERE to arrange a convenient meeting time. " +
+            "<br />" + "<br />" + "Thank you for your consideration, and I look forward to hearing from you soon." + "<br />" +
+            "Sincerely," + "<br />" + "YOUR NAME";
+        return ftext;
+    };
+
+    var cname = document.getElementById("cname").value;
+    var jname = document.getElementById("jname").value;
+    var skills = document.getElementById("skills").value;
+
+    var text = coverLetter(cname, jname, skills);
+
+    document.getElementById("result").innerHTML = text;
+}
+
+var copy = document.getElementById("copybtn");
+var clipboard = new ClipboardJS(copy);
+
+
+</script>
+	</body>
+	</html>

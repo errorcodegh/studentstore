@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head><title>THE TEST PAGE</title>
+
+<style>
+
+	li {
+		list-style: none;
+	}
+
+	ul a {
+		text-decoration: none;
+	}
+
+	a:hover{
+		background: silver;
+	}
+
+	#codelanguage {
+		position: absolute;
+		left: 0px;
+		top: 150px;
+		width: 20%;
+		height: auto;
+	    background: cyan;
+	    display: none;
+	   
+	}
+
+	#closeus {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+	}
+
+	#foneview {
+		position: absolute;
+		top: 300px;
+		left: 0px;
+		font-size: 30px;
+	}
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+	
+<div id="biglang">
+	<button onclick="phoneview()" id="foneview">clickme</button>
+   <div id="codelanguage">
+   <ul>
+   	<button onclick="closeus()" id="closeus">X</button>
+   	<li><a href="#" id="langsmall" class="langs">HTML</a></li>
+   	<li><a href="#" id="langsmall" class="langs">CSS</a></li>
+   	<li><a href="#" id="langsmall" class="langs">JAVASCRIPT</a></li>
+   	<li><a href="#" id="langsmall" class="langs">PHP</a></li>
+   	<li><a href="#" id="langsmall" class="langs">C++</a></li>
+   	<li><a href="#" id="langsmall" class="langs">PYTHON</a></li>
+   	<li><a href="#" id="langsmall" class="langs">NETWORKING</a></li>
+   	<li><a href="#" id="langsmall" class="langs">DATABASE</a></li>
+   </ul>
+</div>
+
+</div>
+
+
+
+
+
+   <script>
+      function phoneview() {
+         document.getElementById("codelanguage").style.display = "block";
+      }
+
+       function closeus(){
+         document.getElementById("codelanguage").style.display = "none";
+     }
+
+</script>
+
+</body>
+		</html>

@@ -1,0 +1,50 @@
+<plaintext>
+<!DOCTYPE html>
+<html>
+<body>
+
+<div style="text-align:center">
+<button onclick="playPause()">Play/Pause</button>
+<button onclick="makeBig()">SD</button>
+<button onclick="makeSmall()">HD</button>
+<button onclick="makeNormal()">FHD</button>
+<button onclick="makeNormal1()">UHD</button>
+<br><br>
+<video id="video1" width="360">
+<source src="vidme.mp4" type="video/mp4">
+<source src="mov_bbb.ogg" type="video/ogg">
+Your browser does not support HTML5 video.
+</video>
+</div>
+
+<script>
+var myVideo = document.getElementById("video1");
+function playPause() {
+if (myVideo.paused)
+myVideo.play();
+else
+myVideo.pause();
+}
+
+function makeBig() {
+myVideo.width = 480;
+}
+
+function makeSmall() {
+myVideo.width = 720;
+}
+
+function makeNormal() {
+myVideo.width = 1080;
+}
+
+function makeNormal1() {
+myVideo.width = 2160;
+}
+</script>
+<h1>NOTE.....THIS PROGRAM ONLY GIVE SCREEN SIZES FOR VIEWERS.</h1>
+</body>
+</html>
+
+
+

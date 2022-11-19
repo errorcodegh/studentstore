@@ -1,0 +1,84 @@
+<plaintext>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stop watch Using JavaScript</title>
+<script language="JavaScript">
+var ms = 0;
+var state = 0;
+
+function startstop()
+{
+if (state == 0)
+{
+state = 1;
+then = new Date();
+then.setTime(then.getTime() - ms);
+}
+else
+{
+state = 0;
+now = new Date();
+ms = now.getTime() - then.getTime();
+document.stpw.time.value = ms;
+}
+}
+
+function swreset()
+{
+state = 0;
+ms = 0;
+document.stpw.time.value = ms;
+}
+
+function display()
+{
+setTimeout("display();", 10);
+if (state == 1)
+{
+now = new Date();
+ms = now.getTime() - then.getTime();
+document.stpw.time.value = ms;
+}
+}
+</script>
+<style>
+body{
+padding:10%;
+background-color: #ddd;
+}
+.show{
+    background-color: #020202f5;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+}
+
+.button{
+    background-color: #ec1717;
+    border: none;
+    color: white;
+    margin-left:125px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+</style>
+<title>Stopwatch Clock in Javascript</title>
+</head>
+
+<body onLoad="display()">
+<form name="stpw">
+<font size="40px">Time: </font>
+<input type="text" Name="time" class="show"><br/><br/>
+<input class="button" type="button" name="ssbutton" value="Start / Stop" onClick="startstop()" class="show">
+<input class="button" type="button" name="reset" value="Reset" onClick="swreset()">
+</form>
+</body>
+</html>

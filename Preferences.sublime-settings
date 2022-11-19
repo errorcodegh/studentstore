@@ -1,0 +1,8 @@
+{
+	"cmd":
+	[
+		"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+		"$file"
+	],
+	"font_size": 19
+}

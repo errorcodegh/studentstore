@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html>
+<head><title>THE EXCELL FORMULAR</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+	table{
+		width: 100%;
+		border-collapse: collapse;
+		background: silver;
+	}
+
+	td, th {
+		padding: 10px;
+		border: 1px solid blue;
+		text-align: center;
+	}
+  
+  h1,th {
+  	text-align: center;
+  	text-shadow: 2px 2px 2px gold;
+  }
+
+  @media screen and (max-width: 320px){
+  	table {
+  		width: 100%;
+  		margin-right: 0px;
+  		font-weight: bold;
+  	}
+  }
+
+ 
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+<h1>EXCELL COUNTS FORMULARS</h1>
+		<tr>
+			<td>Count cells between dates</td>
+			<td>=COUNTIFS(dates,">="&DATE(E5,1,1),dates,"<="&DATE(E5,12,31))</td>
+            <td>To count the number of cells that contain dates between two dates, you can use the COUNTIFS function. </td>
+		</tr>
+
+		<tr>
+			<td>Count cells between two numbers</td>
+			<td>=COUNTIFS(range,">=X",range,"<=Y")</td>
+            <td>To count the number of cells that contain values between two numbers in a range of cells, you can use the COUNTIFS function. In the generic form of the formula (above), range represents a range of cells that contain numbers, X represents the lower boundary, and Y represents the upper boundary of the numbers you want to count.</td>
+		</tr>
+
+		<tr>
+			<td>Count cells equal to</td>
+			<td>=COUNTIF(range,value)</td>
+            <td>The COUNTIF function is fully automatic — it counts the number of cells in a range that match the supplied criteria.<BR>
+            	Note: when text values are supplied directly as criteria, they need to be enclosed double quotes (""). If you have a criteria in another cell, you can supply the cell address as criteria without quotes, 
+            </td>
+		</tr>
+
+		<tr>
+			<td>Count cells equal to case sensitive</td>
+			<td>=SUMPRODUCT((--EXACT(value,range)))</td>
+			<td>To count cells that contain specific text, taking into account upper and lower case, you can use a formula based on the EXACT function together with the SUMPRODUCT function. </td>
+		</tr>
+
+		<tr>
+			<td>Count cells equal to either x or y</td>
+			<td>=COUNTIF(rng,value1) + COUNTIF(rng,value2)</td>
+			<td>To count the number of cells equal to either one value OR another, you use formula that uses the COUNTIF function twice. </td>
+		</tr>
+
+		<tr>
+			<td>Count cells equal to one of many things</td>
+			<td>=SUMPRODUCT(COUNTIF(rng,things))</td>
+			<td>To count the number of cells equal to one of many values, you can use the COUNTIF function inside of the SUMPRODUCT function. In the generic form of the formula (above) rng represents a range of cells, and things represents the values to count.Note: COUNTIF is not case-sensitive.Note: COUNTIF is not case-sensitive.</td>
+		</tr>
+
+		<tr>
+			<td>Count cells greater than</td>
+			<td>=COUNTIF(rng,">X")</td>
+			<td>To count the number of cells that have values greater than a particular number, you can use the COUNTIF function. In the generic form of the formula, rng represents a range of cells that contain numbers, and X represents the threshold above which you want to count.</td>
+		</tr>
+
+		<tr>
+			<td>Count cells less than</td>
+			<td>=COUNTIF(rng,"<X")</td>
+			<td>To count the number of cells that contain values less than a particular number, you can use the COUNTIF function. In the generic form of the formula (above) rng represents a range of cells that contain numbers, and X represents the threshold below which you want to count</td>
+		</tr>
+
+		<tr>
+			<td>Count cells not equal to</td>
+			<td>=COUNTIF(rng,"<>X")</td>
+			<td>To count the number of cells that contain values not equal to a particular value, you can use the COUNTIF function. In the generic form of the formula (above) rng represents a range of cells, and X represents the value you don't want to count. All other values will be counted./td>
+		</tr>
+
+		<tr>
+			<td>Count cells over 100 characters</td>
+			<td>=SUMPRODUCT(N(LEN(range)>100))</td>
+			<td>To count cells that contain more than a certain number of characters, you can use a formula based on the SUMPRODUCT, LEN, and N functions.</td>
+		</tr>
+
+		<tr>
+			<td>Count cells that are blank</td>
+			<td> =COUNTBLANK(range)</td>
+			<td>The COUNTBLANK function counts the number of cells in the range that don't contain any value and returns this number as the result. Cells that contain text, numbers, dates, errors, etc. are not counted. COUNTBLANK is fully automatic. Just pass in a range, and COUNTBLANK will return a result.</td>
+		</tr>
+
+		<tr>
+			<td>Count cells that contain errors</td>
+			<td>=SUMPRODUCT(--ISERROR(range))</td>
+			<td>SUMPRODUCT accepts one or more arrays, multiplies the arrays together, and returns the "sum of products" as a final result. If only one array is supplied, SUMPRODUCT simply returns the sum of items in the array.</td>
+		</tr>
+
+		<tr>
+			<td>Count cells that contain negative numbers</td>
+			<td>=COUNTIF(rng,"<0")</td>
+			<td>COUNTIF counts the number of cells in a range that match the supplied criteria. In this case, the criteria is supplied as "<0", which is evaluated as "values less than zero". The total count of all cells in the range that meet this criteria is returned by the function.</td>
+		</tr>
+
+		<tr>
+			<td>Count dates by day of week</td>
+			<td>=SUMPRODUCT(--(WEEKDAY(dates)=day_num))</td>
+			<td>You might wonder why we aren't using COUNTIF or COUNTIFs? These functions seem like the obvious solution. However, without adding a helper column that contains a weekday value, there is no way to create a criteria for COUNTIF to count weekdays in a range of dates.
+
+Instead, we use the versatile SUMPRODUCT function, which handles arrays gracefully without the need to use Control + Shift + Enter.</td>
+		</tr>
+
+		<tr>
+			<td>Count dates in given year</td>
+			<td>=SUMPRODUCT(--(YEAR(dates)=year))</td>
+			<td>To count dates in a given year, you can use the SUMPRODUCT and YEAR functions</td>
+		</tr>
+
+		<tr>
+			<td>Count if two criteria match</td>
+			<td>=COUNTIFS(range1,critera1,range2,critera2)</td>
+			<td>The COUNTIFS function takes multiple criteria in pairs — each pair contains one range and the associated criteria for that range. To generate a count, all conditions must match. To add more conditions, just add another range / criteria pair.</td>
+		</tr>
+
+		<tr>
+			<td>Count items in list</td>
+			<td>=COUNTIFS(A:A,A1,B:B,B1)</td>
+			<td>To create a count of the values that appear in in a list or table, you can use the COUNTIFS function</td>
+		</tr>
+
+		<tr>
+			<td>Count matches between two columns</td>
+			<td>=SUMPRODUCT(--(range1=range2))</td>
+			<td>If you want to compare two columns and count matches in corresponding rows, you can use the SUMPRODUCT function with a simple comparison of the two ranges.</td>
+		</tr>
+
+		<tr>
+			<td>Count occurrences in entire workbook</td>
+			<td>=SUMPRODUCT(COUNTIF(INDIRECT("'"&sheets&"'!"&rng),criteria))</td>
+			<td>To count matches in entire workbook, you can use a formula based on the COUNTIF and SUMPRODUCT functions.</td>
+		</tr>
+
+		<tr>
+			<td>Count paired items in listed combinations</td>
+			<td>=COUNTIFS(range,"*"&$item1&"*",range,"*"&item2&"*")</td>
+			<td>To build a summary table with a count of paired items that appear in a list of existing combinations, you can use a helper column and a formula based on the COUNTIFS function. </td>
+		</tr>
+
+		<tr>
+			<td>Count rows that contain specific values</td>
+			<td>=SUM(--(MMULT(--(criteria),TRANSPOSE(COLUMN(data)))>0))</td>
+			<td>To count rows that contain specific values, you can use an array formula based on the MMULT, TRANSPOSE, COLUMN, and SUM functions.</td>
+		</tr>
+
+		<tr>
+			<td>Count rows with OR logic</td>
+			<td>=SUMPRODUCT((group="a")*((color1="red")+(color2="red")>0))</td>
+			<td>One of the trickier problems in Excel is to count rows in a set of data with "OR logic". There are two basic scenarios: (1) you want to count rows where a value in a column is "x" OR "y" (2) you want to count rows where a value, "x", exists in one column OR another.</td>
+		</tr>
+
+		<tr>
+			<td>Count sold and remaining</td>
+			<td>=COUNTA(range1)-COUNTA(range2)</td>
+			<td>If you have a list of items, and need to count how many you have total, how many are sold, how remain, etc., you can use the COUNTA function. This can be useful if you are selling tickets, seats, entries, or anything where you maintain and track an inventory of items sold. </td>
+		</tr>
+
+		<tr>
+			<td>Count unique numeric values in a range</td>
+			<td>=SUM(--(FREQUENCY(data,data)>0))</td>
+			<td>To count unique numeric values in a range, you can use a formula based on the FREQUENCY and SUM functions.</td>
+		</tr>
+
+		<tr>
+			<td>Count unique text values in a range</td>
+			<td>=SUMPRODUCT(--(FREQUENCY(MATCH(data,data,0),ROW(data)-ROW(data.firstcell)+1)>0))</td>
+			<td>This formula is more complicated than a similar formula that uses FREQUENCY to count unique numeric values because FREQUENCY doesn't work with non-numeric values. As a result, a large part of the formula simply transforms the non-numeric data into numeric data that FREQUENCY can handle.</td>
+		</tr>
+
+		<tr>
+			<td>Count visible rows in a filtered list</td>
+			<td>=SUBTOTAL(3,range)</td>
+			<td>To count the number of visible rows in a filtered list, you can use the SUBTOTAL function, which automatically ignores rows that are hidden by a filter.
+			The SUBTOTAL function can perform calculations like COUNT, SUM, MAX, MIN, and more. What makes SUBTOTAL especially interesting and useful is that it automatically ignores items that are not visible in a filtered list or table. This makes it ideal for showing how many items are visible in a list, the subtotal of visible rows, etc. </td>
+		</tr>
+
+		<tr>
+			<td>Running count of occurrence in list</td>
+			<td>=COUNTIF($A$1:A1,value)</td>
+			<td>To create a running count of certain values that appear in range of cells, you can use the COUNTIF with a "mixed reference" to create a running total. </td>
+		</tr>
+
+		<tr>
+			<td>Summary count by month with COUNTIFS</td>
+			<td>=COUNTIFS(dates,">="&A1,dates,"<"&EDATE(A1,1))</td>
+			<td>To create a summary count by month, you can use the COUNTIFS function and the EDATE function with two criteria.</td>
+		</tr>
+
+		<tr>
+			<td>Two-way summary count with COUNTIFS</td>
+			<td>=COUNTIFS(rng1,crit1,rng2,crit2)</td>
+			<td>To build a two-way summary count (i.e. summarizing by rows and columns) you can use the COUNTIFS function.</td>
+		</tr>
+
+		<tr>
+			<td>Summary count with percentage breakdown</td>
+			<td>=COUNTIF(range,criteria)/COUNTA(range)</td>
+			<td>To generate a count with a percentage breakdown, you can use the COUNTIF or COUNTIFS function, together with COUNTA.</td>
+		</tr>
+
+		<tr>
+			<td>Summary count with COUNTIF</td>
+			<td>=COUNTIF(range,criteria)</td>
+			<td>When working with data, a common need is to perform summary calculations that show total counts in different ways. For example, total counts by category, color, size, status, etc. The COUNTIF function is a good way to generate these kinds of totals.</td>
+		</tr>
+   </table>
+
+<table>
+<H1>EXCELL SUM FORMULARS</H1>
+
+<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+		<tr>
+			<td>3D sum multiple worksheets</td>
+			<td>=SUM(Sheet1:Sheet3!A1)</td>
+			<td>The syntax for referencing a range of sheets is a built-in feature and works a bit like a reference to a range of cells.To sum the same range in one or more sheets, you can use the SUM formula with a special syntax called a "3d reference". </td>
+		</tr>
+
+		<tr>
+			<td>3D SUMIF for multiple worksheets</td>
+			<td>=SUMPRODUCT(SUMIF(INDIRECT("'"&sheets&"'!"&"rng"),criteria,INDIRECT("'"&sheets&"'!"&"sumrng")))</td>
+			<td>To conditionally sum identical ranges that exist in separate worksheets, all in one formula, you can use the SUMIF function with INDIRECT, wrapped in SUMPRODUCT. </td>
+		</tr>
+
+		<tr>
+			<td>Calculate running total</td>
+			<td>=SUM($A$1:A1)</td>
+			<td>To calculate a running total, or cumulative sum, you can use the SUM formula with a mixed reference that creates an expanding range.</td>
+		</tr>
+
+		<tr>
+			<td>Subtotal by color</td>
+			<td>=SUMIF(color_range,criteria,number_range)</td>
+			<td>If you need to subtotal numbers by color, you can easily do so with the SUMIF function.</td>
+		</tr>
+
+		<tr>
+			<td>Subtotal by invoice number</td>
+			<td>=IF(COUNTIF(range,criteria)=1,SUMIF(range,criteria,sumrange,"")</td>
+			<td>o subtotal values by invoice number, you can use a formula based on COUNTIF and SUMIF..This formula uses COUNTIF with an expanding range to first check if the current row is the first occurrence of a given invoice number:</td>
+		</tr>
+
+		<tr>
+			<td>Subtotal invoices by age</td>
+			<td>=SUMIF(age,criteria,amount)</td>
+			<td>If you need to subtotal invoice amounts by age, you can easily do so with the SUMIF function.</td>
+		</tr>
+        
+        <tr>
+		<td>Sum bottom n values</td>
+		<td>=SUMPRODUCT(SMALL(rng,{1,2,n}))</td>
+		<td>To sum the lowest n values in a range, you can use a formula based on the SMALL function and the SUMPRODUCT function. In the generic form of the formula (above), rng represents a range of cells that contain numeric values and n represents the number of lowest values to sum. </td>
+        </tr>
+
+         <tr>
+		<td>Sum by group</td>
+		<td>=IF(A2=A1,"",SUMIF(A:A,A2,B:B))</td>
+		<td>The framework of this formula is based on IF, which tests each value in column B to see if its the same as the value in the "cell above". When values match, the formula returns nothing (""). When values are different, the IF function calls SUMIF:</td>
+        </tr>
+
+         <tr>
+		<td>Sum by month</td>
+		<td>=SUMIFS(values,date_range,">="&A1,date_range,"<="&EOMONTH(A1,0))</td>
+		<td>The SUMIFS function can sum values in ranges based on multiple criteria.
+In this case, we configure SUMIFS to sum amounts by month using two criteria: one to match dates greater than or equal to the first day of the month, one to match dates less than or equal to the last day of the month. </td>
+        </tr>
+
+         <tr>
+		<td>Sum by month in columns</td>
+		<td>=SUMIFS(amount,client,$F5,date,">="&G$4,date,"<="&EOMONTH(G$4,0))</td>
+		<td>To sum by month in columns you can use the SUMIFS function together with the EOMONTH function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum by week</td>
+		<td>=SUMIFS(value,date,">="&A1,date,"<"&A1+7)</td>
+		<td>To sum by week, you can use a formula based on the SUMIFS function. </td>
+        </tr>
+
+         <tr>
+		<td>Sum by week number</td>
+		<td>=SUMIFS(sumrange,weekrange,week)</td>
+		<td>To sum by week number, you can use a formula based on the SUMIFS function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum by weekday</td>
+		<td>=SUMPRODUCT((WEEKDAY(dates)=day_num)*values)</td>
+		<td>To sum data by weekday (i.e. sum by Mondays, Tuesdays, Wednesdays, etc.), you can use the SUMPRODUCT function together with the WEEKDAY function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum entire column</td>
+		<td>=SUM(A:A)</td>
+		<td>If you want to sum an entire column without supplying an upper or lower bound, you can use the SUM function with and the specific range syntax for entire column.</td>
+        </tr>
+
+         <tr>
+		<td>Sum every n rows</td>
+		<td>=SUM(OFFSET(A1,(ROW()-offset)*n,0,n,1))</td>
+		<td>To sum every n rows, you can use a formula based on the OFFSET and SUM functions.
+		In this example, there are 5 rows of data for each week (Mon-Fri) so we want to sum every 5 rows. To build a range that corresponds to the right 5 rows in each week, we use the OFFSET function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if between</td>
+		<td>=SUMIFS(sum_range,criteria_range,">500",criteria_range,"<1000")</td>
+		<td>To sum if between, you can use the SUMIFS with two criteria.
+		The SUMIFS function supports Excel's logical operators (i.e. "=",">",">=", etc.), so you can use these as you like in your criteria.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if cell contains text in another cell</td>
+		<td>=SUMIF(range,"*"&A1&"*",sum_range)</td>
+		<td>To sum if cells contain specific text in another cell, you can use the SUMIF function with a wildcard and concatenation.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if cells are equal to</td>
+		<td>=SUMIF(region,"West",amount)</td>
+		<td>To sum numbers based on cells being equal to a certain value, you can use either the SUMIF or SUMIFS functions.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if cells are not equal to</td>
+		<td>=SUMIF(range,"<>value",sum_range)</td>
+		<td>To sum cells when other cells are not equal to a specific value, you can use the SUMIF function.The SUMIF function supports all of the standard Excel operators, including not-equal-to, which is input as <>.
+
+When you use an operator in the criteria for a function like SUMIF, you need to enclose it in double quotes (""). In this case, the criteria is input as "<>West" which you can read as "not equal to West", or simply "not West".</td>
+        </tr>
+
+         <tr>
+		<td>Sum if cells contain both x and y</td>
+		<td>=SUMIFS(rng1,rng2,"*cat*",rng2,"*rat*")</td>
+		<td>To sum if cells contain both x and y (i.e. contain "cat" and "rat", in the same cell) you can use the SUMIFS function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if cells contain either x or y</td>
+		<td>=SUMPRODUCT(--((ISNUMBER(SEARCH("cat",rng1)) + ISNUMBER(SEARCH("rat",rng1)))>0),rng2)</td>
+		<td>To sum if cells contain either one text string or another (i.e. contain "cat" or "rat") you can use the SUMPRODUCT function together with ISNUMBER + SEARCH or FIND.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if date is between</td>
+		<td>=SUMIFS(rng1,rng2,">"&A1,rng2,"<"&B1)</td>
+		<td>The SUMIFS function allows logical operators (i.e. "=",">",">=", etc.), and multiple criteria.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if date is greater than</td>
+		<td>=SUMIF(range,">"&DATE(year,month,day),sum_range)</td>
+		<td>To sum if based on dates greater than a certain date, you can use the SUMIF function. The SUMIF function supports Excel's logical operators (i.e. "=",">",">=", etc.), so you can use thee as you like in your criteria.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if equal to either x or y</td>
+		<td>=SUMIF(region,"West",amount)+SUMIF(region,"North",amount) </td>
+		<td>To sum numbers based on other cells being equal to either one value or another (either x or y), you can use the SUMIF function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if greater than</td>
+		<td>=SUMIF(range,">1000")</td>
+		<td>To sum if greater than, you can use the SUMIF function.The SUMIF function supports Excel's logical operators (i.e. "=",">",">=", etc.), so you can use these as you like in your criteria.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if less than</td>
+		<td>=SUMIF(range,"<1000")</td>
+		<td>The SUMIF function supports Excel's logical operators (i.e. "=",">",">=", etc.), so you can use these as you like in your criteria.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if multiple criteria</td>
+		<td>=SUMIFS(sum_rng, crit_rng1, crit1, crit_rng2, crit2)</td>
+		<td>If you need to sum numbers based on multiple criteria, you can use the SUMIFS function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if not blank</td>
+		<td>=SUMIF(range,"<>",sum_range)</td>
+		<td>To sum cells when certain values are not blank, you can use the SUMIF function.
+		The SUMIF function supports all of the standard Excel operators, including not-equal-to, which is input as <>.</td>
+        </tr>
+
+         <tr>
+		<td>Sum if one criteria multiple columns</td>
+		<td>=SUMPRODUCT((criteria_rng="red")*(sum_range))</td>
+		<td>To sum multiple columns conditionally, using one criteria, you can use a formula based on the SUMPRODUCT function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum last n columns</td>
+		<td>=SUM(INDEX(data,0,COLUMNS(data)-(n-1)):INDEX(data,0,COLUMNS(data)))</td>
+		<td>To sum the last n columns in a table of data (i.e. last 3 columns, last 4 columns, etc.) you can use a formula based on the INDEX function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum matching columns</td>
+		<td>=SUMPRODUCT(data*(headers=A1))</td>
+		<td>To sum values in columns by matching matching column headers, you can use a formula based on the SUMPRODUCT function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum matching columns and rows</td>
+		<td>=SUMPRODUCT(data*(range1=criteria1)*(range2=criteria2))</td>
+		<td>To sum values in matching columns and rows, you can use the SUMPRODUCT function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum sales in last 30 days by ID</td>
+		<td>=SUMIFS(amounts,dates,">="&TODAY()-30,ids,id)</td>
+		<td>To sum sales in the last 30 days by an id (like name, initials, region, etc.) you can use the SUMIFS function together with the TODAY function.</td>
+        </tr>
+
+         <tr>
+		<td>Sum through n months</td>
+		<td>=SUM(OFFSET(start,0,0,N,1))</td>
+		<td>To sum a set of monthly data through n number of months, you can use a formula based on the SUM and OFFSET functions.</td>
+        </tr>
+
+         <tr>
+		<td>Sum top n values</td>
+		<td>=SUMPRODUCT(LARGE(rng,{1,2,N}))</td>
+		<td>To sum the top values in a range, you can use a formula based on the LARGE function, wrapped inside the SUMPRODUCT function. In the generic form of the formula (above), rng represents a range of cells that contain numeric values and N represents the idea of Nth value.</td>
+        </tr>
+
+         <tr>
+		<td>Sum visible rows in a filtered list</td>
+		<td>=SUBTOTAL(9,range)</td>
+		<td>To sum visible values rows in a filtered list (i.e. exclude rows that are "filtered out"), use the SUBTOTAL function with function number 9 or 109.  </td>
+        </tr>
+
+         <tr>
+		<td>SUMIFS with multiple criteria and OR logic</td>
+		<td>=SUM(SUMIFS(sum_range,criteria_range,{"red","blue"}))</td>
+		<td>To sum based on multiple criteria using OR logic, you can use the SUMIFS function with an array constant.</td>
+        </tr>
+
+         <tr>
+		<td>SUMPRODUCT with IF</td>
+		<td>=SUMPRODUCT(expression,range)</td>
+		<td>To filter results of SUMPRODUCT with specific criteria, you can apply simple logical expressions directly to arrays in the function, instead of using the IF function. </td>
+        </tr>
+</table>
+
+<table>
+   <h1>EXCELL AVERAGE FORMULAR</h1>
+
+<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+         <tr>
+		<td>Average and ignore errors</td>
+		<td>=AVERAGEIF(values,">=0")</td>
+		<td>The AVERAGEIF function can calculate an average of numeric data with one or more criteria. In this case, the criteria is the expression ">=0". This filters out error values, and AVERAGEIF returns the average of the remaining eight values, 91.75.</td>
+        </tr>
+
+         <tr>
+		<td>Average by month</td>
+		<td>=AVERAGEIFS(values,dates,">="&A1,dates,"<="&EOMONTH(A1))</td>
+		<td>To average by month, you can use a formula based on the AVERAGEIFS function, with help from the EOMONTH function.</td>
+        </tr>
+
+         <tr>
+		<td>Average if criteria not blank</td>
+		<td>=AVERAGEIFS(price,group,"<>")</td>
+		<td>To calculate an average, excluding blank values in a criteria range, you can use the AVERAGEIFS function and a simple logical expression.</td>
+        </tr>
+
+         <tr>
+		<td>Average last 5 values</td>
+		<td>=AVERAGE(OFFSET(A1,COUNT(A:A),0,-N))</td>
+		<td>To average the last 5 data points, you can use the AVERAGE function together with the COUNT and OFFSET functions. You can use this approach to average the last N data points: last 3 days, last 6 measurements, etc.</td>
+        </tr>
+
+         <tr>
+		<td>Average last 5 values in columns</td>
+		<td>=AVERAGE(OFFSET(firstcell,0,COUNT(rng)-N,1,N))</td>
+		<td>To average the last 5 data values in a range of columns, you can use the AVERAGE function together with the COUNT and OFFSET functions. </td>
+        </tr>
+
+         <tr>
+		<td>Average numbers</td>
+		<td>=AVERAGE(B5:D5)</td>
+		<td>AVERAGE is an automatic function in Excel. In most cases, you'll supply a range of cells to average, and the function will return the result. </td>
+        </tr>
+
+         <tr>
+		<td>Average numbers ignore zero</td>
+		<td>=AVERAGEIF(range,"<>0")</td>
+		<td>To get the average of a set of numbers, excluding or ignoring zero values, use the AVERAGEIF function.</td>
+        </tr>
+
+         <tr>
+		<td>Average pay per week</td>
+		<td>=SUMPRODUCT(hours*rate)/COUNTIF(hours,">0")</td>
+		<td>To calculate average pay per week, excluding weeks where no hours were logged, and without total pay per week already calculated, you can use a formula based on the SUMPRODUCT and COUNTIF functions. </td>
+        </tr>
+
+         <tr>
+		<td>Average response time per month</td>
+		<td>=AVERAGEIFS(durations,dates,">="&A1,dates,"<="&EOMONTH(A1))</td>
+		<td>To average response times by month, you can use a formula based on the AVERAGEIFS function, together with the EOMONTH function.</td>
+        </tr>
+
+         <tr>
+		<td>Average the last 3 numeric values</td>
+		<td>{=AVERAGE(LOOKUP(LARGE(IF(ISNUMBER(data),ROW(data)),{1,2,3}),ROW(data), data))}</td>
+		<td>To average the last 3 numeric values in a range, you can use an array formula based on a combination of functions to feed the last n numeric values into the AVERAGE function.</td>
+        </tr>
+
+         <tr>
+		<td>Average top 3 scores</td>
+		<td>=AVERAGE(LARGE(range,{1,2,3}))</td>
+		<td>To average the top 3 scores in a data set, you can use a formula based on the LARGE and AVERAGE functions. </td>
+        </tr>
+
+         <tr>
+		<td>Average with multiple criteria</td>
+		<td>=AVERAGEIFS(values,range1,criteria1,range2,criteria2)</td>
+		<td>To average numbers based on multiple criteria, you can use the AVERAGEIFS function. </td>
+        </tr>
+
+         <tr>
+		<td>Moving average formula</td>
+		<td>=AVERAGE(C5:C7)</td>
+		<td>To calculate a moving or rolling average, you can use a simple formula based on the AVERAGE function with relative references.</td>
+        </tr>
+
+         <tr>
+		<td>Must pass 4 out of 6 subjects</td>
+		<td>=IF(COUNTIF(range,">=70")>=4,"Pass","Fail") </td>
+		<td>To return "Pass" when any 4 subjects have a passing score, and "Fail" when not, you can use a formula based on the IF and COUNTIF functions. </td>
+        </tr>
+
+         <tr>
+		<td>Weighted average</td>
+		<td>=SUMPRODUCT(weights,values)/SUM(weights)</td>
+		<td>To calculated a weighted average, you can use the SUMPRODUCT function together with the SUM function.</td>
+        </tr>
+</table>
+
+<table>
+ <h1>EXCELL Dynamic array FORMULARS</h1>
+
+<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+     <tr>
+		<td>Basic filter example</td>
+		<td>=FILTER(data,range=value,"not found")</td>
+		<td>To query data and extract matching records, you can use the FILTER function .</td>
+        </tr>
+
+          <tr>
+		<td>Count unique values</td>
+		<td>=COUNTA(UNIQUE(data))</td>
+		<td>To count unique values in a set of data, you can use the UNIQUE function together with the COUNTA function.</td>
+        </tr>
+
+          <tr>
+		<td>Distinct values</td>
+		<td>=UNIQUE(data,FALSE,TRUE)</td>
+		<td>To extract a list of distinct values from a set of data (i.e. values that appear just once), you can use the UNIQUE function.</td>
+        </tr>
+
+          <tr>
+		<td>Extract common values from two lists</td>
+		<td>=FILTER(list1,COUNTIF(list2,list1))</td>
+		<td>To compare two lists and extract common values, you can use a formula based on the FILTER and COUNTIF functions. </td>
+        </tr>
+
+          <tr>
+		<td>Filter by date</td>
+		<td>=FILTER(rng1,MONTH(rng2)=7,"No data")</td>
+		<td>To filter data to include data based on dates, you can use the FILTER function with one of Excel's date functions.</td>
+        </tr>
+
+          <tr>
+		<td>Filter contains one of many</td>
+		<td>=FILTER(data,ISNUMBER(MATCH(rng1,rng2,0)),"No data")</td>
+		<td>To filter data to include only records where a column is equal to one of many values, you can use the FILTER function together with the ISNUMBER function and MATCH function.</td>
+        </tr>
+
+          <tr>
+		<td>Filter data between dates</td>
+		<td>=FILTER(data,(dates>=A1)*(dates<=A2),"No data")</td>
+		<td>To filter data to include records between two dates, you can use the FILTER function with boolean logic.</td>
+        </tr>
+
+          <tr>
+		<td>Filter exclude blank values</td>
+		<td>=FILTER(data,(rng1<>"")*(rng2<>"")*(rng3<>""))</td>
+		<td>To filter out rows with blank or empty cells, you can use the FILTER function with boolean logic.
+		The FILTER function is designed to extract data that matches one or more criteria. In this case, we want to apply criteria that requires all three columns in the source data (Name, Group, and Room) to have data. In other words, if a row is missing any of these values, we want to exclude that row from output.</td>
+        </tr>
+
+          <tr>
+		<td>FILTER on first or last n values</td>
+		<td>=INDEX(FILTER(data,data<>""),SEQUENCE(n,1,1,1))</td>
+		<td>To FILTER and extract the first or last n values (i.e. first 3 values, first 5 values, etc.), you can use the FILTER function together with INDEX and SEQUENCE.</td>
+        </tr>
+
+          <tr>
+		<td>FILTER on top n values</td>
+		<td>=FILTER(data,range>=LARGE(range,n))</td>
+		<td>To filter a set of data to show the top n values you can use the FILTER function together with the LARGE function. This formula uses the FILTER function to retrieve data based on a logical test constructed with the LARGE function.
+
+The LARGE function is a simple way to get the nth largest value in a range. Simply provide a range for the first argument (array), and a value for n as the second argument 
+		This formula uses the FILTER function to retrieve data based on a logical test constructed with the LARGE function.
+
+The LARGE function is a simple way to get the nth largest value in a range. Simply provide a range for the first argument (array), and a value for n as the second argument </td>
+        </tr>
+
+          <tr>
+		<td>Filter text contains</td>
+		<td>=FILTER(rng1,ISNUMBER(SEARCH("txt",rng2)))</td>
+		<td>To filter data to include data based on a "contains specific text" logic, you can use the FILTER function with help from the ISNUMBER function and SEARCH function.</td>
+        </tr>
+
+          <tr>
+		<td>FILTER to remove columns</td>
+		<td>=FILTER(data,(header="a")+(header="b"))</td>
+		<td>To filter columns, supply a horizontal array for the include argument.
+		Although FILTER is more commonly used to filter rows, you can also filter columns, the trick is to supply an array with the same number of columns as the source data. In this example, we construct the array we need with boolean logic, also called Boolean algebra.
+		</td>
+        </tr>
+
+          <tr>
+		<td>Filter with exact match</td>
+		<td>=FILTER(data,EXACT(range,A1))</td>
+		<td>To filter data in case-sensitive way, you can use the FILTER function with help together with the EXACT function.
+		This formula relies on the FILTER function to retrieve data based on a logical test. </td>
+        </tr>
+
+          <tr>
+		<td>Minimum value if unique</td>
+		<td>=MIN(UNIQUE(range,0,1))</td>
+		<td>To find the minimum unique value in a set of data, you can use the UNIQUE function together with the MIN function.</td>
+        </tr>
+
+          <tr>
+		<td>Random list of names</td>
+		<td>=INDEX(names,RANDARRAY(n,1,1,COUNTA(names),TRUE))</td>
+		<td>At the core, this formula uses the INDEX function to retrieve 10 random names from a named range called "names" which contains 100 names.
+		To create a random list of names, you can use the INDEX function and the RANDARRAY function to select random names from an existing list.</td>
+        </tr>
+
+          <tr>
+		<td>Sequence of days</td>
+		<td>=SEQUENCE(days,1,start_date,step)</td>
+		<td>To generate a series of dates by day, you can use the SEQUENCE function. 
+		The SEQUENCE function is a dynamic array function that can generate multiple results. When used by itself on the worksheet, SEQUENCE outputs an array of results that "spill" onto the worksheet in a "spill range".</td>
+        </tr>
+
+          <tr>
+		<td>Sequence of months</td>
+		<td>{=EDATE(A1,SEQUENCE(12,1,0))}</td>
+		<td>To generate a series of dates incremented by month, you can use the SEQUENCE function together with the EDATE function or EOMONTH function. </td>
+        </tr>
+
+          <tr>
+		<td>Sequence of times</td>
+		<td>=TIME(SEQUENCE(n,1,HOUR(start),1),0,0)</td>
+		<td>To generate a sequence of times, you can use the SEQUENCE function, in combination with functions like TIME, HOUR, MINUTE, and SECOND. Or you can use SEQUENCE with raw numeric values that represent time. </td>
+        </tr>
+
+          <tr>
+		<td>Sequence of years</td>
+		<td>=DATE(SEQUENCE(12,1,YEAR(A1)),MONTH(B5),DAY(A1))</td>
+		<td>To generate a series of dates by year, you can use the SEQUENCE function together with YEAR, MONTH, and DAY functions.</td>
+        </tr>
+
+          <tr>
+		<td>Sort by custom list</td>
+		<td>=SORTBY(rng,MATCH(rng,custom,0))</td>
+		<td>To sort a list in a custom order, you can combine the SORTBY function with the MATCH function. In the example shown, The table is being sorted by the "group" column using in the order shown in cells J5:J7. </td>
+        </tr>
+
+          <tr>
+		<td>Sort by one column</td>
+		<td>=SORT(data,index,order)</td>
+		<td>To sort by one column, you can use the SORT function or SORTBY function. In the example shown, data is sorted by the Group column.</td>
+        </tr>
+
+          <tr>
+		<td>Sort text by length</td>
+		<td>=SORTBY(data,LEN(data),-1)</td>
+		<td>To sort text strings by length in ascending or descending order, you can use a formula based on the SORTBY and LEN functions.</td>
+        </tr>
+
+          <tr>
+		<td>Sort values by columns</td>
+		<td>=SORT(data,index,order,TRUE)</td>
+		<td>To sort values by columns, you can use the SORT function. In the example shown, data is sorted by the Group column. </td>
+        </tr>
+
+          <tr>
+		<td>Unique values</td>
+		<td>=UNIQUE(data)</td>
+		<td>To extract a list of unique values from a set of data, you can use the UNIQUE function.</td>
+        </tr>
+
+          <tr>
+		<td>Unique values by count</td>
+		<td>=UNIQUE(FILTER(data,COUNTIF(data,data)>n))</td>
+		<td>To extract a list of unique values from a set of data, filtered by count or occurence, you can use UNIQUE with FILTER, and apply criteria with the COUNTIF function.</td>
+        </tr>
+
+          <tr>
+		<td>Unique values with criteria</td>
+		<td>=UNIQUE(FILTER(rng1,rng2=A1))</td>
+		<td>To extract a list of unique values from a set of data, while applying one or more logical criteria, you can use the UNIQUE function together with the FILTER function. </td>
+        </tr>
+
+          <tr>
+		<td>Unique values with multiple criteria</td>
+		<td>=UNIQUE(FILTER(data,(range1="b")*(range2>5)))</td>
+		<td>To extract a list of unique values from a set of data, while applying one or more logical criteria, you can use the UNIQUE function together with the FILTER function. </td>
+        </tr>
+</table>
+
+<table>
+	<h1>EXCELL MIN AND MAX</h1>
+	<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+          <tr>
+		<td>First in, last out times</td>
+		<td>=MINIFS(times,names,name,actions,action)</td>
+		<td>To get "first in, last out" times from timesheet data, you can use the MAXIFS and MINIFS functions, or an array formula as described below.</td>
+        </tr>
+
+          <tr>
+		<td>Large with criteria</td>
+		<td>{=LARGE(IF(criteria,values),n)}</td>
+		<td>To return the largest values in a set of data with criteria, you can use the a formula based on the LARGE and IF functions.</td>
+        </tr>
+
+          <tr>
+		<td>Larger of two values</td>
+		<td>=MAX(value1,value2)</td>
+		<td>To get the larger, or greater, of two values, you can use the MAX function.
+		The MAX function is fully automatic – it returns the largest value in the numbers provided. </td>
+        </tr>
+
+          <tr>
+		<td>Max of every nth column</td>
+		<td>{=MAX(IF(MOD(COLUMN(rng)-COLUMN(rng.first)+1,n)=0,rng))}</td>
+		<td>To get the max of every nth column, you can use an array formula based on the MAX, MOD, and COLUMN functions.</td>
+        </tr>
+
+          <tr>
+		<td>Max value in given month</td>
+		<td>=MAXIFS(sales,dates,">="&G4,dates,"<="&EOMONTH(G4,0))</td>
+		<td>The MAXIFS function can find the maximum value in a range based on one or more criteria. In the example shown, we are using MAXIFS to find the max sales value based in a given month by "bracketing" dates between the first day of the month and the last day of the month.</td>
+        </tr>
+
+          <tr>
+		<td>Max value on given weekday</td>
+		<td>{=MAX(IF(TEXT(dates,"ddd")="Mon",values))}</td>
+		<td>To find the maximum value on a given weekday (i.e. Monday, Tuesday, Wednesday, etc.) you can use a simple array formula based on the MAX, IF, and TEXT functions. </td>
+        </tr>
+
+           <tr>
+		<td>Max value with variable column</td>
+		<td>=MAX(INDEX(data,0,MATCH(column,header,0)))</td>
+		<td>To retrieve the max value in a set of data, where the column is variable, you can use INDEX and MATCH together with the MAX function.Note: If you are new to INDEX and MATCH, see: How to use INDEX and MATCH
+In a standard configuration, the INDEX function retrieves a value at a given row and column.</td>
+        </tr>
+
+         <tr>
+		<td>Maximum value</td>
+		<td>=MAX(range)</td>
+		<td>To get the maximum value from a set of numbers, use the MAX function.
+		The MAX function accepts one or more arguments, which can be a mix of constants, cell references, and ranges. MAX then returns the maximum value in the data provided. Text values and empty cells are ignored.</td>
+        </tr>
+
+         <tr>
+		<td>Minimum difference if not blank</td>
+		<td>{=MIN(IF((rng1<>"")*(rng2<>""),rng1-rng2))}</td>
+		<td>To calculate the minimum difference between two sets of values, ignoring cases where either value is blank, you can use an array formula based on the MIN and IF functions. </td>
+        </tr>
+
+         <tr>
+		<td>Minimum value</td>
+		<td>=MIN(range)</td>
+		<td>To get the minimum value from a set of numbers, use the MIN function. </td>
+        </tr>
+
+         <tr>
+		<td>Minimum value if</td>
+		<td>{=MIN(IF(range=criteria,values))}</td>
+		<td>To get a minimum value based on criteria, you can use the MIN function together with the IF function.</td>
+        </tr>
+
+         <tr>
+		<td>Name of nth largest value</td>
+		<td>=INDEX(names,MATCH(LARGE(values,F5),values,0))</td>
+		<td>To get the name of the nth largest value, you can use INDEX and MATCH with the LARGE function.
+		In a nutshell, this formula uses the LARGE function to find the nth largest value in a set of data. Once we have that value, we plug it into a standard INDEX and MATCH formula to retrieve the associated name. In other words, we use the nth largest value like a "key" to retrieve associated information.
+
+The LARGE function is a straightforward way to get the nth largest value in a range</td>
+        </tr>
+
+         <tr>
+		<td>nth largest value with duplicates</td>
+		<td>=MAX(IF(rng<A2,rng))</td>
+		<td>To get the nth largest value in a data set with duplicates, you can use an array formula based on the MAX and IF functions.
+
+Note: the LARGE function will easily return nth values, but LARGE will return duplicates when they exist in the source data.</td>
+        </tr>
+
+         <tr>
+		<td>nth smallest value</td>
+		<td>=SMALL(range,nth)</td>
+		<td>To get the 2nd smallest value, 3rd smallest value, 4th smallest value, and so on, from a set of data, you can use the SMALL function.</td>
+        </tr>
+
+         <tr>
+		<td>Smaller of two values</td>
+		<td>=MIN(value1,value2)</td>
+		<td>To get the smaller, or lesser, of two values, you can use the MIN function. 
+		The MIN function is fully automatic - it returns the smallest value in the numbers provided. </td>
+        </tr>
+</table>
+
+<table>
+	<h1>MICROSOFT EXCELL LOOKUP FORMULARS</h1>
+<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+         <tr>
+		<td>Approximate match with multiple criteria</td>
+		<td>{=INDEX(D5:D10,MATCH(G7,IF(B5:B10=G6,C5:C10),1))}</td>
+		<td>To lookup and approximate match based on more than one criteria, you can use an array formula based on INDEX and MATCH, with help from the IF function.</td>
+        </tr>
+
+         <tr>
+		<td>Basic INDEX MATCH approximate</td>
+		<td>=INDEX(grades,MATCH(score,scores,1))</td>
+		<td>This example shows how to use INDEX and MATCH to retrieve a grade from a table based a given score. This requires an "approximate match", since it is unlikely that the actual score exists in the table.</td>
+        </tr>
+
+         <tr>
+		<td>Basic INDEX MATCH exact</td>
+		<td>=INDEX(data,MATCH(value,lookup_column,FALSE),column)</td>
+		<td>This example shows how to use INDEX and MATCH to get information from a table based on an exact match.</td>
+        </tr>
+
+         <tr>
+		<td>Basic Tax Rate calculation with VLOOKUP</td>
+		<td>=VLOOKUP(amount,tax_table,2,TRUE)</td>
+		<td>To calculate a tax rate based on a simple tax rate table, you can use the VLOOKUP function.</td>
+        </tr>
+
+         <tr>
+		<td>Break ties with helper column and COUNTIF</td>
+		<td>=C5+(COUNTIF($C$5:C5,C5)-1)*0.01</td>
+		<td>To break ties, you can use a helper column and the COUNTIF function to adjust values so that they don't contain duplicates, and therefore won't result in ties.
+		Sometimes, when you use functions like SMALL, LARGE, or RANK to rank highest or lowest values, you end up with ties, because the data contains duplicates. One way to break ties like this is to add a helper column with values that have been adjusted, then rank those values instead of the originals.</td>
+        </tr>
+
+         <tr>
+		<td>Calculate grades with VLOOKUP</td>
+		<td>=VLOOKUP(score,key,2,TRUE)</td>
+		<td>To assign a grade based on a score, you can use the VLOOKUP function configured to perform an approximate match.</td>
+        </tr>
+
+         <tr>
+		<td>Calculate shipping cost with VLOOKUP</td>
+		<td>=VLOOKUP(weight,table,column,1)*weight</td>
+		<td>To calculate shipping cost based on weight, you can use the VLOOKUP function. </td>
+        </tr>
+
+         <tr>
+		<td>Case sensitive lookup</td>
+		<td>=INDEX(range1,MATCH(TRUE,EXACT(A1,range2),0))</td>
+		<td>To perform a case-sensitive lookup, you can use the EXACT function together with INDEX and MATCH. </td>
+        </tr>
+
+         <tr>
+		<td>Commission split formula example</td>
+		<td>=commission*VLOOKUP(amount,split_table,column,TRUE)</td>
+		<td>To calculate a commission, and split the Commission between Agent and Broker according to a pre-established schedule, you can use the VLOOKUP function. </td>
+        </tr>
+
+         <tr>
+		<td>Count missing values</td>
+		<td>=SUMPRODUCT(--(COUNTIF(list1,list2)=0))</td>
+		<td>To count the values in one list that are missing from another list, you can use a formula based on the COUNTIF and SUMPRODUCT functions.</td>
+        </tr>
+
+         <tr>
+		<td>Dynamic lookup table with INDIRECT</td>
+		<td>=VLOOKUP(A1,INDIRECT("text"),column)</td>
+		<td>To allow a dynamic lookup table, you can use the INDIRECT function with named ranges inside of VLOOKUP. </td>
+        </tr>
+
+         <tr>
+		<td>Exact match lookup with SUMPRODUCT</td>
+		<td>=SUMPRODUCT(--(EXACT(val,lookup_col)),result_col)</td>
+		<td>By default, standard lookups in Excel are not case-sensitive. Both VLOOKUP and INDEX/MATCH will simply return the first match, ignoring case.
+
+A direct way to workaround this limitation, is to use an array formula based on INDEX/MATCH with EXACT. However, if you're looking up numeric values only, SUMPRODUCT + EXACT also gives an interesting and flexible way to do a case-sensitive lookup.</td>
+        </tr>
+
+         <tr>
+		<td>Extract all matches with helper column</td>
+		<td>=IF(rowcheck,INDEX(data,MATCH(rownum,helper,0),column),"")</td>
+		<td>One way to extract multiple matches in Excel is to use INDEX and MATCH with a helper column that flags matching data. This avoids the complexity of a more advanced array formula. </td>
+        </tr>
+
+         <tr>
+		<td>Exact match lookup with INDEX and MATCH</td>
+		<td>{=INDEX(data,MATCH(TRUE,EXACT(val,lookup_col),0),col_num)}</td>
+		<td>By default, standard lookups with VLOOKUP or INDEX + MATCH aren't case-sensitive. Both VLOOKUP and MATCH will simply return the first match, ignoring case.
+
+However, if you need to do a case-sensitive lookup, you can do so with an array formula that uses INDEX, MATCH, and the EXACT function.</td>
+        </tr>
+
+         <tr>
+		<td>Extract all partial matches</td>
+		<td>=IF(F5>ct,"",INDEX(data,AGGREGATE(15,6,(ROW(data)-ROW($B$5)+1)/ISNUMBER(SEARCH(search,data)),F5)))</td>
+		<td>To extract all matches based on a partial match, you can use use an array formula based on the INDEX and AGGREGATE functions, with support from ISNUMBER and SEARCH. </td>
+        </tr>
+
+         <tr>
+		<td>Extract multiple matches into separate columns</td>
+		<td>{=IFERROR(INDEX(names,SMALL(IF(groups=$E5,ROW(names)-MIN(ROW(names))+1),COLUMNS($E$5:E5))),"")}</td>
+		<td>To extract multiple matches to separate cells, in separate columns, you can use an array formula based on INDEX and SMALL. </td>
+        </tr>
+
+         <tr>
+		<td>Extract multiple matches into separate rows</td>
+		<td>{=IFERROR(INDEX(names,SMALL(IF(groups=E$4,ROW(names)-MIN(ROW(names))+1),ROWS($E$5:E5))),"")}</td>
+		<td>To extract multiple matches to separate cells, in separate rows, you can use an array formula based on INDEX and SMALL. </td>
+        </tr>
+
+         <tr>
+		<td>Faster VLOOKUP with 2 VLOOKUPS</td>
+		<td>=IF(VLOOKUP(id,data,1,TRUE)=id, VLOOKUP(id,data,col,TRUE), NA())</td>
+		<td>With large sets of data, exact match VLOOKUP can be painfully slow, but you can make VLOOKUP lightening fast by using two VLOOKUPS, as explained below.
+
+Notes:
+
+If you have a smaller set of data, this approach is overkill. Only use it with large data sets when speed really counts.
+You must sort the data by lookup value in order for this trick to work.
+This example uses named ranges. If you don't want to use named ranges use absolute references instead.</td>
+        </tr>
+
+         <tr>
+		<td>Find closest match</td>
+		<td>{=INDEX(data,MATCH(MIN(ABS(data-value)),ABS(data-value),0))}</td>
+		<td>To find the closest match in numeric data, you can use INDEX and MATCH, with help from the ABS and MIN functions. In the example shown, the formula in F5, copied down, is:</td>
+        </tr>
+
+         <tr>
+		<td>Find longest string in column</td>
+		<td>{=INDEX(rng,MATCH(MAX(LEN(rng)),LEN(rng),0))}</td>
+		<td>To find the longest string (name, word, etc.) in a column, you can use an array formula based on INDEX and MATCH, together with LEN and MAX.</td>
+        </tr>
+
+         <tr>
+		<td>Find lowest n values</td>
+		<td>=SMALL(range,n)</td>
+		<td>To find the n lowest values in a set of data, you can use the SMALL function. This can be combined with INDEX as shown below to retrieve associated values.</td>
+        </tr>
+
+         <tr>
+		<td>First match in range with wildcard</td>
+		<td>=INDEX(range,MATCH(val&"*",range,0))</td>
+		<td>To get the value of the first match in a range using a wildcard, you can use an INDEX and MATCH formula, configured for exact match.</td>
+        </tr>
+
+         <tr>
+		<td>Get address of lookup result</td>
+		<td>=CELL("address",INDEX(range,row,col))</td>
+		<td>To get the address of a lookup result derived with the INDEX function, you can use the CELL function.</td>
+        </tr>
+
+         <tr>
+		<td>Get cell content at given row and column</td>
+		<td>=INDIRECT(ADDRESS(row,col))</td>
+		<td>To get cell content with a given row and column number, you can use the ADDRESS function together with INDIRECT.
+		The Excel ADDRESS function returns the address for a cell based on a given row and column number.</td>
+        </tr>
+
+         <tr>
+		<td>Get employee information with VLOOKUP</td>
+		<td>=VLOOKUP(id,data,column,FALSE)</td>
+		<td>If you want to retrieve employee information from a table, and the table contains a unique id to the left of the information you want to retrieve, you can easily do so with the VLOOKUP function.</td>
+        </tr>
+
+         <tr>
+		<td>Get first non-blank value in a list</td>
+		<td>{=INDEX(range,MATCH(FALSE,ISBLANK(range),0))}</td>
+		<td>To get the first non-blank value (text or number) in a in a one-column range you can use an array formula based on the INDEX, MATCH, and ISBLANK functions.</td>
+        </tr>
+
+         <tr>
+		<td>Get first text value in a list</td>
+		<td>=VLOOKUP("*",range,1,FALSE)</td>
+		<td>If you need to get the first text value in a list (a one-column range) you can use the VLOOKUP function set to exact match, with a wildcard character for the lookup value.</td>
+        </tr>
+
+         <tr>
+		<td>Get information corresponding to max value</td>
+		<td>=INDEX(range1,MATCH(MAX(range2),range2,0))</td>
+		<td>To lookup information related to the maximum value in a range, you can use a formula that combines the MAX, INDEX, and MATCH functions</td>
+        </tr>
+
+         <tr>
+		<td>Get last match</td>
+		<td>{=MAX(IF(criteria,ROW(rng)-MIN(ROW(rng))+1))}</td>
+		<td>To get the position of the last match (i.e. last occurrence) of a lookup value, you can use an array formula based on the IF, ROW, INDEX, MATCH, and MAX functions.</td>
+        </tr>
+
+         <tr>
+		<td>Get nth match with INDEX / MATCH</td>
+		<td>{=INDEX(array,SMALL(IF(vals=val,ROW(vals)-ROW(INDEX(vals,1,1))+1),nth))}</td>
+		<td>To retrieve multiple matching values from a set of data with a formula, you can use the IF and SMALL functions to figure out the row number of each match and feed that value back to INDEX.</td>
+        </tr>
+
+         <tr>
+		<td>Get last match cell contains</td>
+		<td>=LOOKUP(2,1/SEARCH(things,A1),things)</td>
+		<td>To check a cell for one of several things, and return the last match found in the list, you can use a formula based on the LOOKUP and SEARCH functions.</td>
+        </tr>
+
+         <tr>
+		<td>Get location of value in 2D array</td>
+		<td>=SUMPRODUCT((data=MAX(data))*ROW(data))-ROW(data)+1</td>
+		<td>To locate the position of a value in a 2D array, you can use the SUMPRODUCT function. In the example shown, the formulas used to locate the row and column numbers of the max value in the array are:</td>
+        </tr>
+
+         <tr>
+		<td>Get nth match</td>
+		<td>=SMALL(IF(logical,ROW(list)-MIN(ROW(list))+1),n)</td>
+		<td>To get the position of the nth match (for example, the 2nd matching value, the 3rd matching value, etc.), you can use a formula based on the SMALL function.</td>
+        </tr>
+
+         <tr>
+		<td>Get nth match with INDEX / MATCH</td>
+		<td>{=INDEX(array,SMALL(IF(vals=val,ROW(vals)-ROW(INDEX(vals,1,1))+1),nth))}</td>
+		<td>To retrieve multiple matching values from a set of data with a formula, you can use the IF and SMALL functions to figure out the row number of each match and feed that value back to INDEX.</td>
+        </tr>
+
+         <tr>
+		<td>INDEX and MATCH descending order</td>
+		<td>=INDEX(C5:C9,MATCH(F4,B5:B9,-1))</td>
+		<td>To retrieve values from a table where lookup values are sorted in descending order [Z-A] you can use INDEX and MATCH, with MATCH configured for approximate match using a match type of -1. In the example shown, the formula in F5 is:</td>
+        </tr>
+
+         <tr>
+		<td>Index and match on multiple columns</td>
+		<td>{=INDEX(groups,MATCH(1,MMULT(--(names=G4),TRANSPOSE(COLUMN(names)^0)),0))}</td>
+		<td>To lookup a value by matching across multiple columns, you can use an array formula based on the MMULT, TRANSPOSE, COLUMN, and INDEX. In the example shown, the formula in H4 is:</td>
+        </tr>
+
+         <tr>
+		<td>Join tables with INDEX and MATCH</td>
+		<td>=INDEX(data,MATCH(lookup,ids,0),2)</td>
+		<td>To join or merge tables that have a common id, you can use the INDEX and MATCH functions.</td>
+        </tr>
+
+         <tr>
+		<td>Left lookup with INDEX and MATCH</td>
+		<td>=INDEX(item,MATCH(G5,id,0))</td>
+		<td>To perform a left lookup with INDEX and MATCH, set up the MATCH function to locate the lookup value in the column that serves as an ID. Then use the INDEX function to retrieve values at that position. In the example shown, the formula in H5 is:</td>
+        </tr>
+
+         <tr>
+		<td>Lookup and sum column</td>
+		<td>=SUM(INDEX(data,0,MATCH(val,header,0)))</td>
+		<td>To lookup and return the sum of a column, you can use the a formula based on the INDEX, MATCH and SUM functions. </td>
+        </tr>
+
+        <tr>
+		<td>Lookup entire row</td>
+		<td>=INDEX(data,MATCH(value,array,0),0)</td>
+		<td>To lookup and retrieve an entire row, you use the INDEX and MATCH functions.</td>
+        </tr>
+
+        <tr>
+		<td>Lookup last file version</td>
+		<td>=LOOKUP(2,1/(ISNUMBER(FIND(filename,range))),range)</td>
+		<td>To lookup the latest file version in a list, you can use a formula based on the LOOKUP function together with the ISNUMBER and FIND functions. </td>
+        </tr>
+
+        <tr>
+		<td>Lookup latest price</td>
+		<td>=LOOKUP(2,1/(item="hat"),price)</td>
+		<td>To lookup the latest price for a product in a list, sorted so latest items appear last, you can use a formula based on the LOOKUP function</td>
+        </tr>
+
+        <tr>
+		<td>Lookup lowest Monday tide</td>
+		<td>{=MIN(IF(day=I5,IF(tide="L",pred)))}</td>
+		<td>To find the lowest tide on a Monday, given a set of data with many days of high and low tides, you can use an array formula based on the IF and MIN functions.</td>
+        </tr>
+
+        <tr>
+		<td>Match first error</td>
+		<td>{=MATCH(TRUE,ISERROR(rng),0)}</td>
+		<td>If you need to match the first error in a range of cells, you can use an array formula based on the MATCH and ISERROR functions.</td>
+        </tr>
+
+        <tr>
+		<td>Match long text</td>
+		<td>=MATCH(1,EXACT(LEFT(A1,255),LEFT(rng,255))*EXACT(MID(A1,256,255),MID(rng,256,255)),0)</td>
+		<td>To match text longer than 255 characters with the MATCH function, you can use the LEFT, MID, and EXACT functions to parse and compare text, as explained below</td>
+        </tr>
+
+        <tr>
+		<td>Match next highest value</td>
+		<td>=INDEX(data,MATCH(lookup,values)+1)</td>
+		<td>To match the "next highest" value in a lookup table, you can use a formula based on INDEX and MATCH.</td>
+        </tr>
+
+        <tr>
+		<td>Merge tables with VLOOKUP</td>
+		<td>=VLOOKUP($A1,table,COLUMN()-x,0)</td>
+		<td>To merge tables, you can use the VLOOKUP function to lookup and retrieve data from one table to the other. To use VLOOKUP this way, both tables must share a common id or key.
+
+This article explains how join tables using VLOOKUP and a calculated column index. This is one way to use the same basic formula to retrieve data across more than one column.</td>
+        </tr>
+
+        <tr>
+		<td>Nearest location with XMATCH</td>
+		<td>=INDEX(location,XMATCH(0,distance,1))</td>
+		<td>To locate the nearest location by distance you can use a formula based on the XMATCH function with INDEX function. </td>
+        </tr>
+
+        <tr>
+		<td>Self-contained VLOOKUP</td>
+		<td>=VLOOKUP(lookup,{table_array},column,match)</td>
+		<td>To make a self-contained VLOOKUP formula, you can convert the table to an array constant inside of VLOOKUP</td>
+        </tr>
+
+        <tr>
+		<td>Sum lookup values using SUMIF</td>
+		<td>=SUMPRODUCT(SUMIF(codes,lookups,values))</td>
+		<td>To sum values retrieved by a lookup operation, you can use SUMPRODUCT with the SUMIF function.</td>
+        </tr>
+
+        <tr>
+		<td>Two-way approximate match multiple criteria</td>
+		<td>=INDEX(data,MATCH(K6,IF(material=K5,hardness),1),MATCH(K7,diameter,1))</td>
+		<td>To perform a two-way approximate match lookup with multiple criteria, you can use an array formula based on INDEX and MATCH, with help from the IF function to apply criteria. </td>
+        </tr>
+
+        <tr>
+		<td>VLOOKUP from another sheet</td>
+		<td>=VLOOKUP(lookup,sheet!range,column,match)</td>
+		<td>Using VLOOKUP from another sheet is very similar to using VLOOKUP on the same sheet. </td>
+        </tr>
+
+        <tr>
+		<td>VLOOKUP with numbers and text</td>
+		<td>=VLOOKUP(val&"",table,col,0)</td>
+		<td>A common problem with VLOOKUP is a mismatch between numbers and text. Either the first column in the table contains lookup values that are numbers stored as text, or the table contains numbers, but the lookup value itself is a number stored as text.</td>
+        </tr>
+
+        <tr>
+		<td>XMATCH reverse search</td>
+		<td>=XMATCH(A1,range,0,-1)</td>
+		<td>To perform a "reverse search" (i.e. search last to first), you can use the XMATCH function. </td>
+        </tr>
+
+        <tr>
+		<td>XLOOKUP with multiple criteria</td>
+		<td>=XLOOKUP(val1&val2&val3,rng1&rng2&rng3,results)</td>
+		<td>To use XLOOKUP with multiple criteria, you can concatenate lookup values and lookup arrays directly in the formula.</td>
+        </tr>
+
+        <tr>
+		<td>XLOOKUP with logical criteria</td>
+		<td>=XLOOKUP(1,(rng1="red")*(rng2>100),results)</td>
+		<td>To use XLOOKUP with multiple logical, build expressions with boolean logic and then look for the number 1.</td>
+        </tr>
+
+        <tr>
+		<td>XLOOKUP wildcard match example</td>
+		<td>=XLOOKUP(value,lookup,return,"not found",2)</td>
+		<td>To perform a partial match with XLOOKUP, supply 2 for the match mode argument to allow wildcards. </td>
+        </tr>
+
+        <tr>
+		<td>XLOOKUP rearrange columns</td>
+		<td>=XLOOKUP(neworder,oldorder,XLOOKUP(val,lookup,results))</td>
+		<td>XLOOKUP can be used to reorder columns, by nesting one XLOOKUP inside another.</td>
+        </tr>
+
+        <tr>
+		<td>XLOOKUP latest by date</td>
+		<td>=XLOOKUP(max,dates,results,,-1) // latest match by date</td>
+		<td>To get the latest match in a set of data by date, you can use XLOOKUP in approximate match mode by setting match_mode to -1.</td>
+        </tr>
+
+     </table>
+
+     <table>
+     	<h1>MICROSOFT EXCELL IF FORMULARS</h1>
+<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+        <tr>
+		<td>If cell begins with x, y, or z</td>
+		<td>=SUM(COUNTIF(A1,{"x*","y*","z*"}))>0</td>
+		<td>To test values to see if they begin with one of several characters (i.e. begin with x, y, or z) , you can use the COUNTIF function together with the SUM function.</td>
+        </tr>
+
+        <tr>
+		<td>If cell contains</td>
+		<td>=IF(ISNUMBER(SEARCH("abc",A1)),A1,"")</td>
+		<td>To test for cells that contain certain text, you can use a formula that uses the IF function together with the SEARCH and ISNUMBER functions.</td>
+        </tr>
+
+        <tr>
+		<td>if cell contains this or that</td>
+		<td>=IF(SUM(COUNTIF(B5,{"*text1*","*text2*"})),"x","")</td>
+		<td>To check to see if a cell contains more than one substring, you can use a formula based on the COUNTIF function.</td>
+        </tr>
+
+        <tr>
+		<td>If cell equals</td>
+		<td>=IF(A1="red",true result,false result)</td>
+		<td>To take one action when a cell is equal to a certain value, and another when not equal, you can use the IF function.</td>
+        </tr>
+
+        <tr>
+		<td>If cell is blank</td>
+		<td>=IF(A1="","blank","not blank")</td>
+		<td>To test a cell and take some action if the cell is blank (empty), you can use the IF function.</td>
+        </tr>
+
+        <tr>
+		<td>If cell is greater than</td>
+		<td>=IF(A1>30,"Yes","No")</td>
+		<td>To take one action when a cell is greater than a certain value, and another when not, you can use the IF function. </td>
+        </tr>
+
+        <tr>
+		<td>If cell is this OR that</td>
+		<td>=IF(OR(A1="this",A1="that"),"x","")</td>
+		<td>To do something when a cell is this or that (i.e. a cell is equal to "x", "y", etc.) you can use the IF function together with the OR function to run a test. </td>
+        </tr>
+
+        <tr>
+		<td>If cell is x or y and z</td>
+		<td>=IF(AND(OR(A1=x,A1=y),B1=z),"yes","no")</td>
+		<td>You can combine logical statements with the OR and AND functions inside the IF function.
+
+If color is red or green and quantity is greater than 10
+
+In the example shown, we simply want to "mark" or "flag" records where the color is either red OR green AND the quantity is greater than 10.</td>
+        </tr>
+
+        <tr>
+		<td>If else</td>
+		<td>=IF(test, true result, false result)</td>
+		<td>To test a condition, and take one action if the condition is TRUE, and another action if the condition if FALSE, you can use the IF function. </td>
+        </tr>
+
+        <tr>
+		<td>If not blank multiple cells</td>
+		<td>=IF(A1<>"",A1,IF(B1<>"",B1,IF(C1<>"",C1,IF(D1<>"",D1,"no value"))))</td>
+		<td>To test multiple cells, and return the value from the first non-blank cell, you can use a formula based on the IF function. </td>
+        </tr>
+
+        <tr>
+		<td>If NOT this or that</td>
+		<td>=IF(NOT(OR(A1="red",A1="green")),"x","")</td>
+		<td>To do something when a cell is NOT this or that (i.e. a cell is NOT equal to "x", "y", etc.) you can use the IF function together with the OR function to run a test.</td>
+        </tr>
+
+        <tr>
+		<td>If this AND that</td>
+		<td>=IF(AND(A1="this",B1="that"),"x","")</td>
+		<td>To do something when two cells have specific values (i.e. this AND that)  that you can use the IF function together with the AND function to run a test. </td>
+        </tr>
+
+        <tr>
+		<td>If this AND that OR that</td>
+		<td>=IF(AND(A1="x",OR(B1="y",B1="z")),"x","")</td>
+		<td>To test for various combinations of this AND that, or this OR that, you can use the IF function with the AND and OR functions. </td>
+        </tr>
+
+      
+
+        <tr>
+		<td>IF with boolean logic</td>
+		<td>= IF(criteria1*criteria2*criteria3,result)</td>
+		<td>Note: this is an array formula, and must be entered with control + shift + enter.</td>
+        </tr>
+
+        <tr>
+		<td>IF with other calculations</td>
+		<td>=IF(calculation1,calculation2,calculation3)</td>
+		<td>The IF function can be combined with other calculations by nesting other formulas and functions inside IF.</td>
+        </tr>
+
+        <tr>
+		<td>IF with wildcards</td>
+		<td>=IF(COUNTIF(A1,"??-????-???"),"","invalid")</td>
+		<td>The IF function doesn't support wildcards, but you can combine IF with COUNTIF or COUNTIFS to get basic wildcard functionality. </td>
+        </tr>
+
+        <tr>
+		<td>Invoice status with nested if</td>
+		<td>=IF(balance=0,"Paid",IF(current_date<due_date,"Open","Overdue"))</td>
+		<td>To determine invoice status (i.e. paid, open, overdue), you can use a nested IF formula and the TODAY function.</td>
+        </tr>
+
+        <tr>
+		<td>Nested IF function example</td>
+		<td>=IF(T1,R1,IF(T2,R2,IF(T3,R3,IF(T4,R4,R5))))</td>
+		<td>The IF function can be nested inside of itself to handle multiple conditions. In the example shown, a nested IF formula is used to assign a grade to a score.</td>
+        </tr>
+
+        <tr>
+		<td>Nested IF with multiple AND</td>
+		<td>=
+IF(AND(A1="x",B1>=100),1.5,
+IF(AND(A1="y",B1< 100),1.4,
+IF(AND(A1="x",B1>=100),1.3,
+IF(AND(A1="y",B1< 100),1.2,
+1.1))))</td>
+		<td>To evaluate several options with a nested IF statement, one approach is to use a separate IF per line to show the result of each set of logical tests. </td>
+        </tr>
+
+        <tr>
+		<td>Only calculate if not blank</td>
+		<td>=IF(criteria,formula(),"")</td>
+		<td>To run a formula only when one or more cells are not blank, you can use the IF function with an appropriate logical criteria.</td>
+        </tr>
+
+        <tr>
+		<td>Return blank if</td>
+		<td>=IF(A1=1,B1,"")</td>
+		<td>To return a blank result using the IF function, you can use an empty string (""). </td>
+        </tr>
+
+        <tr>
+		<td>Show checkmark if complete</td>
+		<td>=IF(A1="complete",CHAR(252),"")</td>
+		<td>To show a checkmark when a task is complete, you can use a formula based on the IF and CHAR functions. </td>
+        </tr>
+
+        <tr>
+		<td>Tax rate calculation with fixed base</td>
+		<td>=IF(A1<limit,A1*rate,(A1-limit)*rate+fixed)</td>
+		<td>This example shows how to set up simple formula using the IF function to calculate a tax amount with both fixed and variable components.</td>
+        </tr>
+
+        <tr>
+		<td>Two-tier sales tax calculation</td>
+		<td>=IF(A1<=limit,A1*tier1,limit*tier1+(A1-limit)*tier2)</td>
+		<td>To calculate a sales tax with two tiers (brackets), you can use a basic IF formula. </td>
+        </tr>
+
+        <tr>
+		<td>Win loss points calculation</td>
+		<td>=VLOOKUP(result,points_table,2,0)</td>
+		<td>To assign points based on win/loss/tie results for a team, you can use a simple VLOOKUP formula, or a nested IF formula</td>
+        </tr>
+     </table>
+
+     <table>
+      <h1>MICROSOFT EXCELL GROUPING FORMULARS</h1>
+<tr>
+			<th>EXCELL WORK NAME</th>
+			<th>FORMULAR</th>
+			<Th>EXPLANATION</Th>
+		</tr>
+
+	</table>
+        
+
+	
+	</body>
+	</html>

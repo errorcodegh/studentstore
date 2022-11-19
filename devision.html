@@ -1,0 +1,33 @@
+<plaintext>
+
+<?PHP 
+
+$num = $_POST['num'];
+if($num)
+{
+    for ($i=1; $i<=10; $i++)
+    {
+        $mul = $num * $i;
+        echo "$num * $i = $mul<br>";
+    }
+}
+else
+{
+    echo "Invalid Entry!";
+}
+?> 
+
+<!DOCTYPE html>
+  <html>
+<head>
+    <title>Assignment 9.1</title>
+</head>
+<body bgcolor="black" text="white">
+    <form method="post" action="devision.php">
+        <strong>Enter No:</strong>
+        <input type="text" name="num" size="10">
+        <input type="submit" value="Get Table">
+    </form>
+</body>
+</html>
+</plaintext>

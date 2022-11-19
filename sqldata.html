@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head><title>THE SQL DATABASE FUNTION</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+	table{
+		width: 100%;
+		border: border-collapse;
+	}
+
+	td,th {
+		border: 1px solid gold;
+		padding: 10px;
+		text-align: center;
+	}
+
+	
+	h2 {
+		text-shadow: 2px 2px 2px gold;
+	}
+
+	h6 {
+		width: 400px;
+		background: silver;
+		font-size: 20px;
+	}
+
+	p{
+		font-weight: bold;
+		word-spacing: 10px;
+		font-size: 25px;
+		color: red;
+	}
+
+@media screen and (max-width: 440px){
+table {
+ width: 100%;
+}
+
+h6 {
+  width: 100%;
+}
+
+
+
+
+}
+
+
+</style>
+</head>
+
+   <body>
+   <table>
+   	<h1>SQL SERVER DATENAME FUNCTION</h1>
+   	  <tr>
+   	  	<th>SQL Server T-SQL Code</th>
+   	  	<th>Date Function</th>
+   	  	<th>RESULT</th>
+   	  </tr>
+
+     <tr>
+     	<td>SELECT DATENAME(YEAR, GETDATE()) AS 'Year';</td>
+     	<td>YEAR</td>
+     	<td>2019</td>
+     </tr>
+
+     <tr>
+       <td>SELECT DATENAME(QUARTER, GETDATE()) AS 'Quarter';</td>
+       <td>QUATER</td>
+       <td>1</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(MONTH, GETDATE()) AS 'Month';</td>
+       <td>MONTH</td>
+       <td>MARCH</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(DAYOFYEAR, GETDATE()) AS 'DayOfYear';</td>
+       <td>DAYOFYEAR</td>
+       <td>67</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(DAY, GETDATE()) AS 'Day';</td>
+       <td>DAY</td>
+       <td>8</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(WEEK, GETDATE()) AS 'Week';</td>
+       <td>WEEK</td>
+       <td>10</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(WEEKDAY, GETDATE()) AS 'WeekDay';</td>
+       <td>WEEKDAY</td>
+       <td>FRIDAY</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(HOUR, GETDATE()) AS 'Hour';</td>
+       <td>HOUR</td>
+       <td>11</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(MINUTE, GETDATE()) AS 'Minute';</td>
+       <td>MINUTE</td>
+       <td>25</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(SECOND, GETDATE()) AS 'Second';</td>
+       <td>SECOND</td>
+       <td>55</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(MILLISECOND, GETDATE()) AS 'MilliSecond'</td>
+       <td>MILLISECOND</td>
+       <td>426</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(MICROSECOND, GETDATE()) AS 'MicroSecond';</td>
+       <td>MICROSECOND</td>
+       <td>426666</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(NANOSECOND, GETDATE()) AS 'NanoSecond'</td>
+       <td>NANOSECOND</td>
+       <td>426666666</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATENAME(ISO_WEEK, GETDATE()) AS 'Week';</td>
+       <td>WEEK</td>
+       <td>10</td>
+     </tr>
+
+      <tr>
+       <td>SELECT DATEFROMPARTS(2019,1,1) AS 'Date';</td>
+       <td>DATE</td>
+       <td>	2019-01-01</td>
+     </tr>
+
+     <tr>
+       <td>SELECT DATETIME2FROMPARTS(2019,1,1,6,0,0,0,1) AS 'DateTime2';</td>
+       <td>DATETIME2</td>
+       <td>2019-01-01 06:00:00.0</td>
+     </tr>
+
+<tr>
+       <td>SELECT DATETIMEFROMPARTS(2019,1,1,6,0,0,0) AS 'DateTime';</td>
+       <td>DATETIME</td>
+       <td>2019-01-01 06:00:00.000</td>
+     </tr>
+
+<tr>
+       <td>SELECT DATETIMEOFFSETFROMPARTS(2019,1,1,6,0,0,0,0,0,0) AS 'Offset';</td>
+       <td>OFFSET</td>
+       <td>	2019-01-01 06:00:00 +00:00</td>
+     </tr>
+
+<tr>
+       <td>SMALLDATETIME</td>
+       <td>	SmallDateTime</td>
+       <td>2019-01-01 06:00:00</td>
+     </tr>
+
+<tr>
+       <td>SELECT TIMEFROMPARTS(6,0,0,0,0) AS 'Time';</td>
+       <td>TIME</td>
+       <td>06:00:00</td>
+     </tr>
+</table>
+
+
+<BR><BR><BR><BR>
+     <h1>ALTER SQL COLUMN AND ROW SYNTHAX</h1>
+  
+
+    
+     	<h2>DELETE EMAIL COLUMN</h2>
+        <p>The DROP TABLE statement is used to drop an existing table in a database.
+        Note: Be careful before dropping a table. Deleting a table will result in loss of complete information stored in the table!</p>
+        <h6>synthax <br>
+        DROP TABLE Shippers;</h6><br><br>
+
+    
+     	<h2>ADD EMAIL COLUMN</h2>
+     	<P>To add a column in a table, use the following syntax:
+     	The following SQL adds an "Email" column to the "Customers" table:</P>
+        <h6>synthax <br>
+        ALTER TABLE Customers<br>
+        ADD Email varchar(255);</h6>
+        <br><br>
+   
+     	<h2>CHANGE DATATYPE OF A COLUMN</h2>
+     	<p>To change the data type of a column in a table, use the following syntax:</p>
+     	<h6>synthax <br> 
+     		ALTER TABLE table_name<br>
+            ALTER COLUMN column_name datatype;
+            <br><br>
+     	</h6>
+     
+
+     <tr>
+     	<td>DELETE DATABASE TABLE NAME</td>
+        <p>The DROP TABLE statement is used to drop an existing table in a database.
+        Note: Be careful before dropping a table. Deleting a table will result in loss of complete information stored in the table!</p>
+        <h6>synthax <br>
+        DROP TABLE Shippers;</h6><br><br>
+     
+     	<h2>CREATING A NEW TABLE IN DATABSE</h2>
+        <P>The CREATE TABLE statement is used to create a new table in a database.<br>
+        	The column parameters specify the names of the columns of the table.<br>
+The datatype parameter specifies the type of data the column can hold (e.g. varchar, integer, date, etc.).<br>
+The following example creates a table called "Persons" that contains five columns: PersonID, <br/>LastName, FirstName, Address, and City:  </P>
+ <h6>synthax <br>
+ CREATE TABLE Persons (<br>
+    PersonID int,<br>
+    LastName varchar(255),<br>
+    FirstName varchar(255),<br>
+    Address varchar(255),<br>
+    City varchar(255)<br>
+);</h6>
+<br><br>
+        
+
+   
+     	<h2>CREATE A TABLE USING ANOTHER TABLE</h2>
+     	<p>A copy of an existing table can also be created using CREATE TABLE.<br/>
+The new table gets the same column definitions. All columns or specific columns can be selected.<br/>
+If you create a new table using an existing table, the new table will be filled with the existing <br/>values from the old table.</p>
+     	<h6>synthax <br>
+     	CREATE TABLE TestTable AS<br>
+        SELECT customername, contactname<br>
+        FROM customers;</h6>
+        <br><Br>
+
+
+     	<h2>SQL BACKUP DATABASE Statement</h2>
+     	<p>The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.</p>
+     	<h6>synthax<br>
+     		BACKUP DATABASE databasename<br>
+            TO DISK = 'filepath';<br>
+     	</h6>
+     	<br><br>
+
+    
+
+   
+     	<h2>SQL BACKUP WITH DIFFERENTIAL</h2>
+     	<P>A differential back up only backs up the parts of the database that have changed since <br >the last full database backup.
+     		Tip: Always back up the database to a different drive than the actual database.<br> Then, if you get a disk crash, you will not lose your backup file along with the database.</P>
+     	<h6>BACKUP DATABASE databasename<br>
+        TO DISK = 'filepath'<br>
+        WITH DIFFERENTIAL;</h6>
+     	<br><br>
+
+
+     <tr>
+     	<h2>DELETE AN ENTIRE DATABASE</h2>
+     	<P>The DROP DATABASE statement is used to drop an existing SQL database.<br>
+     		Note: Be careful before dropping a database. Deleting a database will result<br>
+     		 in loss of complete information stored in the database!</P>
+     	<h6>synthax <br>
+     	DROP DATABASE testDB;</h6>
+     	<br><br>
+    
+
+     	<h2>SQL CREATE DATABASE</h2>
+        <p>The CREATE DATABASE statement is used to create a new SQL database.<br>
+        	Tip: Make sure you have admin privilege before creating any database.<br> Once a database is created, you can check it in the list of databases with<br>
+        	 the following SQL command: SHOW DATABASES;</p>
+        <h6>synthax <br>
+        CREATE DATABASE testDB;</h6>
+        <br><br>
+
+       <h1>SQL Constraints</h1>
+<p>SQL constraints are used to specify rules for the data in a table.<br>
+
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy<br> and reliability of the data in the table. If there is any violation between the constraint and the <br>data action, the action is aborted.
+
+Constraints can be column level or table level. Column level constraints apply to a column, and <br>table level constraints apply to the whole table.
+
+The following constraints are commonly used in SQL:<br>
+
+NOT NULL - Ensures that a column cannot have a NULL value<br>
+UNIQUE - Ensures that all values in a column are different<br>
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table<br>
+FOREIGN KEY - Uniquely identifies a row/record in another table<br>
+CHECK - Ensures that all values in a column satisfies a specific condition<br>
+DEFAULT - Sets a default value for a column when no value is specified<br>
+INDEX - Used to create and retrieve data from the database very quickly</p>
+
+
+     	<h2>SQL Create Constraints</h2>
+        <p>Constraints can be specified when the table is created with the CREATE TABLE statement<br>, or after the table is created with the ALTER TABLE statement.</p>
+        <h6>synthax <br>
+      CREATE TABLE table_name (<br>
+    column1 datatype constraint,<br>
+    column2 datatype constraint,<br>
+    column3 datatype constraint,<br>
+    ....<br>
+);</h6>
+        <br><br>
+
+
+
+
+
+     	<h2>SQL NOT NULL on CREATE TABLE</h2>
+     	<p>By default, a column can hold NULL values.<br>
+The NOT NULL constraint enforces a column to NOT accept NULL values.<br>
+This enforces a field to always contain a value, which means that you cannot insert a new record,<br> or update a record without adding a value to this field.
+The following SQL ensures that the "ID", "LastName", and "FirstName" columns<br> will NOT accept NULL values when the "Persons" table is created:
+</p>
+     	<h6>CREATE TABLE Persons (<br>
+    ID int NOT NULL,<br>
+    LastName varchar(255) NOT NULL,<br>
+    FirstName varchar(255) NOT NULL,<br>
+    Age int<br>
+);</h6>
+     	<br><br>
+  
+     
+     	<h2>SQL UNIQUE Constraint on CREATE TABLE</h2>
+     	<p>The UNIQUE constraint ensures that all values in a column are different.<br>
+Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.<br>
+A PRIMARY KEY constraint automatically has a UNIQUE constraint.<br>
+However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table<br>
+The following SQL creates a UNIQUE constraint on the "ID" column when the "Persons" table is created:</p>
+     	<h6>CREATE TABLE Persons (<br>
+    ID int NOT NULL,<br>
+    LastName varchar(255) NOT NULL,<br>
+    FirstName varchar(255),<br>
+    Age int,<br>
+    UNIQUE (ID)<br>
+);</h6>
+     	<br><br>
+
+     	<h4>UNIQUE CONSTRAINT IN MULTIPLE COLUMN</h4>
+     	<P>To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns, use the following SQL syntax:</P>
+     	<H6>CREATE TABLE Persons (<br>
+    ID int NOT NULL,<br>
+    LastName varchar(255) NOT NULL,<br>
+    FirstName varchar(255),<br>
+    Age int,<br>
+    CONSTRAINT UC_Person UNIQUE (ID,LastName)<br>
+);</H6>
+
+
+
+     	<h2>SQL PRIMARY KEY on CREATE TABLE</h2>
+     	<P>The PRIMARY KEY constraint uniquely identifies each record in a table.<br>
+Primary keys must contain UNIQUE values, and cannot contain NULL values.<br>
+A table can have only ONE primary key; and in the table, this primary key<br> can consist of single or multiple columns (fields).</P>
+     	<H6>CREATE TABLE Persons (<br>
+    ID int NOT NULL,<br>
+    LastName varchar(255) NOT NULL,<br>
+    FirstName varchar(255),<br>
+    Age int,<br>
+    PRIMARY KEY (ID)<br>
+);</H6>
+     	<BR><BR>
+
+    
+     	<h2>SQL FOREIGN KEY on CREATE TABLE</h2>
+     	<P>A FOREIGN KEY is a key used to link two tables together.<BR>
+A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.<BR>
+The table containing the foreign key is called the child table, and the table containing the <BR>candidate key is called the referenced or parent table.</P>
+     	<H6>CREATE TABLE Orders (<BR>
+    OrderID int NOT NULL,<BR>
+    OrderNumber int NOT NULL,<BR>
+    PersonID int,<BR>
+    PRIMARY KEY (OrderID),<BR>
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)<BR>
+);</H6>
+     	<BR><BR>
+
+     	<H2>SQL CHECK Constraint</H2>
+     	<P>The CHECK constraint is used to limit the value range that can be placed in a column.<BR>
+If you define a CHECK constraint on a single column it allows only certain values for this column.<BR>
+If you define a CHECK constraint on a table it can limit the values in certain columns based on<BR> values in other columns in the row.<BR>
+The following SQL creates a CHECK constraint on the "Age" column when the "Persons" table<BR> is created. The CHECK constraint ensures that the age of a person must be 18, or older:</P>
+     	<H6>CREATE TABLE Persons (<BR>
+    ID int NOT NULL,<BR>
+    LastName varchar(255) NOT NULL,<BR>
+    FirstName varchar(255),<BR>
+    Age int,<BR>
+    CHECK (Age>=18)<BR>
+);</H6>
+     	<BR><BR>
+
+     	<H2>SQL DEFAULT Constraint</H2>
+     	<P>The DEFAULT constraint is used to provide a default value for a column.<BR>
+The default value will be added to all new records IF no other value is specified.</P>
+     	<H6>CREATE TABLE Persons (<BR>
+    ID int NOT NULL,<BR>
+    LastName varchar(255) NOT NULL,<BR>
+    FirstName varchar(255),<BR>
+    Age int,<BR>
+    City varchar(255) DEFAULT 'Sandnes'<BR>
+);</H6>
+     	<BR><BR>
+
+     	<H4>The DEFAULT constraint can also be used to insert system values, by using functions like GETDATE():</H4>
+        <H6>CREATE TABLE Orders (<BR>
+    ID int NOT NULL,<BR>
+    OrderNumber int NOT NULL,<BR>
+    OrderDate date DEFAULT GETDATE()<BR>
+);</H6>
+
+<BR><BR>
+
+
+     	<H2>CREATE INDEX Syntax</H2>
+     	<P>The CREATE INDEX statement is used to create indexes in tables.<BR>
+        Indexes are used to retrieve data from the database more quickly than otherwise.<BR> The users cannot see the indexes, they are just used to speed up searches/queries.</P>
+     	<H6>SYNTHAX <BR>
+     		CREATE INDEX index_name<BR>
+        ON table_name (column1, column2, ...);</H6>
+     	<BR><BR>
+
+     <H2>SQL AUTO INCREMENT Field</H2>
+     	<P>Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.<BR>
+Often this is the primary key field that we would like to be created automatically every time a new record is inserted.<BR>
+he following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:</P>
+     	<H6>SYNTHAX <BR>
+     	CREATE TABLE Persons (<BR>
+    Personid int NOT NULL AUTO_INCREMENT,<BR>
+    LastName varchar(255) NOT NULL,<BR>
+    FirstName varchar(255),<BR>
+    Age int,<BR>
+    PRIMARY KEY (Personid)<BR>
+);</H6>
+     	<BR><BR>
+
+     	<H2>SQL CREATE VIEW Statement</H2>
+     	<P>In SQL, a view is a virtual table based on the result-set of an SQL statement.<BR>
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.<BR>
+You can add SQL functions, WHERE, and JOIN statements to a view and present<BR> the data as if the data were coming from one single table.</P>
+     	<H6>SYNTHAX <BR>
+     		CREATE VIEW [Brazil Customers] AS<BR>
+SELECT CustomerName, ContactName<BR>
+FROM Customers<BR>
+WHERE Country = 'Brazil';<BR> 	 
+</H6>
+     	<BR><BR>
+  
+
+  
+     
+
+
+   	</body>
+   	</html>

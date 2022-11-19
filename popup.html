@@ -1,0 +1,123 @@
+<plaintext>
+<!DOCTYPE html>
+<html>
+<head><title>POP ME UP</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="/path/to/jquery.bpopup.min.js"></script>
+<style>
+
+#logingpage {
+	position: fixed;
+	top: 200px;
+	right: 40%;
+	width: 25%;
+	height: 300px;
+	display: none;
+	background-color: lightblue;
+	text-align: center;
+
+
+}
+
+.lg{
+	width: 250px;
+	height: 30px;
+	color: black;
+	text-align: center;
+	transition: all .2s ease-in-out; 
+
+}
+
+.lg:hover,.sub:hover,#close:hover {
+	background-color: gold;
+	transform: scale(1.2); 
+}
+
+#press{
+	
+	height: 30px;
+	position: relative;
+	top: 300px;
+	left: 40%;
+	background-color: gold;
+	text-shadow: 2px 2px 2px silver;
+    
+}
+
+#close {
+	margin-left: 90%;
+	transition: all .2s ease-in-out; 
+}
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+<button onclick="showme()" id="press">FORM WILL POP UP SOON</button>
+
+<div id="logingpage">
+          <button onclick="cansel()" id="close">X</button>
+      <form  name="logform" onsubmit = "return validate()">
+      <LEGEND>ERROR CODE SOLVED LOG IN</LEGEND><br>
+        <label for="USERNAME">USER<span style="color:maroon">NAME</span></label><br>
+    <input type="text" id="fname" name="user" class="lg" placeholder="ENTER USERNAME">
+         <BR><BR>
+
+    <label for="email">EM<span style="color:maroon">AIL</span></label><br>
+    <input type="text" id="em" name="email" class="lg" placeholder="ENTER EMAIL">
+    <BR><BR>
+
+    <label for="password">PASS<span style="color:maroon">WORD</span></label><br>
+    <input type="text" id="pass" name="pas" class="lg" placeholder="PASSWORD REQUIRED">
+    <BR><BR>
+       <input type="submit" class="sub" value="submit">
+    </form>
+     </div>
+
+     <script>
+     	
+      function showme(){
+       	document.getElementById("logingpage").style.display ="block";
+       }
+
+
+  function cansel(){
+       	document.getElementById("logingpage").style.display ="none";
+       }
+  	
+	</script>
+   
+</body>
+</html>
+
+</plaintext>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,74 @@
+<DOCTYPE html>
+	<html>
+	<head><title>JUST TEXTINH MY PAGE</title>
+     
+     <style>
+   h1 {
+   	color: blue;
+   	font-size: 20px;
+   }
+
+   pre {
+   	font-size: 20px;
+   }
+
+
+</style>
+	</head>
+   <BODY>
+
+    <PRE>
+
+   	    // C++ program to create calculator using 
+// switch statement 
+<h1>#include <iostream></h1> 
+using namespace std; 
+  
+// Main program 
+main() 
+{ 
+    <h1>char op; </h1>
+    <h1>float num1, num2;</h1> 
+  
+    // It allows user to enter operator i.e. +, -, *, / 
+    <h1>cin >> op;</h1> 
+  
+    // It allow user to enter the operands 
+    <h1>cin >> num1 >> num2; </h1>
+  
+    // Switch statement begins 
+    switch (op) { 
+          
+        // If user enter +  
+        case '+': 
+            cout << num1 + num2; 
+            break; 
+          
+        // If user enter -  
+        case '-': 
+            cout << num1 - num2; 
+            break; 
+          
+        // If user enter * 
+        case '*': 
+            cout << num1 * num2; 
+            break; 
+          
+        // If user enter / 
+        case '/': 
+            cout << num1 / num2; 
+            break; 
+          
+        // If the operator is other than +, -, * or /,  
+        // error message will display 
+        default: 
+            cout << "Error! operator is not correct"; 
+            break; 
+    } // switch statement ends 
+  
+   <h1> return 0; </h1> 
+} 
+
+     </PRE>
+     </BODY>
+	</html>

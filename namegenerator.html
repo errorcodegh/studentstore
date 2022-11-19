@@ -1,0 +1,92 @@
+<plaintext>
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
+body {
+  background-color: #f9563a;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+}
+
+.head {
+  width: 100%;
+  margin: auto;
+  padding: 1em;
+  font-family: 'Libre Barcode 39 Text', cursive;
+  color: #0a3d53;
+  font-size: xx-large;
+}
+
+.main {
+  width: 100%;
+  margin: auto;
+  padding: 2em;
+  font-family: 'Overpass Mono', monospace;
+  color: black;
+  font-size: large;
+}
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+ 
+<div class="d-flex justify-content-center">
+    <div>
+      <div class='head'>
+        <h1>
+ Random Name Generator</h1>
+</div>
+<div class='main'>
+      <p>
+How many names would you like to generate (up to 10)?</p>
+<form>
+        <input type='text' class='user-amount'>
+        <button type='button' onClick='nameQuant();' class="btn-sm" style="background-color: #0a3d53; color: white; ">Go</button>
+      </form>
+<br>
+      <p class="bg-warning p-4">
+<span class='list-it'></span></p>
+</div>
+</div>
+</div>
+
+    
+<script>
+  // Check that the JS document is linked to the HTML document.
+console.log('Project 2!');
+
+// Create 2 arrays holding the first and last name elements to combine for our user-specified quantity of random names.
+var firstName = ["Cathy", "Jeremy", "Tim", "Alex", "Skeletor", "Marcie", "Theresa", "Blair", "Megan", "Andrew", "Scott", "Dominic", "Daniel", "Paul"];
+var lastName = ["Jones", "Brown", "Johnson", "Williams", "Jackson", "Redman", "Greene", "Smith", "Miller", "Taylor", "Wilson", "Hall", "Kennedy", "Richman"];
+
+// Create a function "getName()" to call one random element from each array, and assign it to the variable "randName" to be retrieved by the "nameQuant()" function.
+function getName() {
+var randName = firstName[Math.floor(Math.random() * firstName.length)] + ' ' + lastName[Math.floor(Math.random() * lastName.length)];
+return randName;
+}
+
+// Create a variable to retrieve the user's specified quantity from the DOM form. Print the element combinations from the "getName()" function the specified number of times.
+function nameQuant() {
+  var userQuant = document.querySelector('.user-amount').value;
+  for (var i = 0; i < userQuant && userQuant <= 10; i++) {
+    document.querySelector('.list-it').innerHTML += getName() + '<br>';
+  } 
+}
+</script>
+
+
+	</body>
+	</html>
